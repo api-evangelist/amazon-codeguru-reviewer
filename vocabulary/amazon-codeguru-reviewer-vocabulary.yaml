@@ -1,0 +1,158 @@
+vocabulary: 1.0.0
+info:
+  provider: Amazon CodeGuru Reviewer
+  description: Taxonomy of Amazon CodeGuru Reviewer APIs.
+  created: '2026-04-19'
+  modified: '2026-04-19'
+operational:
+  apis:
+  - name: Amazon CodeGuru Reviewer API
+    namespace: codegurureviewer
+    version: '2019-09-19'
+    baseUrl: https://codeguru-reviewer.us-east-1.amazonaws.com
+    status: active
+  resources:
+  - name: associations
+    apis:
+    - Amazon CodeGuru Reviewer API
+    actions: &id001
+    - AssociateRepository
+    - ListRepositoryAssociations
+  - name: codereviews
+    apis:
+    - Amazon CodeGuru Reviewer API
+    actions: &id003
+    - CreateCodeReview
+    - ListCodeReviews
+  - name: '{CodeReviewArn}'
+    apis:
+    - Amazon CodeGuru Reviewer API
+    actions: &id004
+    - DescribeCodeReview
+    - DescribeRecommendationFeedback
+    - ListRecommendationFeedback
+    - ListRecommendations
+  - name: '{AssociationArn}'
+    apis:
+    - Amazon CodeGuru Reviewer API
+    actions: &id005
+    - DescribeRepositoryAssociation
+    - DisassociateRepository
+  - name: '{resourceArn}'
+    apis:
+    - Amazon CodeGuru Reviewer API
+    actions: &id006
+    - ListTagsForResource
+    - TagResource
+    - UntagResource
+  - name: feedback
+    apis:
+    - Amazon CodeGuru Reviewer API
+    actions: &id007
+    - PutRecommendationFeedback
+  actions:
+  - name: list
+    httpMethods:
+    - GET
+    pattern: read
+  - name: create
+    httpMethods:
+    - POST
+    pattern: write
+  - name: delete
+    httpMethods:
+    - DELETE
+    pattern: destructive
+  - name: get
+    httpMethods:
+    - GET
+    pattern: read
+  - name: update
+    httpMethods:
+    - PUT
+    - PATCH
+    pattern: write
+  schemas:
+    core: []
+  parameters:
+    identifiers:
+    - id
+    - name
+    - arn
+    pagination:
+    - nextToken
+    - maxResults
+  authentication:
+    schemes:
+    - AWS Signature Version 4
+    iamIntegration: true
+capability:
+  workflows:
+  - name: Automated Code Review
+    file: capabilities/amazon-codeguru-reviewer-code-review.yaml
+    description: Unified workflow for DevOps teams to manage repository associations, trigger code reviews, retrieve recommendations, and track code quality metrics us
+    toolCount: 8
+    personas: &id002
+    - Developer
+    - DevOps Engineer
+    - Security Engineer
+    domains:
+    - Automated Code Review
+  personas:
+  - id: developer
+    name: Developer
+    description: Developer persona.
+    workflows:
+    - Automated Code Review
+  - id: devops-engineer
+    name: DevOps Engineer
+    description: DevOps Engineer persona.
+    workflows:
+    - Automated Code Review
+  - id: security-engineer
+    name: Security Engineer
+    description: Security Engineer persona.
+    workflows:
+    - Automated Code Review
+  domains:
+  - name: Automated Code Review
+    description: 'Unified workflow for DevOps teams to manage repository associations, trigger code reviews, retrieve '
+  namespaces:
+  - type: consumed
+    name: codegurureviewer
+    port:
+  binds:
+  - AWS_ACCESS_KEY_ID
+  - AWS_SECRET_ACCESS_KEY
+  - AWS_REGION
+crossReference:
+- resource: associations
+  operations: *id001
+  workflows:
+  - Automated Code Review
+  personas: *id002
+- resource: codereviews
+  operations: *id003
+  workflows:
+  - Automated Code Review
+  personas: *id002
+- resource: '{CodeReviewArn}'
+  operations: *id004
+  workflows:
+  - Automated Code Review
+  personas: *id002
+- resource: '{AssociationArn}'
+  operations: *id005
+  workflows:
+  - Automated Code Review
+  personas: *id002
+- resource: '{resourceArn}'
+  operations: *id006
+  workflows:
+  - Automated Code Review
+  personas: *id002
+- resource: feedback
+  operations: *id007
+  workflows:
+  - Automated Code Review
+  personas: *id002

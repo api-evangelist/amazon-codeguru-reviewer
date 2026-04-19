@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-schema/amazon-codeguru-reviewer-rule-metadata-schema.json",
+  "title": "RuleMetadata",
+  "description": "Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.",
+  "type": "object",
+  "properties": {
+    "RuleId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RuleId"
+        },
+        {
+          "description": "The ID of the rule."
+        }
+      ]
+    },
+    "RuleName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RuleName"
+        },
+        {
+          "description": "The name of the rule."
+        }
+      ]
+    },
+    "ShortDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ShortDescription"
+        },
+        {
+          "description": "A short description of the rule."
+        }
+      ]
+    },
+    "LongDescription": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LongDescription"
+        },
+        {
+          "description": "A long description of the rule."
+        }
+      ]
+    },
+    "RuleTags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RuleTags"
+        },
+        {
+          "description": "Tags that are associated with the rule."
+        }
+      ]
+    }
+  }
+}

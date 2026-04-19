@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-schema/amazon-codeguru-reviewer-rule-id-schema.json",
+  "title": "RuleId",
+  "description": "RuleId schema from Amazon CodeGuru Reviewer",
+  "type": "string",
+  "pattern": "^\\S+\\/[a-zA-Z0-9-]+@v\\d+\\.\\d+$",
+  "minLength": 1,
+  "maxLength": 64
+}

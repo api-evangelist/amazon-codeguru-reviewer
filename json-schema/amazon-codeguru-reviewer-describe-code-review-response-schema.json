@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-schema/amazon-codeguru-reviewer-describe-code-review-response-schema.json",
+  "title": "DescribeCodeReviewResponse",
+  "description": "DescribeCodeReviewResponse schema from Amazon CodeGuru Reviewer",
+  "type": "object",
+  "properties": {
+    "CodeReview": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CodeReview"
+        },
+        {
+          "description": "Information about the code review."
+        }
+      ]
+    }
+  }
+}

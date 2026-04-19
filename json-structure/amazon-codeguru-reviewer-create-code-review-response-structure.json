@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-structure/amazon-codeguru-reviewer-create-code-review-response-structure.json",
+  "name": "CreateCodeReviewResponse",
+  "description": "CreateCodeReviewResponse schema from Amazon CodeGuru Reviewer",
+  "type": "object",
+  "properties": {
+    "CodeReview": {
+      "$ref": "#/components/schemas/CodeReview"
+    }
+  }
+}

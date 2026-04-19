@@ -1,0 +1,361 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "amazon-code-guru-reviewer": "https://amazon-code-guru-reviewer.amazonaws.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "AssociateRepositoryResponse": "amazon-code-guru-reviewer:AssociateRepositoryResponse",
+    "CodeCommitRepository": "amazon-code-guru-reviewer:CodeCommitRepository",
+    "ThirdPartySourceRepository": "amazon-code-guru-reviewer:ThirdPartySourceRepository",
+    "S3Repository": "amazon-code-guru-reviewer:S3Repository",
+    "CreateCodeReviewResponse": "amazon-code-guru-reviewer:CreateCodeReviewResponse",
+    "RepositoryAnalysis": {
+      "@id": "amazon-code-guru-reviewer:RepositoryAnalysis",
+      "@type": "xsd:string"
+    },
+    "DescribeCodeReviewResponse": "amazon-code-guru-reviewer:DescribeCodeReviewResponse",
+    "DescribeRecommendationFeedbackResponse": "amazon-code-guru-reviewer:DescribeRecommendationFeedbackResponse",
+    "DescribeRepositoryAssociationResponse": "amazon-code-guru-reviewer:DescribeRepositoryAssociationResponse",
+    "DisassociateRepositoryResponse": "amazon-code-guru-reviewer:DisassociateRepositoryResponse",
+    "ListCodeReviewsResponse": "amazon-code-guru-reviewer:ListCodeReviewsResponse",
+    "ListRecommendationFeedbackResponse": "amazon-code-guru-reviewer:ListRecommendationFeedbackResponse",
+    "ListRecommendationsResponse": "amazon-code-guru-reviewer:ListRecommendationsResponse",
+    "ListRepositoryAssociationsResponse": "amazon-code-guru-reviewer:ListRepositoryAssociationsResponse",
+    "ListTagsForResourceResponse": "amazon-code-guru-reviewer:ListTagsForResourceResponse",
+    "PutRecommendationFeedbackResponse": "amazon-code-guru-reviewer:PutRecommendationFeedbackResponse",
+    "TagResourceResponse": "amazon-code-guru-reviewer:TagResourceResponse",
+    "UntagResourceResponse": "amazon-code-guru-reviewer:UntagResourceResponse",
+    "Repository": {
+      "@id": "amazon-code-guru-reviewer:Repository",
+      "@type": "xsd:string"
+    },
+    "TagMap": "amazon-code-guru-reviewer:TagMap",
+    "KMSKeyDetails": {
+      "@id": "amazon-code-guru-reviewer:KMSKeyDetails",
+      "@type": "xsd:string"
+    },
+    "AssociateRepositoryRequest": "amazon-code-guru-reviewer:AssociateRepositoryRequest",
+    "RepositoryAssociation": {
+      "@id": "amazon-code-guru-reviewer:RepositoryAssociation",
+      "@type": "xsd:string"
+    },
+    "BranchDiffSourceCodeType": "amazon-code-guru-reviewer:BranchDiffSourceCodeType",
+    "CodeArtifacts": {
+      "@id": "amazon-code-guru-reviewer:CodeArtifacts",
+      "@type": "xsd:string"
+    },
+    "SourceCodeType": {
+      "@id": "amazon-code-guru-reviewer:SourceCodeType",
+      "@type": "xsd:string"
+    },
+    "Metrics": {
+      "@id": "amazon-code-guru-reviewer:Metrics",
+      "@type": "xsd:string"
+    },
+    "CodeReview": {
+      "@id": "amazon-code-guru-reviewer:CodeReview",
+      "@type": "xsd:string"
+    },
+    "CodeReviewSummary": "amazon-code-guru-reviewer:CodeReviewSummary",
+    "MetricsSummary": {
+      "@id": "amazon-code-guru-reviewer:MetricsSummary",
+      "@type": "xsd:string"
+    },
+    "CodeReviewType": "amazon-code-guru-reviewer:CodeReviewType",
+    "CommitDiffSourceCodeType": "amazon-code-guru-reviewer:CommitDiffSourceCodeType",
+    "CreateCodeReviewRequest": "amazon-code-guru-reviewer:CreateCodeReviewRequest",
+    "DescribeCodeReviewRequest": "amazon-code-guru-reviewer:DescribeCodeReviewRequest",
+    "DescribeRecommendationFeedbackRequest": "amazon-code-guru-reviewer:DescribeRecommendationFeedbackRequest",
+    "RecommendationFeedback": {
+      "@id": "amazon-code-guru-reviewer:RecommendationFeedback",
+      "@type": "xsd:string"
+    },
+    "DescribeRepositoryAssociationRequest": "amazon-code-guru-reviewer:DescribeRepositoryAssociationRequest",
+    "DisassociateRepositoryRequest": "amazon-code-guru-reviewer:DisassociateRepositoryRequest",
+    "EventInfo": {
+      "@id": "amazon-code-guru-reviewer:EventInfo",
+      "@type": "xsd:string"
+    },
+    "ListCodeReviewsRequest": "amazon-code-guru-reviewer:ListCodeReviewsRequest",
+    "ListRecommendationFeedbackRequest": "amazon-code-guru-reviewer:ListRecommendationFeedbackRequest",
+    "ListRecommendationsRequest": "amazon-code-guru-reviewer:ListRecommendationsRequest",
+    "ListRepositoryAssociationsRequest": "amazon-code-guru-reviewer:ListRepositoryAssociationsRequest",
+    "ListTagsForResourceRequest": "amazon-code-guru-reviewer:ListTagsForResourceRequest",
+    "PutRecommendationFeedbackRequest": "amazon-code-guru-reviewer:PutRecommendationFeedbackRequest",
+    "RecommendationFeedbackSummary": "amazon-code-guru-reviewer:RecommendationFeedbackSummary",
+    "RecommendationSummary": "amazon-code-guru-reviewer:RecommendationSummary",
+    "RuleMetadata": {
+      "@id": "amazon-code-guru-reviewer:RuleMetadata",
+      "@type": "xsd:string"
+    },
+    "RepositoryHeadSourceCodeType": "amazon-code-guru-reviewer:RepositoryHeadSourceCodeType",
+    "S3RepositoryDetails": {
+      "@id": "amazon-code-guru-reviewer:S3RepositoryDetails",
+      "@type": "xsd:string"
+    },
+    "RepositoryAssociationSummary": "amazon-code-guru-reviewer:RepositoryAssociationSummary",
+    "RequestMetadata": {
+      "@id": "amazon-code-guru-reviewer:RequestMetadata",
+      "@type": "xsd:string"
+    },
+    "S3BucketRepository": {
+      "@id": "amazon-code-guru-reviewer:S3BucketRepository",
+      "@type": "xsd:string"
+    },
+    "TagResourceRequest": "amazon-code-guru-reviewer:TagResourceRequest",
+    "UntagResourceRequest": "amazon-code-guru-reviewer:UntagResourceRequest",
+    "Tags": {
+      "@id": "amazon-code-guru-reviewer:Tags",
+      "@type": "xsd:string"
+    },
+    "Name": {
+      "@id": "amazon-code-guru-reviewer:Name",
+      "@type": "xsd:string"
+    },
+    "ConnectionArn": {
+      "@id": "amazon-code-guru-reviewer:ConnectionArn",
+      "@type": "xsd:string"
+    },
+    "Owner": {
+      "@id": "amazon-code-guru-reviewer:Owner",
+      "@type": "xsd:string"
+    },
+    "BucketName": {
+      "@id": "amazon-code-guru-reviewer:BucketName",
+      "@type": "xsd:string"
+    },
+    "RepositoryHead": {
+      "@id": "amazon-code-guru-reviewer:RepositoryHead",
+      "@type": "xsd:string"
+    },
+    "CodeReviewSummaries": {
+      "@id": "amazon-code-guru-reviewer:CodeReviewSummaries",
+      "@type": "xsd:string"
+    },
+    "NextToken": {
+      "@id": "amazon-code-guru-reviewer:NextToken",
+      "@type": "xsd:string"
+    },
+    "RecommendationFeedbackSummaries": {
+      "@id": "amazon-code-guru-reviewer:RecommendationFeedbackSummaries",
+      "@type": "xsd:string"
+    },
+    "RecommendationSummaries": {
+      "@id": "amazon-code-guru-reviewer:RecommendationSummaries",
+      "@type": "xsd:string"
+    },
+    "RepositoryAssociationSummaries": {
+      "@id": "amazon-code-guru-reviewer:RepositoryAssociationSummaries",
+      "@type": "xsd:string"
+    },
+    "CodeCommit": {
+      "@id": "amazon-code-guru-reviewer:CodeCommit",
+      "@type": "xsd:string"
+    },
+    "Bitbucket": {
+      "@id": "amazon-code-guru-reviewer:Bitbucket",
+      "@type": "xsd:string"
+    },
+    "GitHubEnterpriseServer": {
+      "@id": "amazon-code-guru-reviewer:GitHubEnterpriseServer",
+      "@type": "xsd:string"
+    },
+    "S3Bucket": {
+      "@id": "amazon-code-guru-reviewer:S3Bucket",
+      "@type": "xsd:string"
+    },
+    "KMSKeyId": {
+      "@id": "amazon-code-guru-reviewer:KMSKeyId",
+      "@type": "xsd:string"
+    },
+    "EncryptionOption": {
+      "@id": "amazon-code-guru-reviewer:EncryptionOption",
+      "@type": "xsd:string"
+    },
+    "ClientRequestToken": {
+      "@id": "amazon-code-guru-reviewer:ClientRequestToken",
+      "@type": "xsd:string"
+    },
+    "AssociationId": {
+      "@id": "amazon-code-guru-reviewer:AssociationId",
+      "@type": "xsd:string"
+    },
+    "AssociationArn": {
+      "@id": "amazon-code-guru-reviewer:AssociationArn",
+      "@type": "xsd:string"
+    },
+    "ProviderType": {
+      "@id": "amazon-code-guru-reviewer:ProviderType",
+      "@type": "xsd:string"
+    },
+    "State": {
+      "@id": "amazon-code-guru-reviewer:State",
+      "@type": "xsd:string"
+    },
+    "StateReason": {
+      "@id": "amazon-code-guru-reviewer:StateReason",
+      "@type": "xsd:string"
+    },
+    "LastUpdatedTimeStamp": {
+      "@id": "amazon-code-guru-reviewer:LastUpdatedTimeStamp",
+      "@type": "xsd:string"
+    },
+    "CreatedTimeStamp": {
+      "@id": "amazon-code-guru-reviewer:CreatedTimeStamp",
+      "@type": "xsd:string"
+    },
+    "SourceBranchName": {
+      "@id": "amazon-code-guru-reviewer:SourceBranchName",
+      "@type": "xsd:string"
+    },
+    "DestinationBranchName": {
+      "@id": "amazon-code-guru-reviewer:DestinationBranchName",
+      "@type": "xsd:string"
+    },
+    "SourceCodeArtifactsObjectKey": {
+      "@id": "amazon-code-guru-reviewer:SourceCodeArtifactsObjectKey",
+      "@type": "xsd:string"
+    },
+    "BuildArtifactsObjectKey": {
+      "@id": "amazon-code-guru-reviewer:BuildArtifactsObjectKey",
+      "@type": "xsd:string"
+    },
+    "CommitDiff": {
+      "@id": "amazon-code-guru-reviewer:CommitDiff",
+      "@type": "xsd:string"
+    },
+    "BranchDiff": {
+      "@id": "amazon-code-guru-reviewer:BranchDiff",
+      "@type": "xsd:string"
+    },
+    "MeteredLinesOfCodeCount": {
+      "@id": "amazon-code-guru-reviewer:MeteredLinesOfCodeCount",
+      "@type": "xsd:string"
+    },
+    "SuppressedLinesOfCodeCount": {
+      "@id": "amazon-code-guru-reviewer:SuppressedLinesOfCodeCount",
+      "@type": "xsd:string"
+    },
+    "FindingsCount": {
+      "@id": "amazon-code-guru-reviewer:FindingsCount",
+      "@type": "xsd:string"
+    },
+    "CodeReviewArn": {
+      "@id": "amazon-code-guru-reviewer:CodeReviewArn",
+      "@type": "xsd:string"
+    },
+    "RepositoryName": {
+      "@id": "amazon-code-guru-reviewer:RepositoryName",
+      "@type": "xsd:string"
+    },
+    "Type": {
+      "@id": "amazon-code-guru-reviewer:Type",
+      "@type": "xsd:string"
+    },
+    "PullRequestId": {
+      "@id": "amazon-code-guru-reviewer:PullRequestId",
+      "@type": "xsd:string"
+    },
+    "AnalysisTypes": {
+      "@id": "amazon-code-guru-reviewer:AnalysisTypes",
+      "@type": "xsd:string"
+    },
+    "ConfigFileState": {
+      "@id": "amazon-code-guru-reviewer:ConfigFileState",
+      "@type": "xsd:string"
+    },
+    "SourceCommit": {
+      "@id": "amazon-code-guru-reviewer:SourceCommit",
+      "@type": "xsd:string"
+    },
+    "DestinationCommit": {
+      "@id": "amazon-code-guru-reviewer:DestinationCommit",
+      "@type": "xsd:string"
+    },
+    "MergeBaseCommit": {
+      "@id": "amazon-code-guru-reviewer:MergeBaseCommit",
+      "@type": "xsd:string"
+    },
+    "RepositoryAssociationArn": {
+      "@id": "amazon-code-guru-reviewer:RepositoryAssociationArn",
+      "@type": "xsd:string"
+    },
+    "RecommendationId": {
+      "@id": "amazon-code-guru-reviewer:RecommendationId",
+      "@type": "xsd:string"
+    },
+    "Reactions": {
+      "@id": "amazon-code-guru-reviewer:Reactions",
+      "@type": "xsd:string"
+    },
+    "UserId": {
+      "@id": "amazon-code-guru-reviewer:UserId",
+      "@type": "xsd:string"
+    },
+    "FilePath": {
+      "@id": "amazon-code-guru-reviewer:FilePath",
+      "@type": "xsd:string"
+    },
+    "StartLine": {
+      "@id": "amazon-code-guru-reviewer:StartLine",
+      "@type": "xsd:string"
+    },
+    "EndLine": {
+      "@id": "amazon-code-guru-reviewer:EndLine",
+      "@type": "xsd:string"
+    },
+    "Description": {
+      "@id": "amazon-code-guru-reviewer:Description",
+      "@type": "xsd:string"
+    },
+    "RecommendationCategory": {
+      "@id": "amazon-code-guru-reviewer:RecommendationCategory",
+      "@type": "xsd:string"
+    },
+    "Severity": {
+      "@id": "amazon-code-guru-reviewer:Severity",
+      "@type": "xsd:string"
+    },
+    "RuleId": {
+      "@id": "amazon-code-guru-reviewer:RuleId",
+      "@type": "xsd:string"
+    },
+    "RuleName": {
+      "@id": "amazon-code-guru-reviewer:RuleName",
+      "@type": "xsd:string"
+    },
+    "ShortDescription": {
+      "@id": "amazon-code-guru-reviewer:ShortDescription",
+      "@type": "xsd:string"
+    },
+    "LongDescription": {
+      "@id": "amazon-code-guru-reviewer:LongDescription",
+      "@type": "xsd:string"
+    },
+    "RuleTags": {
+      "@id": "amazon-code-guru-reviewer:RuleTags",
+      "@type": "xsd:string"
+    },
+    "BranchName": {
+      "@id": "amazon-code-guru-reviewer:BranchName",
+      "@type": "xsd:string"
+    },
+    "RequestId": {
+      "@id": "amazon-code-guru-reviewer:RequestId",
+      "@type": "xsd:string"
+    },
+    "Requester": {
+      "@id": "amazon-code-guru-reviewer:Requester",
+      "@type": "xsd:string"
+    },
+    "VendorName": {
+      "@id": "amazon-code-guru-reviewer:VendorName",
+      "@type": "xsd:string"
+    },
+    "Details": {
+      "@id": "amazon-code-guru-reviewer:Details",
+      "@type": "xsd:string"
+    }
+  }
+}

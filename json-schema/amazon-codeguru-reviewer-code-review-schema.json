@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-schema/amazon-codeguru-reviewer-code-review-schema.json",
+  "title": "CodeReview",
+  "description": "Information about a code review. A code review belongs to the associated repository that contains the reviewed code.",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The name of the code review."
+        }
+      ]
+    },
+    "CodeReviewArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html\">CodeReview</a> object. "
+        }
+      ]
+    },
+    "RepositoryName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The name of the repository."
+        }
+      ]
+    },
+    "Owner": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Owner"
+        },
+        {
+          "description": "The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID."
+        }
+      ]
+    },
+    "ProviderType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProviderType"
+        },
+        {
+          "description": "The type of repository that contains the reviewed code (for example, GitHub or Bitbucket)."
+        }
+      ]
+    },
+    "State": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobState"
+        },
+        {
+          "description": "<p>The valid code review states are:</p> <ul> <li> <p> <code>Completed</code>: The code review is complete.</p> </li> <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> <li> <p> <code>Failed</code>: The code review failed.</p> </li> <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> </ul>"
+        }
+      ]
+    },
+    "StateReason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StateReason"
+        },
+        {
+          "description": "The reason for the state of the code review."
+        }
+      ]
+    },
+    "CreatedTimeStamp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeStamp"
+        },
+        {
+          "description": "The time, in milliseconds since the epoch, when the code review was created."
+        }
+      ]
+    },
+    "LastUpdatedTimeStamp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeStamp"
+        },
+        {
+          "description": "The time, in milliseconds since the epoch, when the code review was last updated."
+        }
+      ]
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Type"
+        },
+        {
+          "description": "The type of code review."
+        }
+      ]
+    },
+    "PullRequestId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PullRequestId"
+        },
+        {
+          "description": "The pull request ID for the code review."
+        }
+      ]
+    },
+    "SourceCodeType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SourceCodeType"
+        },
+        {
+          "description": "The type of the source code for the code review."
+        }
+      ]
+    },
+    "AssociationArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AssociationArn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html\">RepositoryAssociation</a> that contains the reviewed source code. You can retrieve associated repository ARNs by calling <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html\">ListRepositoryAssociations</a>."
+        }
+      ]
+    },
+    "Metrics": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Metrics"
+        },
+        {
+          "description": "The statistics from the code review."
+        }
+      ]
+    },
+    "AnalysisTypes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AnalysisTypes"
+        },
+        {
+          "description": "The types of analysis performed during a repository analysis or a pull request review. You can specify either <code>Security</code>, <code>CodeQuality</code>, or both."
+        }
+      ]
+    },
+    "ConfigFileState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConfigFileState"
+        },
+        {
+          "description": "The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository."
+        }
+      ]
+    }
+  }
+}

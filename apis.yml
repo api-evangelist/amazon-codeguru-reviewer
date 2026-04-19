@@ -1,16 +1,105 @@
 aid: amazon-codeguru-reviewer
-name: Amazon Codeguru Reviewer
-description: >-
-  Amazon Codeguru Reviewer provides API capabilities.
+name: Amazon CodeGuru Reviewer
+description: Amazon CodeGuru Reviewer is an automated code review service that uses machine learning and AWS best practices to identify security vulnerabilities, bugs, and hard-to-detect issues in 
+  your Java and Python code. It provides intelligent recommendations to help improve code quality and find defects that may be difficult to detect through manual code reviews.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-tags: []
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/apis.yml
+tags:
+- Amazon
+- AWS
+- Code Review
+- Security
+- DevOps
+- Machine Learning
+- Developer Tools
+url: https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-03-16'
+modified: '2026-04-19'
 specificationVersion: '0.19'
-apis: []
+apis:
+- aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-api
+  name: Amazon CodeGuru Reviewer API
+  description: The Amazon CodeGuru Reviewer REST API.
+  humanURL: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+  baseURL: https://codeguru-reviewer.us-east-1.amazonaws.com
+  tags:
+  - Amazon
+  - AWS
+  - Code Review
+  - Security
+  - DevOps
+  properties:
+  - type: Documentation
+    url: https://docs.aws.amazon.com/codegurureviewer/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+  - type: OpenAPI
+    url: openapi/amazon-codeguru-reviewer-openapi-original.yaml
+common:
+- type: GettingStarted
+  url: https://docs.aws.amazon.com/codeguru/reviewer
+- type: Pricing
+  url: https://aws.amazon.com/codegurureviewer/pricing/
+- type: Console
+  url: https://console.aws.amazon.com/codegurureviewer/
+- type: Portal
+  url: https://aws.amazon.com/codegurureviewer/
+- type: Documentation
+  url: https://docs.aws.amazon.com/codegurureviewer/
+- type: TermsOfService
+  url: https://aws.amazon.com/service-terms/
+- type: PrivacyPolicy
+  url: https://aws.amazon.com/privacy/
+- type: StatusPage
+  url: https://health.aws.amazon.com/health/status
+- type: Blog
+  url: https://aws.amazon.com/blogs/devops/
+- type: SignUp
+  url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html
+- type: GitHubOrganization
+  url: https://github.com/aws
+- type: SpectralRules
+  url: rules/amazon-codeguru-reviewer-spectral-rules.yml
+- type: Vocabulary
+  url: vocabulary/amazon-codeguru-reviewer-vocabulary.yaml
+- type: NaftikoCapability
+  url: capabilities/amazon-codeguru-reviewer-code-review.yaml
+- type: JSONLD
+  url: json-ld/amazon-codeguru-reviewer-context.jsonld
+- type: Features
+  data:
+  - name: Automated Code Review
+    description: Automatically analyze code changes in pull requests and provide recommendations for bugs, security vulnerabilities, and code quality issues.
+  - name: Security Analysis
+    description: Detect security vulnerabilities including OWASP Top 10, input validation issues, encryption problems, and AWS API security best practices.
+  - name: Java and Python Support
+    description: Analyze Java and Python code with language-specific recommendations based on AWS best practices.
+  - name: Repository Association
+    description: Connect CodeGuru Reviewer to GitHub, GitHub Enterprise, Bitbucket, CodeCommit, and S3 repositories.
+  - name: Pull Request Integration
+    description: Automatically trigger code reviews on new pull requests and post recommendations as inline comments.
+- type: UseCases
+  data:
+  - name: Security Vulnerability Detection
+    description: Automatically detect security issues in code changes before they reach production, reducing security review burden on developers.
+  - name: Automated Code Quality Enforcement
+    description: Enforce code quality standards across the organization with consistent, automated review feedback on every pull request.
+  - name: Developer Productivity
+    description: Help developers identify and fix common coding errors and anti-patterns earlier in the development cycle.
+- type: Integrations
+  data:
+  - name: GitHub
+    description: Associate GitHub repositories for automated code reviews on pull requests.
+  - name: GitHub Enterprise
+    description: Connect self-hosted GitHub Enterprise repositories for automated code review.
+  - name: Bitbucket
+    description: Integrate with Bitbucket repositories for pull request code reviews.
+  - name: AWS CodeCommit
+    description: Analyze CodeCommit repositories and pull requests natively.
+  - name: Amazon S3
+    description: Associate S3 buckets for one-time code analysis.
+  - name: Amazon CodeGuru Profiler
+    description: Combine code review recommendations with profiling insights for comprehensive code quality.
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com

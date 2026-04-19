@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-structure/amazon-codeguru-reviewer-put-recommendation-feedback-request-structure.json",
+  "name": "PutRecommendationFeedbackRequest",
+  "description": "PutRecommendationFeedbackRequest schema from Amazon CodeGuru Reviewer",
+  "type": "object",
+  "properties": {
+    "CodeReviewArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html\">CodeReview</a> object. "
+        }
+      ]
+    },
+    "RecommendationId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecommendationId"
+        },
+        {
+          "description": "The recommendation ID that can be used to track the provided recommendations and then to collect the feedback."
+        }
+      ]
+    },
+    "Reactions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Reactions"
+        },
+        {
+          "description": "List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback."
+        }
+      ]
+    }
+  },
+  "required": [
+    "CodeReviewArn",
+    "RecommendationId",
+    "Reactions"
+  ]
+}

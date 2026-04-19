@@ -1,0 +1,10 @@
+{
+  "FilePath": "example-value",
+  "RecommendationId": "500123",
+  "StartLine": "example-value",
+  "EndLine": "example-value",
+  "Description": "Example description",
+  "RecommendationCategory": "example-value",
+  "RuleMetadata": "example-value",
+  "Severity": "example-value"
+}

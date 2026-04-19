@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-schema/amazon-codeguru-reviewer-request-metadata-schema.json",
+  "title": "RequestMetadata",
+  "description": "Metadata that is associated with a code review. This applies to both pull request and repository analysis code reviews.",
+  "type": "object",
+  "properties": {
+    "RequestId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RequestId"
+        },
+        {
+          "description": "The ID of the request. This is required for a pull request code review."
+        }
+      ]
+    },
+    "Requester": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Requester"
+        },
+        {
+          "description": "An identifier, such as a name or account ID, that is associated with the requester. The <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request."
+        }
+      ]
+    },
+    "EventInfo": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EventInfo"
+        },
+        {
+          "description": "Information about the event associated with a code review."
+        }
+      ]
+    },
+    "VendorName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VendorName"
+        },
+        {
+          "description": "The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more information, see the definition for <code>ProviderType</code> in <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html\">RepositoryAssociation</a>."
+        }
+      ]
+    }
+  }
+}

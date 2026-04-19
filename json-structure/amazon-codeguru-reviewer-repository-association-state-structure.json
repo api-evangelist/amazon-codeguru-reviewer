@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-structure/amazon-codeguru-reviewer-repository-association-state-structure.json",
+  "name": "RepositoryAssociationState",
+  "description": "RepositoryAssociationState schema from Amazon CodeGuru Reviewer",
+  "type": "string",
+  "enum": [
+    "Associated",
+    "Associating",
+    "Failed",
+    "Disassociating",
+    "Disassociated"
+  ]
+}

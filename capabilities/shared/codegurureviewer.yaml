@@ -1,0 +1,453 @@
+naftiko: 1.0.0-alpha1
+info:
+  label: Amazon CodeGuru Reviewer
+  description: Amazon CodeGuru Reviewer is an automated code review service that uses machine learning and AWS best practices to identify security vulnerabilities, bugs, and hard-to-detect issues in 
+    your Java and Py
+  tags:
+  - Amazon
+  - AWS
+  - Code Review
+  - Security
+  - DevOps
+  - Machine Learning
+  - Developer Tools
+  created: '2026-04-19'
+  modified: '2026-04-19'
+binds:
+- namespace: env
+  keys:
+    AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+    AWS_REGION: AWS_REGION
+capability:
+  consumes:
+  - type: http
+    namespace: codegurureviewer
+    baseUri: http://codeguru-reviewer.us-east-1.amazonaws.com
+    description: Amazon CodeGuru Reviewer REST API.
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{AWS_AUTH_TOKEN}}'
+      placement: header
+    resources:
+    - name: associations
+      path: /associations
+      description: Operations for associations
+      operations:
+      - name: associateRepository
+        method: POST
+        description: Amazon CodeGuru Reviewer Associate Repository
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: listRepositoryAssociations
+        method: GET
+        description: Amazon CodeGuru Reviewer List Repository Associations
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: codereviews
+      path: /codereviews
+      description: Operations for codereviews
+      operations:
+      - name: createCodeReview
+        method: POST
+        description: Amazon CodeGuru Reviewer Create Code Review
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: listCodeReviews
+        method: GET
+        description: Amazon CodeGuru Reviewer List Code Reviews
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: '{CodeReviewArn}'
+      path: /codereviews/{CodeReviewArn}
+      description: Operations for {CodeReviewArn}
+      operations:
+      - name: describeCodeReview
+        method: GET
+        description: Amazon CodeGuru Reviewer Describe Code Review
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: describeRecommendationFeedback
+        method: GET
+        description: Amazon CodeGuru Reviewer Describe Recommendation Feedback
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: listRecommendationFeedback
+        method: GET
+        description: Amazon CodeGuru Reviewer List Recommendation Feedback
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: listRecommendations
+        method: GET
+        description: Amazon CodeGuru Reviewer List Recommendations
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: '{AssociationArn}'
+      path: /associations/{AssociationArn}
+      description: Operations for {AssociationArn}
+      operations:
+      - name: describeRepositoryAssociation
+        method: GET
+        description: Amazon CodeGuru Reviewer Describe Repository Association
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: disassociateRepository
+        method: DELETE
+        description: Amazon CodeGuru Reviewer Disassociate Repository
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: '{resourceArn}'
+      path: /tags/{resourceArn}
+      description: Operations for {resourceArn}
+      operations:
+      - name: listTagsForResource
+        method: GET
+        description: Amazon CodeGuru Reviewer List Tags for Resource
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: tagResource
+        method: POST
+        description: Amazon CodeGuru Reviewer Tag Resource
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+      - name: untagResource
+        method: DELETE
+        description: Amazon CodeGuru Reviewer Untag Resource
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: feedback
+      path: /feedback
+      description: Operations for feedback
+      operations:
+      - name: putRecommendationFeedback
+        method: PUT
+        description: Amazon CodeGuru Reviewer Put Recommendation Feedback
+        inputParameters: []
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        body:
+          type: json
+          data: {}
+  exposes:
+  - type: rest
+    port: 8100
+    namespace: codegurureviewer-rest
+    resources:
+    - path: /v1/associations
+      name: associations
+      description: REST for associations
+      operations:
+      - method: POST
+        name: associateRepository
+        description: Amazon CodeGuru Reviewer Associate Repository
+        call: codegurureviewer.associateRepository
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listRepositoryAssociations
+        description: Amazon CodeGuru Reviewer List Repository Associations
+        call: codegurureviewer.listRepositoryAssociations
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/codereviews
+      name: codereviews
+      description: REST for codereviews
+      operations:
+      - method: POST
+        name: createCodeReview
+        description: Amazon CodeGuru Reviewer Create Code Review
+        call: codegurureviewer.createCodeReview
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listCodeReviews
+        description: Amazon CodeGuru Reviewer List Code Reviews
+        call: codegurureviewer.listCodeReviews
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/{CodeReviewArn}
+      name: '{CodeReviewArn}'
+      description: REST for {CodeReviewArn}
+      operations:
+      - method: GET
+        name: describeCodeReview
+        description: Amazon CodeGuru Reviewer Describe Code Review
+        call: codegurureviewer.describeCodeReview
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: describeRecommendationFeedback
+        description: Amazon CodeGuru Reviewer Describe Recommendation Feedback
+        call: codegurureviewer.describeRecommendationFeedback
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listRecommendationFeedback
+        description: Amazon CodeGuru Reviewer List Recommendation Feedback
+        call: codegurureviewer.listRecommendationFeedback
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: GET
+        name: listRecommendations
+        description: Amazon CodeGuru Reviewer List Recommendations
+        call: codegurureviewer.listRecommendations
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/{AssociationArn}
+      name: '{AssociationArn}'
+      description: REST for {AssociationArn}
+      operations:
+      - method: GET
+        name: describeRepositoryAssociation
+        description: Amazon CodeGuru Reviewer Describe Repository Association
+        call: codegurureviewer.describeRepositoryAssociation
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: disassociateRepository
+        description: Amazon CodeGuru Reviewer Disassociate Repository
+        call: codegurureviewer.disassociateRepository
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/{resourceArn}
+      name: '{resourceArn}'
+      description: REST for {resourceArn}
+      operations:
+      - method: GET
+        name: listTagsForResource
+        description: Amazon CodeGuru Reviewer List Tags for Resource
+        call: codegurureviewer.listTagsForResource
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: tagResource
+        description: Amazon CodeGuru Reviewer Tag Resource
+        call: codegurureviewer.tagResource
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: untagResource
+        description: Amazon CodeGuru Reviewer Untag Resource
+        call: codegurureviewer.untagResource
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/feedback
+      name: feedback
+      description: REST for feedback
+      operations:
+      - method: PUT
+        name: putRecommendationFeedback
+        description: Amazon CodeGuru Reviewer Put Recommendation Feedback
+        call: codegurureviewer.putRecommendationFeedback
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9100
+    namespace: codegurureviewer-mcp
+    transport: http
+    tools:
+    - name: codegurureviewer-associateRepository
+      description: Amazon CodeGuru Reviewer Associate Repository
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codegurureviewer.associateRepository
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codegurureviewer-listRepositoryAssociations
+      description: Amazon CodeGuru Reviewer List Repository Associations
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurureviewer.listRepositoryAssociations
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codegurureviewer-createCodeReview
+      description: Amazon CodeGuru Reviewer Create Code Review
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codegurureviewer.createCodeReview
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codegurureviewer-listCodeReviews
+      description: Amazon CodeGuru Reviewer List Code Reviews
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurureviewer.listCodeReviews
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codegurureviewer-describeCodeReview
+      description: Amazon CodeGuru Reviewer Describe Code Review
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurureviewer.describeCodeReview
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codegurureviewer-describeRecommendationFeedback
+      description: Amazon CodeGuru Reviewer Describe Recommendation Feedback
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurureviewer.describeRecommendationFeedback
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codegurureviewer-listRecommendationFeedback
+      description: Amazon CodeGuru Reviewer List Recommendation Feedback
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurureviewer.listRecommendationFeedback
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codegurureviewer-listRecommendations
+      description: Amazon CodeGuru Reviewer List Recommendations
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurureviewer.listRecommendations
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codegurureviewer-describeRepositoryAssociation
+      description: Amazon CodeGuru Reviewer Describe Repository Association
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurureviewer.describeRepositoryAssociation
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codegurureviewer-disassociateRepository
+      description: Amazon CodeGuru Reviewer Disassociate Repository
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codegurureviewer.disassociateRepository
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codegurureviewer-listTagsForResource
+      description: Amazon CodeGuru Reviewer List Tags for Resource
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurureviewer.listTagsForResource
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codegurureviewer-tagResource
+      description: Amazon CodeGuru Reviewer Tag Resource
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codegurureviewer.tagResource
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codegurureviewer-untagResource
+      description: Amazon CodeGuru Reviewer Untag Resource
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codegurureviewer.untagResource
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: codegurureviewer-putRecommendationFeedback
+      description: Amazon CodeGuru Reviewer Put Recommendation Feedback
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codegurureviewer.putRecommendationFeedback
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-schema/amazon-codeguru-reviewer-vendor-name-schema.json",
+  "title": "VendorName",
+  "description": "VendorName schema from Amazon CodeGuru Reviewer",
+  "type": "string",
+  "enum": [
+    "GitHub",
+    "GitLab",
+    "NativeS3"
+  ]
+}

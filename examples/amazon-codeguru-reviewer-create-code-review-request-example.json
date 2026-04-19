@@ -1,0 +1,6 @@
+{
+  "Name": "example-resource",
+  "RepositoryAssociationArn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "Type": "STANDARD",
+  "ClientRequestToken": "example-value"
+}

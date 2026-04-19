@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-schema/amazon-codeguru-reviewer-request-id-schema.json",
+  "title": "RequestId",
+  "description": "RequestId schema from Amazon CodeGuru Reviewer",
+  "type": "string",
+  "minLength": 1,
+  "maxLength": 64
+}

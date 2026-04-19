@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-structure/amazon-codeguru-reviewer-commit-id-structure.json",
+  "name": "CommitId",
+  "description": "CommitId schema from Amazon CodeGuru Reviewer",
+  "type": "string",
+  "minLength": 6,
+  "maxLength": 64
+}

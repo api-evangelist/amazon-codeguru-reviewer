@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-structure/amazon-codeguru-reviewer-list-recommendation-feedback-request-structure.json",
+  "name": "ListRecommendationFeedbackRequest",
+  "description": "ListRecommendationFeedbackRequest schema from Amazon CodeGuru Reviewer",
+  "type": "object",
+  "properties": {}
+}

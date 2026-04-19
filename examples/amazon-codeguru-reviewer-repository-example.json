@@ -1,0 +1,6 @@
+{
+  "CodeCommit": "example-value",
+  "Bitbucket": "example-value",
+  "GitHubEnterpriseServer": "example-value",
+  "S3Bucket": "example-value"
+}

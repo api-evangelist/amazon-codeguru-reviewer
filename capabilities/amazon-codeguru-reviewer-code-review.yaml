@@ -1,0 +1,120 @@
+naftiko: 1.0.0-alpha1
+info:
+  label: Amazon CodeGuru Reviewer Automated Code Review
+  description: Unified workflow for DevOps teams to manage repository associations, trigger code reviews, retrieve recommendations, and track code quality metrics using Amazon CodeGuru Reviewer.
+  tags:
+  - Amazon
+  - AWS
+  - Code Review
+  - Security
+  - DevOps
+  - Machine Learning
+  - Developer Tools
+  created: '2026-04-19'
+  modified: '2026-04-19'
+binds:
+- namespace: env
+  keys:
+    AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+    AWS_REGION: AWS_REGION
+capability:
+  consumes:
+  - import: codegurureviewer
+    location: ./shared/codegurureviewer.yaml
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: codegurureviewer-code-review-api
+    description: Unified REST API for Automated Code Review.
+    resources:
+    - path: /v1/listRepositoryAssociations
+      name: list-repository-associations
+      description: List repositories associated with CodeGuru Reviewer
+    - path: /v1/associateRepository
+      name: associate-repository
+      description: Associate a repository for code review
+    - path: /v1/describeRepositoryAssociation
+      name: describe-repository-association
+      description: Get details about a repository association
+    - path: /v1/listCodeReviews
+      name: list-code-reviews
+      description: List code reviews for a repository
+  - type: mcp
+    port: 9090
+    namespace: codegurureviewer-code-review-mcp
+    transport: http
+    description: MCP server for AI-assisted Automated Code Review.
+    tools:
+    - name: list-repository-associations
+      description: List repositories associated with CodeGuru Reviewer
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurureviewer.listRepositoryAssociations
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: associate-repository
+      description: Associate a repository for code review
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codegurureviewer.associateRepository
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: describe-repository-association
+      description: Get details about a repository association
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurureviewer.describeRepositoryAssociation
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-code-reviews
+      description: List code reviews for a repository
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurureviewer.listCodeReviews
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-code-review
+      description: Create a code review
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codegurureviewer.createCodeReview
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: describe-code-review
+      description: Get details about a code review
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurureviewer.describeCodeReview
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-recommendations
+      description: List recommendations from a code review
+      hints:
+        readOnly: true
+        openWorld: true
+      call: codegurureviewer.listRecommendations
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: put-recommendation-feedback
+      description: Submit feedback on a code review recommendation
+      hints:
+        readOnly: false
+        openWorld: true
+      call: codegurureviewer.putRecommendationFeedback
+      outputParameters:
+      - type: object
+        mapping: $.

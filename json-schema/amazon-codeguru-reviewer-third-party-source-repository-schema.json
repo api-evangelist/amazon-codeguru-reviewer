@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-schema/amazon-codeguru-reviewer-third-party-source-repository-schema.json",
+  "title": "ThirdPartySourceRepository",
+  "description": "Information about a third-party source repository connected to CodeGuru Reviewer.",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The name of the third party source repository."
+        }
+      ]
+    },
+    "ConnectionArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ConnectionArn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href=\"https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html\">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>."
+        }
+      ]
+    },
+    "Owner": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Owner"
+        },
+        {
+          "description": "The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services account ID "
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "ConnectionArn",
+    "Owner"
+  ]
+}

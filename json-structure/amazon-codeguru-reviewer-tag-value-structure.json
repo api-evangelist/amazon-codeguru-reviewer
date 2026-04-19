@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-structure/amazon-codeguru-reviewer-tag-value-structure.json",
+  "name": "TagValue",
+  "description": "TagValue schema from Amazon CodeGuru Reviewer",
+  "type": "string",
+  "maxLength": 256
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-structure/amazon-codeguru-reviewer-encryption-option-structure.json",
+  "name": "EncryptionOption",
+  "description": "EncryptionOption schema from Amazon CodeGuru Reviewer",
+  "type": "string",
+  "enum": [
+    "AWS_OWNED_CMK",
+    "CUSTOMER_MANAGED_CMK"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-structure/amazon-codeguru-reviewer-rule-tags-structure.json",
+  "name": "RuleTags",
+  "description": "RuleTags schema from Amazon CodeGuru Reviewer",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/RuleTag"
+  },
+  "minItems": 1,
+  "maxItems": 20
+}

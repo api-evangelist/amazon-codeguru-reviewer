@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-schema/amazon-codeguru-reviewer-branch-diff-source-code-type-schema.json",
+  "title": "BranchDiffSourceCodeType",
+  "description": "A type of <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType\">SourceCodeType</a> that specifies a code diff between a source and destination branch in an associated repository.",
+  "type": "object",
+  "properties": {
+    "SourceBranchName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BranchName"
+        },
+        {
+          "description": "The source branch for a diff in an associated repository."
+        }
+      ]
+    },
+    "DestinationBranchName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BranchName"
+        },
+        {
+          "description": "The destination branch for a diff in an associated repository."
+        }
+      ]
+    }
+  },
+  "required": [
+    "SourceBranchName",
+    "DestinationBranchName"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "CommitDiff": "example-value",
+  "RepositoryHead": "example-value",
+  "BranchDiff": "example-value",
+  "S3BucketRepository": "example-value",
+  "RequestMetadata": "example-value"
+}

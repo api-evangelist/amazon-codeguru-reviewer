@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-structure/amazon-codeguru-reviewer-association-arn-structure.json",
+  "name": "AssociationArn",
+  "description": "AssociationArn schema from Amazon CodeGuru Reviewer",
+  "type": "string",
+  "pattern": "^arn:aws[^:\\s]*:codeguru-reviewer:[^:\\s]+:[\\d]{12}:association:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$",
+  "minLength": 1,
+  "maxLength": 1600
+}

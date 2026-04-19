@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-structure/amazon-codeguru-reviewer-code-review-summary-structure.json",
+  "name": "CodeReviewSummary",
+  "description": "Information about the summary of the code review.",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The name of the code review."
+        }
+      ]
+    },
+    "CodeReviewArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html\">CodeReview</a> object. "
+        }
+      ]
+    },
+    "RepositoryName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The name of the repository."
+        }
+      ]
+    },
+    "Owner": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Owner"
+        },
+        {
+          "description": "The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID."
+        }
+      ]
+    },
+    "ProviderType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ProviderType"
+        },
+        {
+          "description": "The provider type of the repository association."
+        }
+      ]
+    },
+    "State": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/JobState"
+        },
+        {
+          "description": "<p>The state of the code review.</p> <p>The valid code review states are:</p> <ul> <li> <p> <code>Completed</code>: The code review is complete.</p> </li> <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> <li> <p> <code>Failed</code>: The code review failed.</p> </li> <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> </ul>"
+        }
+      ]
+    },
+    "CreatedTimeStamp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeStamp"
+        },
+        {
+          "description": "The time, in milliseconds since the epoch, when the code review was created."
+        }
+      ]
+    },
+    "LastUpdatedTimeStamp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeStamp"
+        },
+        {
+          "description": "The time, in milliseconds since the epoch, when the code review was last updated."
+        }
+      ]
+    },
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Type"
+        },
+        {
+          "description": "The type of the code review."
+        }
+      ]
+    },
+    "PullRequestId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PullRequestId"
+        },
+        {
+          "description": "The pull request ID for the code review."
+        }
+      ]
+    },
+    "MetricsSummary": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MetricsSummary"
+        },
+        {
+          "description": "The statistics from the code review."
+        }
+      ]
+    },
+    "SourceCodeType": {
+      "$ref": "#/components/schemas/SourceCodeType"
+    }
+  }
+}

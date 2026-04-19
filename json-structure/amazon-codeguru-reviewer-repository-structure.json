@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-structure/amazon-codeguru-reviewer-repository-structure.json",
+  "name": "Repository",
+  "description": "Information about an associated Amazon Web Services CodeCommit repository or an associated repository that is managed by Amazon Web Services CodeStar Connections (for example, Bitbucket). This <code>Repository</code> object is not used if your source code is in an associated GitHub repository.",
+  "type": "object",
+  "properties": {
+    "CodeCommit": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CodeCommitRepository"
+        },
+        {
+          "description": "Information about an Amazon Web Services CodeCommit repository."
+        }
+      ]
+    },
+    "Bitbucket": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ThirdPartySourceRepository"
+        },
+        {
+          "description": " Information about a Bitbucket repository. "
+        }
+      ]
+    },
+    "GitHubEnterpriseServer": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ThirdPartySourceRepository"
+        },
+        {
+          "description": "Information about a GitHub Enterprise Server repository."
+        }
+      ]
+    },
+    "S3Bucket": {
+      "$ref": "#/components/schemas/S3Repository"
+    }
+  }
+}

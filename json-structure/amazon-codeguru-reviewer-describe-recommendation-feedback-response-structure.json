@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-structure/amazon-codeguru-reviewer-describe-recommendation-feedback-response-structure.json",
+  "name": "DescribeRecommendationFeedbackResponse",
+  "description": "DescribeRecommendationFeedbackResponse schema from Amazon CodeGuru Reviewer",
+  "type": "object",
+  "properties": {
+    "RecommendationFeedback": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecommendationFeedback"
+        },
+        {
+          "description": "The recommendation feedback given by the user."
+        }
+      ]
+    }
+  }
+}

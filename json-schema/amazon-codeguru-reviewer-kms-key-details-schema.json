@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-schema/amazon-codeguru-reviewer-kms-key-details-schema.json",
+  "title": "KMSKeyDetails",
+  "description": "<p>An object that contains:</p> <ul> <li> <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> <li> <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p> </li> </ul>",
+  "type": "object",
+  "properties": {
+    "KMSKeyId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/KMSKeyId"
+        },
+        {
+          "description": "The ID of the Amazon Web Services KMS key that is associated with a repository association."
+        }
+      ]
+    },
+    "EncryptionOption": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EncryptionOption"
+        },
+        {
+          "description": "The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>)."
+        }
+      ]
+    }
+  }
+}

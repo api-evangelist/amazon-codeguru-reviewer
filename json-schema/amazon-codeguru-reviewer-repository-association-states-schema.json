@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-schema/amazon-codeguru-reviewer-repository-association-states-schema.json",
+  "title": "RepositoryAssociationStates",
+  "description": "RepositoryAssociationStates schema from Amazon CodeGuru Reviewer",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/RepositoryAssociationState"
+  },
+  "minItems": 1,
+  "maxItems": 5
+}

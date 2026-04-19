@@ -1,0 +1,10 @@
+{
+  "AssociationArn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "ConnectionArn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "LastUpdatedTimeStamp": "example-value",
+  "AssociationId": "500123",
+  "Name": "example-resource",
+  "Owner": "123456789012",
+  "ProviderType": "500123",
+  "State": "example-value"
+}

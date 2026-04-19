@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-schema/amazon-codeguru-reviewer-connection-arn-schema.json",
+  "title": "ConnectionArn",
+  "description": "ConnectionArn schema from Amazon CodeGuru Reviewer",
+  "type": "string",
+  "pattern": "arn:aws(-[\\w]+)*:.+:.+:[0-9]{12}:.+",
+  "minLength": 0,
+  "maxLength": 256
+}

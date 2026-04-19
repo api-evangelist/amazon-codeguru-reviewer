@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-structure/amazon-codeguru-reviewer-recommendation-category-structure.json",
+  "name": "RecommendationCategory",
+  "description": "RecommendationCategory schema from Amazon CodeGuru Reviewer",
+  "type": "string",
+  "enum": [
+    "AWSBestPractices",
+    "AWSCloudFormationIssues",
+    "DuplicateCode",
+    "CodeMaintenanceIssues",
+    "ConcurrencyIssues",
+    "InputValidations",
+    "PythonBestPractices",
+    "JavaBestPractices",
+    "ResourceLeaks",
+    "SecurityIssues",
+    "CodeInconsistencies"
+  ]
+}

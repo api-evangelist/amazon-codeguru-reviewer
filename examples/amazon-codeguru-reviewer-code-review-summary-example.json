@@ -1,0 +1,10 @@
+{
+  "Name": "example-resource",
+  "CodeReviewArn": "arn:aws:service:us-east-1:123456789012:resource/example",
+  "RepositoryName": "example-resource",
+  "Owner": "123456789012",
+  "ProviderType": "500123",
+  "State": "example-value",
+  "CreatedTimeStamp": "example-value",
+  "LastUpdatedTimeStamp": "example-value"
+}

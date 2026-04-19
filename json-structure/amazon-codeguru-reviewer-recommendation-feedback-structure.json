@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-structure/amazon-codeguru-reviewer-recommendation-feedback-structure.json",
+  "name": "RecommendationFeedback",
+  "description": "Information about the recommendation feedback.",
+  "type": "object",
+  "properties": {
+    "CodeReviewArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Arn"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html\">CodeReview</a> object. "
+        }
+      ]
+    },
+    "RecommendationId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RecommendationId"
+        },
+        {
+          "description": "The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback."
+        }
+      ]
+    },
+    "Reactions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Reactions"
+        },
+        {
+          "description": "List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback."
+        }
+      ]
+    },
+    "UserId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UserId"
+        },
+        {
+          "description": "<p>The ID of the user that made the API call.</p> <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying\"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>"
+        }
+      ]
+    },
+    "CreatedTimeStamp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeStamp"
+        },
+        {
+          "description": "The time at which the feedback was created."
+        }
+      ]
+    },
+    "LastUpdatedTimeStamp": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TimeStamp"
+        },
+        {
+          "description": "The time at which the feedback was last updated."
+        }
+      ]
+    }
+  }
+}

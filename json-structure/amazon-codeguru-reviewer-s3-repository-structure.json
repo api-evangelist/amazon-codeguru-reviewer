@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-structure/amazon-codeguru-reviewer-s3-repository-structure.json",
+  "name": "S3Repository",
+  "description": "Information about a repository in an S3 bucket.",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Name"
+        },
+        {
+          "description": "The name of the repository in the S3 bucket."
+        }
+      ]
+    },
+    "BucketName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/S3BucketName"
+        },
+        {
+          "description": "The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. "
+        }
+      ]
+    }
+  },
+  "required": [
+    "Name",
+    "BucketName"
+  ]
+}

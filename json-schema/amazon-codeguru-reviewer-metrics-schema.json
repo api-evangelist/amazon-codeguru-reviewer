@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/json-schema/amazon-codeguru-reviewer-metrics-schema.json",
+  "title": "Metrics",
+  "description": "Information about the statistics from the code review.",
+  "type": "object",
+  "properties": {
+    "MeteredLinesOfCodeCount": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LinesOfCodeCount"
+        },
+        {
+          "description": " <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines."
+        }
+      ]
+    },
+    "SuppressedLinesOfCodeCount": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LinesOfCodeCount"
+        },
+        {
+          "description": " <code>SuppressedLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened that CodeGuru Reviewer did not analyze. The lines suppressed in the analysis is based on the <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code> file. This number does not include non-code lines such as comments and blank lines. "
+        }
+      ]
+    },
+    "FindingsCount": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FindingsCount"
+        },
+        {
+          "description": "Total number of recommendations found in the code review."
+        }
+      ]
+    }
+  }
+}

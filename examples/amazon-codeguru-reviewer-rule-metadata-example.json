@@ -1,0 +1,7 @@
+{
+  "RuleId": "500123",
+  "RuleName": "example-resource",
+  "ShortDescription": "Example description",
+  "LongDescription": "Example description",
+  "RuleTags": "example-value"
+}
