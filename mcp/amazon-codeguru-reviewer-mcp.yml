@@ -1,0 +1,54 @@
+generated: '2026-06-20'
+method: derived
+status: candidate
+source: openapi/amazon-codeguru-reviewer-openapi-original.yaml
+notes: >-
+  No official first-party hosted/remote MCP server for CodeGuru Reviewer was found
+  on AWS docs, the AWS MCP servers project, or public MCP registries. The tool list
+  below is a candidate derived one-to-one from the OpenAPI operationIds.
+server:
+  name: amazon-codeguru-reviewer
+  transport: stdio
+tools:
+  - name: associate_repository
+    description: Associate a CodeCommit, S3, Bitbucket, or GitHub Enterprise Server repository with CodeGuru Reviewer.
+    source_operation: openapi/amazon-codeguru-reviewer-openapi-original.yaml#AssociateRepository
+  - name: list_repository_associations
+    description: List repository association summaries, filterable by provider type, name, state, and owner.
+    source_operation: openapi/amazon-codeguru-reviewer-openapi-original.yaml#ListRepositoryAssociations
+  - name: describe_repository_association
+    description: Return information about a requested repository association.
+    source_operation: openapi/amazon-codeguru-reviewer-openapi-original.yaml#DescribeRepositoryAssociation
+  - name: disassociate_repository
+    description: Remove the association between CodeGuru Reviewer and a repository.
+    source_operation: openapi/amazon-codeguru-reviewer-openapi-original.yaml#DisassociateRepository
+  - name: create_code_review
+    description: Create a RepositoryAnalysis code review over a specified branch.
+    source_operation: openapi/amazon-codeguru-reviewer-openapi-original.yaml#CreateCodeReview
+  - name: describe_code_review
+    description: Return metadata and status for a code review.
+    source_operation: openapi/amazon-codeguru-reviewer-openapi-original.yaml#DescribeCodeReview
+  - name: list_code_reviews
+    description: List code reviews created in the past 90 days.
+    source_operation: openapi/amazon-codeguru-reviewer-openapi-original.yaml#ListCodeReviews
+  - name: list_recommendations
+    description: Return all recommendations for a completed code review.
+    source_operation: openapi/amazon-codeguru-reviewer-openapi-original.yaml#ListRecommendations
+  - name: describe_recommendation_feedback
+    description: Describe customer feedback for a recommendation.
+    source_operation: openapi/amazon-codeguru-reviewer-openapi-original.yaml#DescribeRecommendationFeedback
+  - name: list_recommendation_feedback
+    description: List recommendation feedback summaries for all users.
+    source_operation: openapi/amazon-codeguru-reviewer-openapi-original.yaml#ListRecommendationFeedback
+  - name: put_recommendation_feedback
+    description: Store reactions/feedback for a recommendation.
+    source_operation: openapi/amazon-codeguru-reviewer-openapi-original.yaml#PutRecommendationFeedback
+  - name: list_tags_for_resource
+    description: List the tags on a repository association resource.
+    source_operation: openapi/amazon-codeguru-reviewer-openapi-original.yaml#ListTagsForResource
+  - name: tag_resource
+    description: Add tags to a repository association resource.
+    source_operation: openapi/amazon-codeguru-reviewer-openapi-original.yaml#TagResource
+  - name: untag_resource
+    description: Remove tags from a repository association resource.
+    source_operation: openapi/amazon-codeguru-reviewer-openapi-original.yaml#UntagResource

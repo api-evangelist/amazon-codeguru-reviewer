@@ -14,7 +14,7 @@ tags:
 - Developer Tools
 url: https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-04-19'
+modified: '2026-06-20'
 specificationVersion: '0.19'
 apis:
 - aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-api
@@ -35,6 +35,16 @@ apis:
     url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
   - type: OpenAPI
     url: openapi/amazon-codeguru-reviewer-openapi-original.yaml
+  - type: Overlay
+    url: overlays/amazon-codeguru-reviewer-openapi-overlay.yaml
+  - type: ErrorCatalog
+    url: errors/amazon-codeguru-reviewer-problem-types.yml
+  - type: Conformance
+    url: conformance/amazon-codeguru-reviewer-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
+  - type: MCPServer
+    url: mcp/amazon-codeguru-reviewer-mcp.yml
 common:
 - type: GettingStarted
   url: https://docs.aws.amazon.com/codeguru/reviewer
@@ -66,6 +76,16 @@ common:
   url: capabilities/amazon-codeguru-reviewer-code-review.yaml
 - type: JSONLD
   url: json-ld/amazon-codeguru-reviewer-context.jsonld
+- type: Packages
+  url: packages/amazon-codeguru-reviewer-packages.yml
+- type: WellKnown
+  url: well-known/amazon-codeguru-reviewer-well-known.yml
+- type: SecurityTxt
+  url: well-known/amazon-codeguru-reviewer-security.txt
+- type: LLMsTxt
+  url: llms/amazon-codeguru-reviewer-llms.txt
+- type: Blog
+  url: https://aws.amazon.com/blogs/devops/tag/amazon-codeguru-reviewer/feed/
 - type: Features
   data:
   - name: Automated Code Review

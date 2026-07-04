@@ -1,0 +1,36 @@
+generated: '2026-06-20'
+method: derived
+source: openapi/amazon-codeguru-reviewer-openapi-original.yaml
+standards:
+  - id: aws-sigv4
+    conforms: true
+    evidence: securitySchemes.hmac (type apiKey) plus X-Amz-* signing parameters on every path; security is [hmac] globally.
+  - id: oauth2
+    conforms: false
+    evidence: No oauth2 security scheme; requests are authenticated with AWS Signature Version 4.
+  - id: oidc
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Error responses use AWS JSON exception shapes (application/json), not application/problem+json.
+  - id: pagination
+    conforms: true
+    evidence: List operations expose MaxResults + NextToken opaque cursor pagination (ListRepositoryAssociations, ListCodeReviews, ListRecommendations, ListRecommendationFeedback).
+  - id: idempotency
+    conforms: true
+    evidence: AssociateRepository and CreateCodeReview accept a ClientRequestToken to prevent duplicate creation on retries.
+  - id: rest-json
+    conforms: true
+    evidence: Resource-oriented paths with JSON request/response bodies over HTTP methods (POST/GET/DELETE).
+  - id: json-api
+    conforms: false
+  - id: fhir-r4
+    conforms: false
+  - id: scim2
+    conforms: false
+  - id: odata
+    conforms: false
+  - id: fapi
+    conforms: false
+  - id: psd2
+    conforms: false

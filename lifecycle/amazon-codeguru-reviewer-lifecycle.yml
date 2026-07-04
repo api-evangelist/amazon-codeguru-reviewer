@@ -1,0 +1,20 @@
+generated: '2026-06-20'
+method: derived
+source: openapi/amazon-codeguru-reviewer-openapi-original.yaml + AWS Health status page
+notes: >-
+  CodeGuru Reviewer uses a date-stamped AWS service API version rather than a
+  URI/path version. No RFC 8594 Sunset/Deprecation header support is declared in the
+  spec, and no per-operation deprecations are present. Region availability is
+  expressed through the servers[] {region} template.
+versioning:
+  scheme: aws-service-api-version
+  current: '2019-09-19'
+  docs: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+deprecation:
+  sunset_header: false
+  policy_url: null
+sla:
+  url: null
+  uptime_target: null
+status_page: https://health.aws.amazon.com/health/status
+deprecated_operations: []

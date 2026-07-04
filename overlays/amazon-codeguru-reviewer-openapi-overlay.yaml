@@ -1,0 +1,29 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Amazon CodeGuru Reviewer
+  version: 1.0.0
+extends: openapi/amazon-codeguru-reviewer-openapi-original.yaml
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-slug: amazon-codeguru-reviewer
+      x-apievangelist-provider: Amazon Web Services
+      x-apievangelist-categories:
+        - Code Review
+        - Security
+        - DevOps
+        - Machine Learning
+      x-apievangelist-artifacts:
+        packages: packages/amazon-codeguru-reviewer-packages.yml
+        conformance: conformance/amazon-codeguru-reviewer-conformance.yml
+        errors: errors/amazon-codeguru-reviewer-problem-types.yml
+        lifecycle: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
+        mcp: mcp/amazon-codeguru-reviewer-mcp.yml
+        llms: llms/amazon-codeguru-reviewer-llms.txt
+  - target: $.info
+    update:
+      x-apievangelist-auth: AWS Signature Version 4 (SigV4); requests must be signed with the codeguru-reviewer signing name.
+  - target: $.externalDocs
+    update:
+      x-apievangelist-llms-txt: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/llms.txt
+      x-apievangelist-security-txt: https://aws.amazon.com/.well-known/security.txt

@@ -1,0 +1,46 @@
+generated: '2026-06-20'
+method: derived
+format: aws-json
+source: openapi/amazon-codeguru-reviewer-openapi-original.yaml
+notes: >-
+  CodeGuru Reviewer returns AWS JSON protocol exception shapes (application/json with
+  an __type/message body), not RFC 9457 application/problem+json. The aws2openapi
+  converter encoded the exception responses with synthetic status codes (480-485);
+  the real HTTP status each exception maps to is recorded below along with the docs
+  Common Errors reference (https://docs.aws.amazon.com/codeguru/latest/reviewer-api/CommonErrors.html).
+problems:
+  - name: ValidationException
+    status: 400
+    title: The input fails to satisfy the constraints specified by an AWS service.
+    remediation: Correct the request parameters to satisfy the documented constraints (patterns, lengths, required fields) and retry.
+    operations: [AssociateRepository, ListRepositoryAssociations, CreateCodeReview, DescribeCodeReview, DescribeRecommendationFeedback, DescribeRepositoryAssociation, DisassociateRepository, ListCodeReviews, ListRecommendationFeedback, ListRecommendations, ListTagsForResource, TagResource, PutRecommendationFeedback, UntagResource]
+  - name: AccessDeniedException
+    status: 403
+    title: You do not have sufficient access to perform this action.
+    remediation: Verify the IAM principal has the required codeguru-reviewer permissions and resource policies allow the call.
+    operations: [AssociateRepository, CreateCodeReview, DescribeCodeReview, DescribeRecommendationFeedback, DescribeRepositoryAssociation, DisassociateRepository, ListCodeReviews, ListRecommendationFeedback, ListRecommendations]
+  - name: ConflictException
+    status: 409
+    title: The requested operation would cause a conflict with the current state of a service resource.
+    remediation: Resolve the conflicting resource state (e.g. duplicate association or in-progress operation) before retrying.
+    operations: [AssociateRepository, CreateCodeReview, DisassociateRepository]
+  - name: ThrottlingException
+    status: 429
+    title: The request was denied due to request throttling.
+    remediation: Reduce request rate and retry with exponential backoff.
+    operations: [AssociateRepository, ListRepositoryAssociations, CreateCodeReview, DescribeCodeReview, DescribeRecommendationFeedback, DescribeRepositoryAssociation, DisassociateRepository, ListCodeReviews, ListRecommendationFeedback, ListRecommendations, ListTagsForResource, TagResource, PutRecommendationFeedback, UntagResource]
+  - name: ResourceNotFoundException
+    status: 404
+    title: The resource specified in the request was not found.
+    remediation: Confirm the CodeReviewArn / recommendation resource exists and belongs to the caller's account and region.
+    operations: [CreateCodeReview, DescribeCodeReview, DescribeRecommendationFeedback, ListRecommendationFeedback, ListRecommendations, PutRecommendationFeedback]
+  - name: NotFoundException
+    status: 404
+    title: The requested resource association could not be found.
+    remediation: Confirm the AssociationArn exists and belongs to the caller's account and region.
+    operations: [DescribeRepositoryAssociation, DisassociateRepository, ListTagsForResource, TagResource, UntagResource]
+  - name: InternalServerException
+    status: 500
+    title: The server encountered an internal error and is unable to complete the request.
+    remediation: Retry the request; if the error persists, contact AWS Support.
+    operations: [AssociateRepository, ListRepositoryAssociations, CreateCodeReview, DescribeCodeReview, DescribeRecommendationFeedback, DescribeRepositoryAssociation, DisassociateRepository, ListCodeReviews, ListRecommendationFeedback, ListRecommendations, ListTagsForResource, TagResource, PutRecommendationFeedback, UntagResource]

@@ -1,0 +1,65 @@
+generated: '2026-06-20'
+method: searched
+source: AWS SDK package registries (npm, PyPI, Maven Central, NuGet, pkg.go.dev, RubyGems, Packagist, crates.io)
+packages:
+  - language: javascript
+    registry: npm
+    name: "@aws-sdk/client-codeguru-reviewer"
+    version: 3.1079.0
+    url: https://www.npmjs.com/package/@aws-sdk/client-codeguru-reviewer
+    install: npm install @aws-sdk/client-codeguru-reviewer
+    official: true
+  - language: python
+    registry: pypi
+    name: boto3
+    version: 1.43.40
+    url: https://pypi.org/project/boto3/
+    install: pip install boto3
+    official: true
+    note: Monolithic AWS SDK for Python; CodeGuru Reviewer available via the "codeguru-reviewer" client.
+  - language: java
+    registry: maven
+    name: software.amazon.awssdk:codegurureviewer
+    version: 2.46.21
+    url: https://central.sonatype.com/artifact/software.amazon.awssdk/codegurureviewer
+    install: "implementation 'software.amazon.awssdk:codegurureviewer:2.46.21'"
+    official: true
+  - language: dotnet
+    registry: nuget
+    name: AWSSDK.CodeGuruReviewer
+    url: https://www.nuget.org/packages/AWSSDK.CodeGuruReviewer
+    install: dotnet add package AWSSDK.CodeGuruReviewer
+    official: true
+  - language: go
+    registry: pkg.go.dev
+    name: github.com/aws/aws-sdk-go-v2/service/codegurureviewer
+    version: v1.35.7
+    url: https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/codegurureviewer
+    install: go get github.com/aws/aws-sdk-go-v2/service/codegurureviewer
+    official: true
+  - language: ruby
+    registry: rubygems
+    name: aws-sdk-codegurureviewer
+    version: 1.81.0
+    url: https://rubygems.org/gems/aws-sdk-codegurureviewer
+    install: gem install aws-sdk-codegurureviewer
+    official: true
+  - language: php
+    registry: packagist
+    name: aws/aws-sdk-php
+    url: https://packagist.org/packages/aws/aws-sdk-php
+    install: composer require aws/aws-sdk-php
+    official: true
+    note: Monolithic AWS SDK for PHP; CodeGuru Reviewer available via the CodeGuruReviewerClient.
+  - language: rust
+    registry: crates.io
+    name: aws-sdk-codegurureviewer
+    version: 1.102.0
+    url: https://crates.io/crates/aws-sdk-codegurureviewer
+    install: cargo add aws-sdk-codegurureviewer
+    official: true
+cli:
+  - name: AWS CLI
+    command: aws codeguru-reviewer
+    url: https://docs.aws.amazon.com/cli/latest/reference/codeguru-reviewer/
+    official: true

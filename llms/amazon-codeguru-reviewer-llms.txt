@@ -1,0 +1,62 @@
+# Amazon CodeGuru Reviewer API Reference
+
+> This section provides documentation for the Amazon CodeGuru Reviewer API operations. CodeGuru Reviewer is a service that uses program analysis and machine learning to detect potential defects that are difficult for developers to find and recommends fixes in your Java and Python code.
+
+- [Welcome](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.md)
+- [Common Parameters](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/CommonParameters.md)
+- [Common Error Types](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/CommonErrors.md)
+
+## [Actions](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_Operations.md)
+
+- [AssociateRepository](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_AssociateRepository.md)
+- [CreateCodeReview](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview.md)
+- [CreateCodeReviewInternal](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReviewInternal.md)
+- [CreateConnectionToken](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateConnectionToken.md)
+- [DescribeCodeReview](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeCodeReview.md)
+- [DescribeRecommendationFeedback](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRecommendationFeedback.md)
+- [DescribeRepositoryAssociation](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.md)
+- [DisassociateRepository](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DisassociateRepository.md)
+- [GetMetricsData](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_GetMetricsData.md)
+- [ListCodeReviews](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListCodeReviews.md)
+- [ListRecommendationFeedback](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRecommendationFeedback.md)
+- [ListRecommendations](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRecommendations.md)
+- [ListRepositoryAssociations](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.md)
+- [ListTagsForResource](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListTagsForResource.md)
+- [ListThirdPartyRepositories](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListThirdPartyRepositories.md)
+- [PutRecommendationFeedback](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_PutRecommendationFeedback.md)
+- [TagResource](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_TagResource.md)
+- [UntagResource](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_UntagResource.md)
+
+
+## [Data Types](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_Types.md)
+
+- [AuthorizationToken](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_AuthorizationToken.md): Contains authorization information for accessing third-party repositories.
+- [BranchDiffSourceCodeType](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_BranchDiffSourceCodeType.md): A type of SourceCodeType that specifies a code diff between a source and destination branch in an associated repository.
+- [CodeArtifacts](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeArtifacts.md): Code artifacts are source code artifacts and build artifacts used in a repository analysis or a pull request review.
+- [CodeCommitRepository](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeCommitRepository.md): Information about an AWS CodeCommit repository.
+- [CodeReview](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.md): Information about a code review.
+- [CodeReviewSummary](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewSummary.md): Information about the summary of the code review.
+- [CodeReviewType](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.md): The type of a code review.
+- [CommitDiffSourceCodeType](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CommitDiffSourceCodeType.md): A type of SourceCodeType that specifies the commit diff for a pull request on an associated repository.
+- [EventInfo](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_EventInfo.md): Information about an event.
+- [FindingsMetricsData](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_FindingsMetricsData.md): Contains metrics data about code analysis findings and statistics.
+- [GitHubRepository](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_GitHubRepository.md): Information about a GitHub repository for code analysis.
+- [KMSKeyDetails](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_KMSKeyDetails.md): An object that contains:
+- [Metrics](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_Metrics.md): Information about the statistics from the code review.
+- [MetricsSummary](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_MetricsSummary.md): Information about metrics summaries.
+- [RecommendationFeedback](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedback.md): Information about the recommendation feedback.
+- [RecommendationFeedbackSummary](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.md): Information about recommendation feedback summaries.
+- [RecommendationSummary](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationSummary.md): Information about recommendations.
+- [Repository](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_Repository.md): Information about an associated AWS CodeCommit repository or an associated repository that is managed by AWS CodeStar Connections (for example, Bitbucket).
+- [RepositoryAnalysis](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAnalysis.md): A code review type that analyzes all code under a specified branch in an associated repository.
+- [RepositoryAssociation](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.md): Information about a repository association.
+- [RepositoryAssociationSummary](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.md): Summary information about a repository association.
+- [RepositoryHeadSourceCodeType](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryHeadSourceCodeType.md): A SourceCodeType that specifies the tip of a branch in an associated repository.
+- [RequestMetadata](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RequestMetadata.md): Metadata that is associated with a code review.
+- [RuleMetadata](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RuleMetadata.md): Metadata about a rule.
+- [S3BucketRepository](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_S3BucketRepository.md): Information about an associated repository in an S3 bucket.
+- [S3Repository](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_S3Repository.md): Information about a repository in an S3 bucket.
+- [S3RepositoryDetails](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_S3RepositoryDetails.md): Specifies the name of an S3 bucket and a CodeArtifacts object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
+- [SourceCodeType](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType.md): Specifies the source code that is analyzed in a code review.
+- [ThirdPartyRepository](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ThirdPartyRepository.md): Information about a third-party repository that can be connected to CodeGuru Reviewer.
+- [ThirdPartySourceRepository](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ThirdPartySourceRepository.md): Information about a third-party source repository connected to CodeGuru Reviewer.
