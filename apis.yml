@@ -46,6 +46,14 @@ apis:
   - type: MCPServer
     url: mcp/amazon-codeguru-reviewer-mcp.yml
 common:
+- type: TrustCenter
+  url: security/amazon-codeguru-reviewer-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-codeguru-reviewer-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-codeguru-reviewer-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-codeguru-reviewer-authentication.yml
 - type: GettingStarted
   url: https://docs.aws.amazon.com/codeguru/reviewer
 - type: Pricing
