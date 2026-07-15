@@ -46,6 +46,8 @@ apis:
   - type: MCPServer
     url: mcp/amazon-codeguru-reviewer-mcp.yml
 common:
+- type: AgenticAccess
+  url: agentic-access/amazon-codeguru-reviewer-agentic-access.yml
 - type: TrustCenter
   url: security/amazon-codeguru-reviewer-trust-center.yml
 - type: VulnerabilityDisclosure
