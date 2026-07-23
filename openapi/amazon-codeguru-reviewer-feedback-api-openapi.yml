@@ -1,0 +1,647 @@
+openapi: 3.0.0
+info:
+  version: '2019-09-19'
+  x-release: v4
+  title: Amazon CodeGuru Reviewer Associations Feedback API
+  description: <p>This section provides documentation for the Amazon CodeGuru Reviewer API operations. CodeGuru Reviewer is a service that uses program analysis and machine learning to detect potential defects that are difficult for developers to find and recommends fixes in your Java and Python code.</p> <p>By proactively detecting and providing recommendations for addressing code defects and implementing best practices, CodeGuru Reviewer improves the overall quality and maintainability of your code base during the code review stage. For more information about CodeGuru Reviewer, see the <i> <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html">Amazon CodeGuru Reviewer User Guide</a>.</i> </p> <p>To improve the security of your CodeGuru Reviewer API calls, you can establish a private connection between your VPC and CodeGuru Reviewer by creating an <i>interface VPC endpoint</i>. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/vpc-interface-endpoints.html">CodeGuru Reviewer and interface VPC endpoints (Amazon Web Services PrivateLink)</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: codeguru-reviewer
+  x-aws-signingName: codeguru-reviewer
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/codeguru-reviewer-2019-09-19.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://codeguru-reviewer.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The CodeGuruReviewer multi-region endpoint
+- url: https://codeguru-reviewer.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The CodeGuruReviewer multi-region endpoint
+- url: http://codeguru-reviewer.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The CodeGuruReviewer endpoint for China (Beijing) and China (Ningxia)
+- url: https://codeguru-reviewer.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The CodeGuruReviewer endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Feedback
+paths:
+  /feedback/{CodeReviewArn}#RecommendationId:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: DescribeRecommendationFeedback
+      description: Describes the customer feedback for a CodeGuru Reviewer recommendation.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DescribeRecommendationFeedbackResponse'
+              examples:
+                DescribeRecommendationFeedback200Example:
+                  summary: Default DescribeRecommendationFeedback 200 response
+                  x-microcks-default: true
+                  value:
+                    RecommendationFeedback: example-value
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                DescribeRecommendationFeedback480Example:
+                  summary: Default DescribeRecommendationFeedback 480 response
+                  x-microcks-default: true
+                  value: example-value
+        '481':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+              examples:
+                DescribeRecommendationFeedback481Example:
+                  summary: Default DescribeRecommendationFeedback 481 response
+                  x-microcks-default: true
+                  value: example-value
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                DescribeRecommendationFeedback482Example:
+                  summary: Default DescribeRecommendationFeedback 482 response
+                  x-microcks-default: true
+                  value: example-value
+        '483':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+              examples:
+                DescribeRecommendationFeedback483Example:
+                  summary: Default DescribeRecommendationFeedback 483 response
+                  x-microcks-default: true
+                  value: example-value
+        '484':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+              examples:
+                DescribeRecommendationFeedback484Example:
+                  summary: Default DescribeRecommendationFeedback 484 response
+                  x-microcks-default: true
+                  value: example-value
+      parameters:
+      - name: CodeReviewArn
+        in: path
+        required: true
+        description: 'The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. '
+        schema:
+          type: string
+          pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+          minLength: 1
+          maxLength: 1600
+      - name: RecommendationId
+        in: query
+        required: true
+        description: The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 64
+      - name: UserId
+        in: query
+        required: false
+        description: <p>Optional parameter to describe the feedback for a given user. If this is not supplied, it defaults to the user making the request.</p> <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 256
+      summary: Amazon CodeGuru Reviewer Describe Recommendation Feedback
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Feedback
+  /feedback/{CodeReviewArn}/RecommendationFeedback:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: ListRecommendationFeedback
+      description: Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.html">RecommendationFeedbackSummary</a> objects that contain customer recommendation feedback for all CodeGuru Reviewer users.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListRecommendationFeedbackResponse'
+              examples:
+                ListRecommendationFeedback200Example:
+                  summary: Default ListRecommendationFeedback 200 response
+                  x-microcks-default: true
+                  value:
+                    RecommendationFeedbackSummaries: example-value
+                    NextToken: example-value
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                ListRecommendationFeedback480Example:
+                  summary: Default ListRecommendationFeedback 480 response
+                  x-microcks-default: true
+                  value: example-value
+        '481':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+              examples:
+                ListRecommendationFeedback481Example:
+                  summary: Default ListRecommendationFeedback 481 response
+                  x-microcks-default: true
+                  value: example-value
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                ListRecommendationFeedback482Example:
+                  summary: Default ListRecommendationFeedback 482 response
+                  x-microcks-default: true
+                  value: example-value
+        '483':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+              examples:
+                ListRecommendationFeedback483Example:
+                  summary: Default ListRecommendationFeedback 483 response
+                  x-microcks-default: true
+                  value: example-value
+        '484':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+              examples:
+                ListRecommendationFeedback484Example:
+                  summary: Default ListRecommendationFeedback 484 response
+                  x-microcks-default: true
+                  value: example-value
+      parameters:
+      - name: NextToken
+        in: query
+        required: false
+        description: If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 2048
+      - name: MaxResults
+        in: query
+        required: false
+        description: The maximum number of results that are returned per call. The default is 100.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 100
+      - name: CodeReviewArn
+        in: path
+        required: true
+        description: 'The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. '
+        schema:
+          type: string
+          pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+          minLength: 1
+          maxLength: 1600
+      - name: UserIds
+        in: query
+        required: false
+        description: <p>An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.</p> <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserId'
+          minItems: 1
+          maxItems: 100
+      - name: RecommendationIds
+        in: query
+        required: false
+        description: Used to query the recommendation feedback for a given recommendation.
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/RecommendationId'
+          minItems: 1
+          maxItems: 100
+      summary: Amazon CodeGuru Reviewer List Recommendation Feedback
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Feedback
+  /feedback:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    put:
+      operationId: PutRecommendationFeedback
+      description: Stores customer feedback for a CodeGuru Reviewer recommendation. When this API is called again with different reactions the previous feedback is overwritten.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutRecommendationFeedbackResponse'
+              examples:
+                PutRecommendationFeedback200Example:
+                  summary: Default PutRecommendationFeedback 200 response
+                  x-microcks-default: true
+                  value: {}
+        '480':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+              examples:
+                PutRecommendationFeedback480Example:
+                  summary: Default PutRecommendationFeedback 480 response
+                  x-microcks-default: true
+                  value: example-value
+        '481':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+              examples:
+                PutRecommendationFeedback481Example:
+                  summary: Default PutRecommendationFeedback 481 response
+                  x-microcks-default: true
+                  value: example-value
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                PutRecommendationFeedback482Example:
+                  summary: Default PutRecommendationFeedback 482 response
+                  x-microcks-default: true
+                  value: example-value
+        '483':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+              examples:
+                PutRecommendationFeedback483Example:
+                  summary: Default PutRecommendationFeedback 483 response
+                  x-microcks-default: true
+                  value: example-value
+        '484':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+              examples:
+                PutRecommendationFeedback484Example:
+                  summary: Default PutRecommendationFeedback 484 response
+                  x-microcks-default: true
+                  value: example-value
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - CodeReviewArn
+              - RecommendationId
+              - Reactions
+              properties:
+                CodeReviewArn:
+                  description: 'The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. '
+                  type: string
+                  pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+                  minLength: 1
+                  maxLength: 1600
+                RecommendationId:
+                  description: The recommendation ID that can be used to track the provided recommendations and then to collect the feedback.
+                  type: string
+                  minLength: 1
+                  maxLength: 64
+                Reactions:
+                  description: List for storing reactions. Reactions are utf-8 text code for emojis. If you send an empty list it clears all your feedback.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Reaction'
+                  minItems: 0
+                  maxItems: 1
+            examples:
+              PutRecommendationFeedbackRequestExample:
+                summary: Default PutRecommendationFeedback request
+                x-microcks-default: true
+                value:
+                  CodeReviewArn: arn:aws:service:us-east-1:123456789012:resource/example
+                  RecommendationId: '500123'
+                  Reactions:
+                  - ThumbsUp
+      summary: Amazon CodeGuru Reviewer Put Recommendation Feedback
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Feedback
+components:
+  schemas:
+    UserId:
+      type: string
+      minLength: 1
+      maxLength: 256
+    ValidationException: {}
+    ResourceNotFoundException: {}
+    RecommendationFeedback:
+      type: object
+      properties:
+        CodeReviewArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: 'The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. '
+        RecommendationId:
+          allOf:
+          - $ref: '#/components/schemas/RecommendationId'
+          - description: The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
+        Reactions:
+          allOf:
+          - $ref: '#/components/schemas/Reactions'
+          - description: List for storing reactions. Reactions are utf-8 text code for emojis. You can send an empty list to clear off all your feedback.
+        UserId:
+          allOf:
+          - $ref: '#/components/schemas/UserId'
+          - description: <p>The ID of the user that made the API call.</p> <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+        CreatedTimeStamp:
+          allOf:
+          - $ref: '#/components/schemas/TimeStamp'
+          - description: The time at which the feedback was created.
+        LastUpdatedTimeStamp:
+          allOf:
+          - $ref: '#/components/schemas/TimeStamp'
+          - description: The time at which the feedback was last updated.
+      description: Information about the recommendation feedback.
+    Reaction:
+      type: string
+      enum:
+      - ThumbsUp
+      - ThumbsDown
+    ListRecommendationFeedbackResponse:
+      type: object
+      properties:
+        RecommendationFeedbackSummaries:
+          allOf:
+          - $ref: '#/components/schemas/RecommendationFeedbackSummaries'
+          - description: Recommendation feedback summaries corresponding to the code review ARN.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
+    NextToken:
+      type: string
+      minLength: 1
+      maxLength: 2048
+    TimeStamp:
+      type: string
+      format: date-time
+    PutRecommendationFeedbackResponse:
+      type: object
+      properties: {}
+    Arn:
+      type: string
+      pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+      minLength: 1
+      maxLength: 1600
+    ThrottlingException: {}
+    RecommendationId:
+      type: string
+      minLength: 1
+      maxLength: 64
+    AccessDeniedException: {}
+    InternalServerException: {}
+    RecommendationFeedbackSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/RecommendationFeedbackSummary'
+    DescribeRecommendationFeedbackResponse:
+      type: object
+      properties:
+        RecommendationFeedback:
+          allOf:
+          - $ref: '#/components/schemas/RecommendationFeedback'
+          - description: The recommendation feedback given by the user.
+    Reactions:
+      type: array
+      items:
+        $ref: '#/components/schemas/Reaction'
+      minItems: 0
+      maxItems: 1
+    RecommendationFeedbackSummary:
+      type: object
+      properties:
+        RecommendationId:
+          allOf:
+          - $ref: '#/components/schemas/RecommendationId'
+          - description: The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
+        Reactions:
+          allOf:
+          - $ref: '#/components/schemas/Reactions'
+          - description: List for storing reactions. Reactions are utf-8 text code for emojis.
+        UserId:
+          allOf:
+          - $ref: '#/components/schemas/UserId'
+          - description: <p>The ID of the user that gave the feedback.</p> <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+      description: Information about recommendation feedback summaries.
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/codeguru-reviewer/
+x-hasEquivalentPaths: true
