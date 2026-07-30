@@ -3,7 +3,19 @@ name: Amazon CodeGuru Reviewer
 description: Amazon CodeGuru Reviewer is an automated code review service that uses machine learning and AWS best practices to identify security vulnerabilities, bugs, and hard-to-detect issues in 
   your Java and Python code. It provides intelligent recommendations to help improve code quality and find defects that may be difficult to detect through manual code reviews.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-codeguru-reviewer.png
 tags:
 - Amazon
 - AWS
@@ -17,35 +29,110 @@ created: '2026-03-16'
 modified: '2026-06-20'
 specificationVersion: '0.19'
 apis:
-- aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-api
-  name: Amazon CodeGuru Reviewer API
-  description: The Amazon CodeGuru Reviewer REST API.
+- aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-associations-api
+  name: Amazon CodeGuru Reviewer Associations API
+  description: The Associations API from Amazon CodeGuru Reviewer — 2 operation(s) for associations.
   humanURL: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
   baseURL: https://codeguru-reviewer.us-east-1.amazonaws.com
   tags:
-  - Amazon
-  - AWS
-  - Code Review
-  - Security
-  - DevOps
+  - Associations
   properties:
+  - type: OpenAPI
+    url: openapi/amazon-codeguru-reviewer-associations-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/codegurureviewer/
   - type: APIReference
     url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
-  - type: OpenAPI
-    url: openapi/amazon-codeguru-reviewer-openapi-original.yaml
-  - type: Overlay
-    url: overlays/amazon-codeguru-reviewer-openapi-overlay.yaml
   - type: ErrorCatalog
     url: errors/amazon-codeguru-reviewer-problem-types.yml
   - type: Conformance
     url: conformance/amazon-codeguru-reviewer-conformance.yml
   - type: Lifecycle
     url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
-  - type: MCPServer
-    url: mcp/amazon-codeguru-reviewer-mcp.yml
+- aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-codereviews-api
+  name: Amazon CodeGuru Reviewer Codereviews API
+  description: The Codereviews API from Amazon CodeGuru Reviewer — 3 operation(s) for codereviews.
+  humanURL: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+  baseURL: https://codeguru-reviewer.us-east-1.amazonaws.com
+  tags:
+  - Codereviews
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-codeguru-reviewer-codereviews-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/codegurureviewer/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+  - type: ErrorCatalog
+    url: errors/amazon-codeguru-reviewer-problem-types.yml
+  - type: Conformance
+    url: conformance/amazon-codeguru-reviewer-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
+- aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-codereviews-type-api
+  name: Amazon CodeGuru Reviewer Codereviews#Type API
+  description: >-
+    The Codereviews#Type API from Amazon CodeGuru Reviewer — 1 operation(s) for codereviews#type.
+  humanURL: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+  baseURL: https://codeguru-reviewer.us-east-1.amazonaws.com
+  tags:
+  - Codereviews#Type
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-codeguru-reviewer-codereviews-type-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/codegurureviewer/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+  - type: ErrorCatalog
+    url: errors/amazon-codeguru-reviewer-problem-types.yml
+  - type: Conformance
+    url: conformance/amazon-codeguru-reviewer-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
+- aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-feedback-api
+  name: Amazon CodeGuru Reviewer Feedback API
+  description: The Feedback API from Amazon CodeGuru Reviewer — 3 operation(s) for feedback.
+  humanURL: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+  baseURL: https://codeguru-reviewer.us-east-1.amazonaws.com
+  tags:
+  - Feedback
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-codeguru-reviewer-feedback-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/codegurureviewer/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+  - type: ErrorCatalog
+    url: errors/amazon-codeguru-reviewer-problem-types.yml
+  - type: Conformance
+    url: conformance/amazon-codeguru-reviewer-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
+- aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-tags-api
+  name: Amazon CodeGuru Reviewer Tags API
+  description: The Tags API from Amazon CodeGuru Reviewer — 2 operation(s) for tags.
+  humanURL: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+  baseURL: https://codeguru-reviewer.us-east-1.amazonaws.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-codeguru-reviewer-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/codegurureviewer/
+  - type: APIReference
+    url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+  - type: ErrorCatalog
+    url: errors/amazon-codeguru-reviewer-problem-types.yml
+  - type: Conformance
+    url: conformance/amazon-codeguru-reviewer-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-codeguru-reviewer/overview
 - type: AgenticAccess
   url: agentic-access/amazon-codeguru-reviewer-agentic-access.yml
 - type: TrustCenter
