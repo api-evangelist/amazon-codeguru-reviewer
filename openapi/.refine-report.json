@@ -1,0 +1,22 @@
+{
+  "provider": "amazon-codeguru-reviewer",
+  "sources": [
+    "amazon-codeguru-reviewer-associations-api-openapi.yml",
+    "amazon-codeguru-reviewer-codereviews-api-openapi.yml",
+    "amazon-codeguru-reviewer-codereviews-type-api-openapi.yml",
+    "amazon-codeguru-reviewer-feedback-api-openapi.yml",
+    "amazon-codeguru-reviewer-tags-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-codeguru-reviewer-associations-api-openapi.yml",
+    "amazon-codeguru-reviewer-codereviews-api-openapi.yml",
+    "amazon-codeguru-reviewer-codereviews-type-api-openapi.yml",
+    "amazon-codeguru-reviewer-feedback-api-openapi.yml",
+    "amazon-codeguru-reviewer-tags-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

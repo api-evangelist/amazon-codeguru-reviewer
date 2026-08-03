@@ -1,0 +1,1839 @@
+{
+  "info": {
+    "_postman_id": "6c5d1fa0-21b9-4fb4-bd3a-0950d99ff736",
+    "name": "Amazon CodeGuru Reviewer Associations Codereviews API",
+    "description": "<p>This section provides documentation for the Amazon CodeGuru Reviewer API operations. CodeGuru Reviewer is a service that uses program analysis and machine learning to detect potential defects that are difficult for developers to find and recommends fixes in your Java and Python code.</p> <p>By proactively detecting and providing recommendations for addressing code defects and implementing best practices, CodeGuru Reviewer improves the overall quality and maintainability of your code base during the code review stage. For more information about CodeGuru Reviewer, see the <i> <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html\">Amazon CodeGuru Reviewer User Guide</a>.</i> </p> <p>To improve the security of your CodeGuru Reviewer API calls, you can establish a private connection between your VPC and CodeGuru Reviewer by creating an <i>interface VPC endpoint</i>. For more information, see <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/vpc-interface-endpoints.html\">CodeGuru Reviewer and interface VPC endpoints (Amazon Web Services PrivateLink)</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:09:29.000Z",
+    "updatedAt": "2026-07-28T10:09:29.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-6c5d1fa0-21b9-4fb4-bd3a-0950d99ff736"
+  },
+  "item": [
+    {
+      "name": "codereviews",
+      "item": [
+        {
+          "name": "{CodeReviewArn}",
+          "item": [
+            {
+              "name": "Recommendations",
+              "item": [
+                {
+                  "name": "Amazon CodeGuru Reviewer List Recommendations",
+                  "id": "42114085-1b93-4b3c-8733-43c21f8a38c1",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/codereviews/:CodeReviewArn/Recommendations?NextToken=<string>&MaxResults=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "codereviews",
+                        ":CodeReviewArn",
+                        "Recommendations"
+                      ],
+                      "query": [
+                        {
+                          "description": "Pagination token.",
+                          "key": "NextToken",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The maximum number of results that are returned per call. The default is 100.",
+                          "key": "MaxResults",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "f25e6fe6-81c8-44a1-91ed-ab6f6671da92",
+                          "key": "CodeReviewArn",
+                          "value": "arn:awsMuCP}k:codeguru-reviewer:49Mwj&o:667430293128:qudlkhq:7x",
+                          "description": "(Required) The Amazon Resource Name (ARN) of the <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html\">CodeReview</a> object. "
+                        }
+                      ]
+                    },
+                    "description": "Returns the list of all recommendations for a completed code review."
+                  },
+                  "response": [
+                    {
+                      "id": "a159bc30-8c47-4e94-b4af-971e4ae1d75c",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/codereviews/:CodeReviewArn/Recommendations?NextToken=<string>&MaxResults=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "codereviews",
+                            ":CodeReviewArn",
+                            "Recommendations"
+                          ],
+                          "query": [
+                            {
+                              "description": "Pagination token.",
+                              "key": "NextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of results that are returned per call. The default is 100.",
+                              "key": "MaxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "CodeReviewArn"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"RecommendationSummaries\": [\n    {\n      \"FilePath\": \"<string>\",\n      \"RecommendationId\": \"<string>\",\n      \"StartLine\": \"<integer>\",\n      \"EndLine\": \"<integer>\",\n      \"Description\": \"<string>\",\n      \"RecommendationCategory\": \"CodeInconsistencies\",\n      \"RuleMetadata\": {\n        \"RuleId\": \"U=T/PjBtuE1L@v992.902760422\",\n        \"RuleName\": \"w\",\n        \"ShortDescription\": \"-u#(F\",\n        \"LongDescription\": \"?i}1$p&\",\n        \"RuleTags\": [\n          \"j\"\n        ]\n      },\n      \"Severity\": \"Low\"\n    },\n    {\n      \"FilePath\": \"<string>\",\n      \"RecommendationId\": \"<string>\",\n      \"StartLine\": \"<integer>\",\n      \"EndLine\": \"<integer>\",\n      \"Description\": \"<string>\",\n      \"RecommendationCategory\": \"AWSBestPractices\",\n      \"RuleMetadata\": {\n        \"RuleId\": \"-~m4ls{/mU@v9029.98\",\n        \"RuleName\": \"Wr\",\n        \"ShortDescription\": \"}7yTz{s\",\n        \"LongDescription\": \"O_\",\n        \"RuleTags\": [\n          \"jG>6p%n+m\"\n        ]\n      },\n      \"Severity\": \"Medium\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T10:09:30.000Z",
+                      "updatedAt": "2026-07-28T10:09:30.000Z",
+                      "uid": "35240-a159bc30-8c47-4e94-b4af-971e4ae1d75c"
+                    },
+                    {
+                      "id": "144102b2-d15d-4b24-9d7e-753dc2b668b4",
+                      "name": "ResourceNotFoundException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/codereviews/:CodeReviewArn/Recommendations?NextToken=<string>&MaxResults=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "codereviews",
+                            ":CodeReviewArn",
+                            "Recommendations"
+                          ],
+                          "query": [
+                            {
+                              "description": "Pagination token.",
+                              "key": "NextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of results that are returned per call. The default is 100.",
+                              "key": "MaxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "CodeReviewArn"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:09:30.000Z",
+                      "updatedAt": "2026-07-28T10:09:30.000Z",
+                      "uid": "35240-144102b2-d15d-4b24-9d7e-753dc2b668b4"
+                    },
+                    {
+                      "id": "b3f6e6aa-d5a0-4aee-870d-666a97f62c97",
+                      "name": "InternalServerException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/codereviews/:CodeReviewArn/Recommendations?NextToken=<string>&MaxResults=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "codereviews",
+                            ":CodeReviewArn",
+                            "Recommendations"
+                          ],
+                          "query": [
+                            {
+                              "description": "Pagination token.",
+                              "key": "NextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of results that are returned per call. The default is 100.",
+                              "key": "MaxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "CodeReviewArn"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:09:30.000Z",
+                      "updatedAt": "2026-07-28T10:09:30.000Z",
+                      "uid": "35240-b3f6e6aa-d5a0-4aee-870d-666a97f62c97"
+                    },
+                    {
+                      "id": "6418e5ad-cf84-44b9-8a55-18f3147017a1",
+                      "name": "ValidationException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/codereviews/:CodeReviewArn/Recommendations?NextToken=<string>&MaxResults=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "codereviews",
+                            ":CodeReviewArn",
+                            "Recommendations"
+                          ],
+                          "query": [
+                            {
+                              "description": "Pagination token.",
+                              "key": "NextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of results that are returned per call. The default is 100.",
+                              "key": "MaxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "CodeReviewArn"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:09:30.000Z",
+                      "updatedAt": "2026-07-28T10:09:30.000Z",
+                      "uid": "35240-6418e5ad-cf84-44b9-8a55-18f3147017a1"
+                    },
+                    {
+                      "id": "c2f23bb6-0bf4-4eb7-ad22-a416324709a6",
+                      "name": "AccessDeniedException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/codereviews/:CodeReviewArn/Recommendations?NextToken=<string>&MaxResults=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "codereviews",
+                            ":CodeReviewArn",
+                            "Recommendations"
+                          ],
+                          "query": [
+                            {
+                              "description": "Pagination token.",
+                              "key": "NextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of results that are returned per call. The default is 100.",
+                              "key": "MaxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "CodeReviewArn"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:09:30.000Z",
+                      "updatedAt": "2026-07-28T10:09:30.000Z",
+                      "uid": "35240-c2f23bb6-0bf4-4eb7-ad22-a416324709a6"
+                    },
+                    {
+                      "id": "9b1a99eb-bff5-4157-95e7-bfe50c014923",
+                      "name": "ThrottlingException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/codereviews/:CodeReviewArn/Recommendations?NextToken=<string>&MaxResults=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "codereviews",
+                            ":CodeReviewArn",
+                            "Recommendations"
+                          ],
+                          "query": [
+                            {
+                              "description": "Pagination token.",
+                              "key": "NextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of results that are returned per call. The default is 100.",
+                              "key": "MaxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "CodeReviewArn"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:09:30.000Z",
+                      "updatedAt": "2026-07-28T10:09:30.000Z",
+                      "uid": "35240-9b1a99eb-bff5-4157-95e7-bfe50c014923"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:09:30.000Z",
+                  "updatedAt": "2026-07-28T10:09:30.000Z",
+                  "uid": "35240-42114085-1b93-4b3c-8733-43c21f8a38c1"
+                }
+              ],
+              "id": "5f84ea5c-28bb-4819-8863-64ad7b11c95c",
+              "createdAt": "2026-07-28T10:09:30.000Z",
+              "updatedAt": "2026-07-28T10:09:30.000Z",
+              "uid": "35240-5f84ea5c-28bb-4819-8863-64ad7b11c95c"
+            },
+            {
+              "name": "Amazon CodeGuru Reviewer Describe Code Review",
+              "id": "5e85b205-70ff-4a21-adf0-288d081e3e8f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/codereviews/:CodeReviewArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "codereviews",
+                    ":CodeReviewArn"
+                  ],
+                  "variable": [
+                    {
+                      "id": "328cd115-c323-459a-b0d4-73c5534dca1d",
+                      "key": "CodeReviewArn",
+                      "value": "arn:awsMuCP}k:codeguru-reviewer:49Mwj&o:667430293128:qudlkhq:7x",
+                      "description": "(Required) The Amazon Resource Name (ARN) of the <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html\">CodeReview</a> object. "
+                    }
+                  ]
+                },
+                "description": "Returns the metadata associated with the code review along with its status."
+              },
+              "response": [
+                {
+                  "id": "797444ee-736a-4cc9-84ff-fadbd92e6e1e",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/codereviews/:CodeReviewArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "codereviews",
+                        ":CodeReviewArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "CodeReviewArn"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"CodeReview\": {\n    \"Name\": \"|OOzQzx3\",\n    \"CodeReviewArn\": \"arn:aws7:codeguru-reviewer:M\\\"4k:569093203244:srgzthtmw:w\",\n    \"RepositoryName\": \"o.gMdAh\",\n    \"Owner\": \"%}vm9f>.lM\",\n    \"ProviderType\": \"Bitbucket\",\n    \"State\": \"Pending\",\n    \"StateReason\": \"<string>\",\n    \"CreatedTimeStamp\": \"<dateTime>\",\n    \"LastUpdatedTimeStamp\": \"<dateTime>\",\n    \"Type\": \"PullRequest\",\n    \"PullRequestId\": \"<string>\",\n    \"SourceCodeType\": {\n      \"CommitDiff\": {\n        \"SourceCommit\": \"<string>\",\n        \"DestinationCommit\": \"<string>\",\n        \"MergeBaseCommit\": \"<string>\"\n      },\n      \"RepositoryHead\": {\n        \"BranchName\": \"<string>\"\n      },\n      \"BranchDiff\": {\n        \"SourceBranchName\": \"<string>\",\n        \"DestinationBranchName\": \"<string>\"\n      },\n      \"S3BucketRepository\": {\n        \"Name\": \"OEiz.PH\",\n        \"Details\": {\n          \"BucketName\": \"3333\",\n          \"CodeArtifacts\": {\n            \"SourceCodeArtifactsObjectKey\": \"5v[gr9EBC\",\n            \"BuildArtifactsObjectKey\": \"c=wM\"\n          }\n        }\n      },\n      \"RequestMetadata\": {\n        \"RequestId\": \"<string>\",\n        \"Requester\": \":\",\n        \"EventInfo\": {\n          \"Name\": \"f\",\n          \"State\": \"lJSqR\"\n        },\n        \"VendorName\": \"GitHub\"\n      }\n    },\n    \"AssociationArn\": \"arn:awsco/~5FD:codeguru-reviewer:pAa.;M;ET:380391069124:association:308436ef-2d14-0768-3e73-94df8b944db0\",\n    \"Metrics\": {\n      \"MeteredLinesOfCodeCount\": \"<integer>\",\n      \"SuppressedLinesOfCodeCount\": \"<integer>\",\n      \"FindingsCount\": \"<integer>\"\n    },\n    \"AnalysisTypes\": [\n      \"CodeQuality\",\n      \"CodeQuality\"\n    ],\n    \"ConfigFileState\": \"Absent\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:09:30.000Z",
+                  "updatedAt": "2026-07-28T10:09:30.000Z",
+                  "uid": "35240-797444ee-736a-4cc9-84ff-fadbd92e6e1e"
+                },
+                {
+                  "id": "86ee9522-05fc-47a0-89c8-cc0a529aacae",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/codereviews/:CodeReviewArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "codereviews",
+                        ":CodeReviewArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "CodeReviewArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:30.000Z",
+                  "updatedAt": "2026-07-28T10:09:30.000Z",
+                  "uid": "35240-86ee9522-05fc-47a0-89c8-cc0a529aacae"
+                },
+                {
+                  "id": "13ef483b-ab39-4697-a8e5-24c403e0202f",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/codereviews/:CodeReviewArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "codereviews",
+                        ":CodeReviewArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "CodeReviewArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:30.000Z",
+                  "updatedAt": "2026-07-28T10:09:30.000Z",
+                  "uid": "35240-13ef483b-ab39-4697-a8e5-24c403e0202f"
+                },
+                {
+                  "id": "9e4c062c-8d34-46e4-b931-366128a22691",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/codereviews/:CodeReviewArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "codereviews",
+                        ":CodeReviewArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "CodeReviewArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:30.000Z",
+                  "updatedAt": "2026-07-28T10:09:30.000Z",
+                  "uid": "35240-9e4c062c-8d34-46e4-b931-366128a22691"
+                },
+                {
+                  "id": "5cf108fe-eac3-4c88-8ad3-1bcaf0b1a132",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/codereviews/:CodeReviewArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "codereviews",
+                        ":CodeReviewArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "CodeReviewArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:30.000Z",
+                  "updatedAt": "2026-07-28T10:09:30.000Z",
+                  "uid": "35240-5cf108fe-eac3-4c88-8ad3-1bcaf0b1a132"
+                },
+                {
+                  "id": "341edbbc-ccce-4de7-9a2a-a1216b41637b",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/codereviews/:CodeReviewArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "codereviews",
+                        ":CodeReviewArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "CodeReviewArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:30.000Z",
+                  "updatedAt": "2026-07-28T10:09:30.000Z",
+                  "uid": "35240-341edbbc-ccce-4de7-9a2a-a1216b41637b"
+                }
+              ],
+              "createdAt": "2026-07-28T10:09:30.000Z",
+              "updatedAt": "2026-07-28T10:09:30.000Z",
+              "uid": "35240-5e85b205-70ff-4a21-adf0-288d081e3e8f"
+            }
+          ],
+          "id": "6f28f1f1-4df2-43e2-81f9-a8811c7b93e0",
+          "createdAt": "2026-07-28T10:09:30.000Z",
+          "updatedAt": "2026-07-28T10:09:30.000Z",
+          "uid": "35240-6f28f1f1-4df2-43e2-81f9-a8811c7b93e0"
+        },
+        {
+          "name": "Amazon CodeGuru Reviewer Create Code Review",
+          "id": "3ba62b45-f8f8-4c93-a178-b0957331ec63",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"_xfO\",\n  \"RepositoryAssociationArn\": \"arn:awsl3:codeguru-reviewer:&jM1h324:088241900638:association:ef147c81-c0c1-45f4-8781-539e46c48e61\",\n  \"Type\": {\n    \"RepositoryAnalysis\": {\n      \"RepositoryHead\": {\n        \"BranchName\": \"<string>\"\n      },\n      \"SourceCodeType\": {\n        \"CommitDiff\": {\n          \"SourceCommit\": \"<string>\",\n          \"DestinationCommit\": \"<string>\",\n          \"MergeBaseCommit\": \"<string>\"\n        },\n        \"RepositoryHead\": {\n          \"BranchName\": \"<string>\"\n        },\n        \"BranchDiff\": {\n          \"SourceBranchName\": \"<string>\",\n          \"DestinationBranchName\": \"<string>\"\n        },\n        \"S3BucketRepository\": {\n          \"Name\": \"aQ6s3uD\",\n          \"Details\": {\n            \"BucketName\": \"OOOO\",\n            \"CodeArtifacts\": {\n              \"SourceCodeArtifactsObjectKey\": \"R\",\n              \"BuildArtifactsObjectKey\": \"r\"\n            }\n          }\n        },\n        \"RequestMetadata\": {\n          \"RequestId\": \"<string>\",\n          \"Requester\": \"_Ii09\",\n          \"EventInfo\": {\n            \"Name\": \"nvZBNw\",\n            \"State\": \"gjOQqsIhSX\"\n          },\n          \"VendorName\": \"GitHub\"\n        }\n      }\n    },\n    \"AnalysisTypes\": [\n      \"CodeQuality\",\n      \"Security\"\n    ]\n  },\n  \"ClientRequestToken\": \"M\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/codereviews",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "codereviews"
+              ]
+            },
+            "description": "Use to create a code review with a <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html\">CodeReviewType</a> of <code>RepositoryAnalysis</code>. This type of code review analyzes all code under a specified branch in an associated repository. <code>PullRequest</code> code reviews are automatically triggered by a pull request."
+          },
+          "response": [
+            {
+              "id": "17398d42-b43e-40b7-86ec-91f8a7c592f8",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"_xfO\",\n  \"RepositoryAssociationArn\": \"arn:awsl3:codeguru-reviewer:&jM1h324:088241900638:association:ef147c81-c0c1-45f4-8781-539e46c48e61\",\n  \"Type\": {\n    \"RepositoryAnalysis\": {\n      \"RepositoryHead\": {\n        \"BranchName\": \"<string>\"\n      },\n      \"SourceCodeType\": {\n        \"CommitDiff\": {\n          \"SourceCommit\": \"<string>\",\n          \"DestinationCommit\": \"<string>\",\n          \"MergeBaseCommit\": \"<string>\"\n        },\n        \"RepositoryHead\": {\n          \"BranchName\": \"<string>\"\n        },\n        \"BranchDiff\": {\n          \"SourceBranchName\": \"<string>\",\n          \"DestinationBranchName\": \"<string>\"\n        },\n        \"S3BucketRepository\": {\n          \"Name\": \"aQ6s3uD\",\n          \"Details\": {\n            \"BucketName\": \"OOOO\",\n            \"CodeArtifacts\": {\n              \"SourceCodeArtifactsObjectKey\": \"R\",\n              \"BuildArtifactsObjectKey\": \"r\"\n            }\n          }\n        },\n        \"RequestMetadata\": {\n          \"RequestId\": \"<string>\",\n          \"Requester\": \"_Ii09\",\n          \"EventInfo\": {\n            \"Name\": \"nvZBNw\",\n            \"State\": \"gjOQqsIhSX\"\n          },\n          \"VendorName\": \"GitHub\"\n        }\n      }\n    },\n    \"AnalysisTypes\": [\n      \"CodeQuality\",\n      \"Security\"\n    ]\n  },\n  \"ClientRequestToken\": \"M\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/codereviews",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "codereviews"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"CodeReview\": {\n    \"Name\": \";rdkJlz\",\n    \"CodeReviewArn\": \"arn:awsk6dh:codeguru-reviewer:7)A.+:317374545274:hm:UQJ7cJAW01n\",\n    \"RepositoryName\": \"aW\",\n    \"Owner\": \"o_W][Xs\",\n    \"ProviderType\": \"S3Bucket\",\n    \"State\": \"Deleting\",\n    \"StateReason\": \"<string>\",\n    \"CreatedTimeStamp\": \"<dateTime>\",\n    \"LastUpdatedTimeStamp\": \"<dateTime>\",\n    \"Type\": \"RepositoryAnalysis\",\n    \"PullRequestId\": \"<string>\",\n    \"SourceCodeType\": {\n      \"CommitDiff\": {\n        \"SourceCommit\": \"<string>\",\n        \"DestinationCommit\": \"<string>\",\n        \"MergeBaseCommit\": \"<string>\"\n      },\n      \"RepositoryHead\": {\n        \"BranchName\": \"<string>\"\n      },\n      \"BranchDiff\": {\n        \"SourceBranchName\": \"<string>\",\n        \"DestinationBranchName\": \"<string>\"\n      },\n      \"S3BucketRepository\": {\n        \"Name\": \"93\",\n        \"Details\": {\n          \"BucketName\": \"IIII\",\n          \"CodeArtifacts\": {\n            \"SourceCodeArtifactsObjectKey\": \"f]E!$aE=\",\n            \"BuildArtifactsObjectKey\": \"#\"\n          }\n        }\n      },\n      \"RequestMetadata\": {\n        \"RequestId\": \"<string>\",\n        \"Requester\": \"<C7hWM^rF\",\n        \"EventInfo\": {\n          \"Name\": \"ZrFKCeJrfP\",\n          \"State\": \"-QSJy\"\n        },\n        \"VendorName\": \"NativeS3\"\n      }\n    },\n    \"AssociationArn\": \"arn:aws$D:codeguru-reviewer:4)xD/A0:549408452642:association:36048098-a3ec-1aca-f318-2ff3ff6acdf3\",\n    \"Metrics\": {\n      \"MeteredLinesOfCodeCount\": \"<integer>\",\n      \"SuppressedLinesOfCodeCount\": \"<integer>\",\n      \"FindingsCount\": \"<integer>\"\n    },\n    \"AnalysisTypes\": [\n      \"Security\",\n      \"CodeQuality\"\n    ],\n    \"ConfigFileState\": \"Absent\"\n  }\n}",
+              "createdAt": "2026-07-28T10:09:30.000Z",
+              "updatedAt": "2026-07-28T10:09:30.000Z",
+              "uid": "35240-17398d42-b43e-40b7-86ec-91f8a7c592f8"
+            },
+            {
+              "id": "7fe8b6e3-2f53-4668-8f6a-6595a3309981",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"_xfO\",\n  \"RepositoryAssociationArn\": \"arn:awsl3:codeguru-reviewer:&jM1h324:088241900638:association:ef147c81-c0c1-45f4-8781-539e46c48e61\",\n  \"Type\": {\n    \"RepositoryAnalysis\": {\n      \"RepositoryHead\": {\n        \"BranchName\": \"<string>\"\n      },\n      \"SourceCodeType\": {\n        \"CommitDiff\": {\n          \"SourceCommit\": \"<string>\",\n          \"DestinationCommit\": \"<string>\",\n          \"MergeBaseCommit\": \"<string>\"\n        },\n        \"RepositoryHead\": {\n          \"BranchName\": \"<string>\"\n        },\n        \"BranchDiff\": {\n          \"SourceBranchName\": \"<string>\",\n          \"DestinationBranchName\": \"<string>\"\n        },\n        \"S3BucketRepository\": {\n          \"Name\": \"aQ6s3uD\",\n          \"Details\": {\n            \"BucketName\": \"OOOO\",\n            \"CodeArtifacts\": {\n              \"SourceCodeArtifactsObjectKey\": \"R\",\n              \"BuildArtifactsObjectKey\": \"r\"\n            }\n          }\n        },\n        \"RequestMetadata\": {\n          \"RequestId\": \"<string>\",\n          \"Requester\": \"_Ii09\",\n          \"EventInfo\": {\n            \"Name\": \"nvZBNw\",\n            \"State\": \"gjOQqsIhSX\"\n          },\n          \"VendorName\": \"GitHub\"\n        }\n      }\n    },\n    \"AnalysisTypes\": [\n      \"CodeQuality\",\n      \"Security\"\n    ]\n  },\n  \"ClientRequestToken\": \"M\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/codereviews",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "codereviews"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:30.000Z",
+              "updatedAt": "2026-07-28T10:09:30.000Z",
+              "uid": "35240-7fe8b6e3-2f53-4668-8f6a-6595a3309981"
+            },
+            {
+              "id": "fa65af84-2011-4f15-b9e3-717ab5d74ca0",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"_xfO\",\n  \"RepositoryAssociationArn\": \"arn:awsl3:codeguru-reviewer:&jM1h324:088241900638:association:ef147c81-c0c1-45f4-8781-539e46c48e61\",\n  \"Type\": {\n    \"RepositoryAnalysis\": {\n      \"RepositoryHead\": {\n        \"BranchName\": \"<string>\"\n      },\n      \"SourceCodeType\": {\n        \"CommitDiff\": {\n          \"SourceCommit\": \"<string>\",\n          \"DestinationCommit\": \"<string>\",\n          \"MergeBaseCommit\": \"<string>\"\n        },\n        \"RepositoryHead\": {\n          \"BranchName\": \"<string>\"\n        },\n        \"BranchDiff\": {\n          \"SourceBranchName\": \"<string>\",\n          \"DestinationBranchName\": \"<string>\"\n        },\n        \"S3BucketRepository\": {\n          \"Name\": \"aQ6s3uD\",\n          \"Details\": {\n            \"BucketName\": \"OOOO\",\n            \"CodeArtifacts\": {\n              \"SourceCodeArtifactsObjectKey\": \"R\",\n              \"BuildArtifactsObjectKey\": \"r\"\n            }\n          }\n        },\n        \"RequestMetadata\": {\n          \"RequestId\": \"<string>\",\n          \"Requester\": \"_Ii09\",\n          \"EventInfo\": {\n            \"Name\": \"nvZBNw\",\n            \"State\": \"gjOQqsIhSX\"\n          },\n          \"VendorName\": \"GitHub\"\n        }\n      }\n    },\n    \"AnalysisTypes\": [\n      \"CodeQuality\",\n      \"Security\"\n    ]\n  },\n  \"ClientRequestToken\": \"M\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/codereviews",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "codereviews"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:30.000Z",
+              "updatedAt": "2026-07-28T10:09:30.000Z",
+              "uid": "35240-fa65af84-2011-4f15-b9e3-717ab5d74ca0"
+            },
+            {
+              "id": "52ae12da-6ec1-4a62-adb0-e3bcdc83e186",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"_xfO\",\n  \"RepositoryAssociationArn\": \"arn:awsl3:codeguru-reviewer:&jM1h324:088241900638:association:ef147c81-c0c1-45f4-8781-539e46c48e61\",\n  \"Type\": {\n    \"RepositoryAnalysis\": {\n      \"RepositoryHead\": {\n        \"BranchName\": \"<string>\"\n      },\n      \"SourceCodeType\": {\n        \"CommitDiff\": {\n          \"SourceCommit\": \"<string>\",\n          \"DestinationCommit\": \"<string>\",\n          \"MergeBaseCommit\": \"<string>\"\n        },\n        \"RepositoryHead\": {\n          \"BranchName\": \"<string>\"\n        },\n        \"BranchDiff\": {\n          \"SourceBranchName\": \"<string>\",\n          \"DestinationBranchName\": \"<string>\"\n        },\n        \"S3BucketRepository\": {\n          \"Name\": \"aQ6s3uD\",\n          \"Details\": {\n            \"BucketName\": \"OOOO\",\n            \"CodeArtifacts\": {\n              \"SourceCodeArtifactsObjectKey\": \"R\",\n              \"BuildArtifactsObjectKey\": \"r\"\n            }\n          }\n        },\n        \"RequestMetadata\": {\n          \"RequestId\": \"<string>\",\n          \"Requester\": \"_Ii09\",\n          \"EventInfo\": {\n            \"Name\": \"nvZBNw\",\n            \"State\": \"gjOQqsIhSX\"\n          },\n          \"VendorName\": \"GitHub\"\n        }\n      }\n    },\n    \"AnalysisTypes\": [\n      \"CodeQuality\",\n      \"Security\"\n    ]\n  },\n  \"ClientRequestToken\": \"M\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/codereviews",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "codereviews"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:30.000Z",
+              "updatedAt": "2026-07-28T10:09:30.000Z",
+              "uid": "35240-52ae12da-6ec1-4a62-adb0-e3bcdc83e186"
+            },
+            {
+              "id": "d801e7ec-81d6-4278-b175-bad907e16eeb",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"_xfO\",\n  \"RepositoryAssociationArn\": \"arn:awsl3:codeguru-reviewer:&jM1h324:088241900638:association:ef147c81-c0c1-45f4-8781-539e46c48e61\",\n  \"Type\": {\n    \"RepositoryAnalysis\": {\n      \"RepositoryHead\": {\n        \"BranchName\": \"<string>\"\n      },\n      \"SourceCodeType\": {\n        \"CommitDiff\": {\n          \"SourceCommit\": \"<string>\",\n          \"DestinationCommit\": \"<string>\",\n          \"MergeBaseCommit\": \"<string>\"\n        },\n        \"RepositoryHead\": {\n          \"BranchName\": \"<string>\"\n        },\n        \"BranchDiff\": {\n          \"SourceBranchName\": \"<string>\",\n          \"DestinationBranchName\": \"<string>\"\n        },\n        \"S3BucketRepository\": {\n          \"Name\": \"aQ6s3uD\",\n          \"Details\": {\n            \"BucketName\": \"OOOO\",\n            \"CodeArtifacts\": {\n              \"SourceCodeArtifactsObjectKey\": \"R\",\n              \"BuildArtifactsObjectKey\": \"r\"\n            }\n          }\n        },\n        \"RequestMetadata\": {\n          \"RequestId\": \"<string>\",\n          \"Requester\": \"_Ii09\",\n          \"EventInfo\": {\n            \"Name\": \"nvZBNw\",\n            \"State\": \"gjOQqsIhSX\"\n          },\n          \"VendorName\": \"GitHub\"\n        }\n      }\n    },\n    \"AnalysisTypes\": [\n      \"CodeQuality\",\n      \"Security\"\n    ]\n  },\n  \"ClientRequestToken\": \"M\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/codereviews",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "codereviews"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:30.000Z",
+              "updatedAt": "2026-07-28T10:09:30.000Z",
+              "uid": "35240-d801e7ec-81d6-4278-b175-bad907e16eeb"
+            },
+            {
+              "id": "9472068b-5152-4d7d-8f5a-793a7fad94bb",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"_xfO\",\n  \"RepositoryAssociationArn\": \"arn:awsl3:codeguru-reviewer:&jM1h324:088241900638:association:ef147c81-c0c1-45f4-8781-539e46c48e61\",\n  \"Type\": {\n    \"RepositoryAnalysis\": {\n      \"RepositoryHead\": {\n        \"BranchName\": \"<string>\"\n      },\n      \"SourceCodeType\": {\n        \"CommitDiff\": {\n          \"SourceCommit\": \"<string>\",\n          \"DestinationCommit\": \"<string>\",\n          \"MergeBaseCommit\": \"<string>\"\n        },\n        \"RepositoryHead\": {\n          \"BranchName\": \"<string>\"\n        },\n        \"BranchDiff\": {\n          \"SourceBranchName\": \"<string>\",\n          \"DestinationBranchName\": \"<string>\"\n        },\n        \"S3BucketRepository\": {\n          \"Name\": \"aQ6s3uD\",\n          \"Details\": {\n            \"BucketName\": \"OOOO\",\n            \"CodeArtifacts\": {\n              \"SourceCodeArtifactsObjectKey\": \"R\",\n              \"BuildArtifactsObjectKey\": \"r\"\n            }\n          }\n        },\n        \"RequestMetadata\": {\n          \"RequestId\": \"<string>\",\n          \"Requester\": \"_Ii09\",\n          \"EventInfo\": {\n            \"Name\": \"nvZBNw\",\n            \"State\": \"gjOQqsIhSX\"\n          },\n          \"VendorName\": \"GitHub\"\n        }\n      }\n    },\n    \"AnalysisTypes\": [\n      \"CodeQuality\",\n      \"Security\"\n    ]\n  },\n  \"ClientRequestToken\": \"M\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/codereviews",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "codereviews"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:30.000Z",
+              "updatedAt": "2026-07-28T10:09:30.000Z",
+              "uid": "35240-9472068b-5152-4d7d-8f5a-793a7fad94bb"
+            },
+            {
+              "id": "276a5b96-6d00-4b4f-8c05-6a2c1c521aa9",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"_xfO\",\n  \"RepositoryAssociationArn\": \"arn:awsl3:codeguru-reviewer:&jM1h324:088241900638:association:ef147c81-c0c1-45f4-8781-539e46c48e61\",\n  \"Type\": {\n    \"RepositoryAnalysis\": {\n      \"RepositoryHead\": {\n        \"BranchName\": \"<string>\"\n      },\n      \"SourceCodeType\": {\n        \"CommitDiff\": {\n          \"SourceCommit\": \"<string>\",\n          \"DestinationCommit\": \"<string>\",\n          \"MergeBaseCommit\": \"<string>\"\n        },\n        \"RepositoryHead\": {\n          \"BranchName\": \"<string>\"\n        },\n        \"BranchDiff\": {\n          \"SourceBranchName\": \"<string>\",\n          \"DestinationBranchName\": \"<string>\"\n        },\n        \"S3BucketRepository\": {\n          \"Name\": \"aQ6s3uD\",\n          \"Details\": {\n            \"BucketName\": \"OOOO\",\n            \"CodeArtifacts\": {\n              \"SourceCodeArtifactsObjectKey\": \"R\",\n              \"BuildArtifactsObjectKey\": \"r\"\n            }\n          }\n        },\n        \"RequestMetadata\": {\n          \"RequestId\": \"<string>\",\n          \"Requester\": \"_Ii09\",\n          \"EventInfo\": {\n            \"Name\": \"nvZBNw\",\n            \"State\": \"gjOQqsIhSX\"\n          },\n          \"VendorName\": \"GitHub\"\n        }\n      }\n    },\n    \"AnalysisTypes\": [\n      \"CodeQuality\",\n      \"Security\"\n    ]\n  },\n  \"ClientRequestToken\": \"M\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/codereviews",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "codereviews"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:30.000Z",
+              "updatedAt": "2026-07-28T10:09:30.000Z",
+              "uid": "35240-276a5b96-6d00-4b4f-8c05-6a2c1c521aa9"
+            }
+          ],
+          "createdAt": "2026-07-28T10:09:30.000Z",
+          "updatedAt": "2026-07-28T10:09:30.000Z",
+          "uid": "35240-3ba62b45-f8f8-4c93-a178-b0957331ec63"
+        }
+      ],
+      "id": "ded4c3d5-7eba-476d-ab47-080886f1acc3",
+      "createdAt": "2026-07-28T10:09:30.000Z",
+      "updatedAt": "2026-07-28T10:09:30.000Z",
+      "uid": "35240-ded4c3d5-7eba-476d-ab47-080886f1acc3"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://codeguru-reviewer.{{region}}.amazonaws.com"
+    }
+  ]
+}

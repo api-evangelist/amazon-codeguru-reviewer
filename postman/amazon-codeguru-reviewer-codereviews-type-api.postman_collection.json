@@ -1,0 +1,652 @@
+{
+  "info": {
+    "_postman_id": "7a85e286-9def-4ab2-84d4-3b17ceab5fb0",
+    "name": "Amazon CodeGuru Reviewer Associations Codereviews#Type API",
+    "description": "<p>This section provides documentation for the Amazon CodeGuru Reviewer API operations. CodeGuru Reviewer is a service that uses program analysis and machine learning to detect potential defects that are difficult for developers to find and recommends fixes in your Java and Python code.</p> <p>By proactively detecting and providing recommendations for addressing code defects and implementing best practices, CodeGuru Reviewer improves the overall quality and maintainability of your code base during the code review stage. For more information about CodeGuru Reviewer, see the <i> <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html\">Amazon CodeGuru Reviewer User Guide</a>.</i> </p> <p>To improve the security of your CodeGuru Reviewer API calls, you can establish a private connection between your VPC and CodeGuru Reviewer by creating an <i>interface VPC endpoint</i>. For more information, see <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/vpc-interface-endpoints.html\">CodeGuru Reviewer and interface VPC endpoints (Amazon Web Services PrivateLink)</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:09:30.000Z",
+    "updatedAt": "2026-07-28T10:09:30.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-7a85e286-9def-4ab2-84d4-3b17ceab5fb0"
+  },
+  "item": [
+    {
+      "name": "codereviews#Type",
+      "item": [
+        {
+          "name": "Amazon CodeGuru Reviewer List Code Reviews",
+          "id": "8da2ee8c-9071-4c04-ad96-2cdcd67e4173",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/codereviews?ProviderTypes=GitHubEnterpriseServer&States=Completed&RepositoryNames=*Qkzf7H6&Type=PullRequest&MaxResults=<integer>&NextToken=<string>#Type",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "codereviews"
+              ],
+              "query": [
+                {
+                  "description": "List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.",
+                  "key": "ProviderTypes",
+                  "value": "GitHubEnterpriseServer"
+                },
+                {
+                  "description": "<p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p> <p>The valid code review states are:</p> <ul> <li> <p> <code>Completed</code>: The code review is complete.</p> </li> <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> <li> <p> <code>Failed</code>: The code review failed.</p> </li> <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> </ul>",
+                  "key": "States",
+                  "value": "Completed"
+                },
+                {
+                  "description": "List of repository names for filtering that needs to be applied before displaying the result.",
+                  "key": "RepositoryNames",
+                  "value": "*Qkzf7H6"
+                },
+                {
+                  "description": "(Required) The type of code reviews to list in the response.",
+                  "key": "Type",
+                  "value": "PullRequest"
+                },
+                {
+                  "description": "The maximum number of results that are returned per call. The default is 100.",
+                  "key": "MaxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "Type"
+            },
+            "description": "Lists all the code reviews that the customer has created in the past 90 days."
+          },
+          "response": [
+            {
+              "id": "d8661344-6a9b-4058-b186-30e762c80f55",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/codereviews?ProviderTypes=GitHubEnterpriseServer&States=Completed&RepositoryNames=*Qkzf7H6&Type=PullRequest&MaxResults=<integer>&NextToken=<string>#Type",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "codereviews"
+                  ],
+                  "query": [
+                    {
+                      "description": "List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.",
+                      "key": "ProviderTypes",
+                      "value": "GitHubEnterpriseServer"
+                    },
+                    {
+                      "description": "<p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p> <p>The valid code review states are:</p> <ul> <li> <p> <code>Completed</code>: The code review is complete.</p> </li> <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> <li> <p> <code>Failed</code>: The code review failed.</p> </li> <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> </ul>",
+                      "key": "States",
+                      "value": "Completed"
+                    },
+                    {
+                      "description": "List of repository names for filtering that needs to be applied before displaying the result.",
+                      "key": "RepositoryNames",
+                      "value": "*Qkzf7H6"
+                    },
+                    {
+                      "description": "(Required) The type of code reviews to list in the response.",
+                      "key": "Type",
+                      "value": "PullRequest"
+                    },
+                    {
+                      "description": "The maximum number of results that are returned per call. The default is 100.",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "Type"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"CodeReviewSummaries\": [\n    {\n      \"Name\": \".Kl0JE-lbRM\",\n      \"CodeReviewArn\": \"arn:aws-\\\\D$4|:codeguru-reviewer:~z+g^0wxZd:198857966873:-f-a:Sth\",\n      \"RepositoryName\": \"gWcD8ACy\",\n      \"Owner\": \"d1|Ht|BT\",\n      \"ProviderType\": \"GitHubEnterpriseServer\",\n      \"State\": \"Completed\",\n      \"CreatedTimeStamp\": \"<dateTime>\",\n      \"LastUpdatedTimeStamp\": \"<dateTime>\",\n      \"Type\": \"PullRequest\",\n      \"PullRequestId\": \"<string>\",\n      \"MetricsSummary\": {\n        \"MeteredLinesOfCodeCount\": \"<integer>\",\n        \"SuppressedLinesOfCodeCount\": \"<integer>\",\n        \"FindingsCount\": \"<integer>\"\n      },\n      \"SourceCodeType\": {\n        \"CommitDiff\": {\n          \"SourceCommit\": \"<string>\",\n          \"DestinationCommit\": \"<string>\",\n          \"MergeBaseCommit\": \"<string>\"\n        },\n        \"RepositoryHead\": {\n          \"BranchName\": \"<string>\"\n        },\n        \"BranchDiff\": {\n          \"SourceBranchName\": \"<string>\",\n          \"DestinationBranchName\": \"<string>\"\n        },\n        \"S3BucketRepository\": {\n          \"Name\": \"*m8TOO9N\",\n          \"Details\": {\n            \"BucketName\": \"''''\",\n            \"CodeArtifacts\": {\n              \"SourceCodeArtifactsObjectKey\": \"w\",\n              \"BuildArtifactsObjectKey\": \"9h',h\"\n            }\n          }\n        },\n        \"RequestMetadata\": {\n          \"RequestId\": \"<string>\",\n          \"Requester\": \"UZtjbf'\",\n          \"EventInfo\": {\n            \"Name\": \"a aed DvTfX\",\n            \"State\": \"LtZRX\"\n          },\n          \"VendorName\": \"GitHub\"\n        }\n      }\n    },\n    {\n      \"Name\": \"TybtCMbH\",\n      \"CodeReviewArn\": \"arn:aws$Z\\\\M$:codeguru-reviewer:c>V\\\\F:095027487646:qhjwxvfh:pW\",\n      \"RepositoryName\": \"Ql\",\n      \"Owner\": \"zZw\",\n      \"ProviderType\": \"GitHubEnterpriseServer\",\n      \"State\": \"Completed\",\n      \"CreatedTimeStamp\": \"<dateTime>\",\n      \"LastUpdatedTimeStamp\": \"<dateTime>\",\n      \"Type\": \"PullRequest\",\n      \"PullRequestId\": \"<string>\",\n      \"MetricsSummary\": {\n        \"MeteredLinesOfCodeCount\": \"<integer>\",\n        \"SuppressedLinesOfCodeCount\": \"<integer>\",\n        \"FindingsCount\": \"<integer>\"\n      },\n      \"SourceCodeType\": {\n        \"CommitDiff\": {\n          \"SourceCommit\": \"<string>\",\n          \"DestinationCommit\": \"<string>\",\n          \"MergeBaseCommit\": \"<string>\"\n        },\n        \"RepositoryHead\": {\n          \"BranchName\": \"<string>\"\n        },\n        \"BranchDiff\": {\n          \"SourceBranchName\": \"<string>\",\n          \"DestinationBranchName\": \"<string>\"\n        },\n        \"S3BucketRepository\": {\n          \"Name\": \"VTzFfoHHt\",\n          \"Details\": {\n            \"BucketName\": \"####\",\n            \"CodeArtifacts\": {\n              \"SourceCodeArtifactsObjectKey\": \"=\\\"R*'ZaIq\\\",u\",\n              \"BuildArtifactsObjectKey\": \"E;`L]|)BOk]\"\n            }\n          }\n        },\n        \"RequestMetadata\": {\n          \"RequestId\": \"<string>\",\n          \"Requester\": \"KmY!3\\\\\",\n          \"EventInfo\": {\n            \"Name\": \"DedHBWZPl\",\n            \"State\": \"M\"\n          },\n          \"VendorName\": \"GitLab\"\n        }\n      }\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:09:31.000Z",
+              "updatedAt": "2026-07-28T10:09:31.000Z",
+              "uid": "35240-d8661344-6a9b-4058-b186-30e762c80f55"
+            },
+            {
+              "id": "64f42660-858b-402e-b7ac-9635202530fd",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/codereviews?ProviderTypes=GitHubEnterpriseServer&States=Completed&RepositoryNames=*Qkzf7H6&Type=PullRequest&MaxResults=<integer>&NextToken=<string>#Type",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "codereviews"
+                  ],
+                  "query": [
+                    {
+                      "description": "List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.",
+                      "key": "ProviderTypes",
+                      "value": "GitHubEnterpriseServer"
+                    },
+                    {
+                      "description": "<p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p> <p>The valid code review states are:</p> <ul> <li> <p> <code>Completed</code>: The code review is complete.</p> </li> <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> <li> <p> <code>Failed</code>: The code review failed.</p> </li> <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> </ul>",
+                      "key": "States",
+                      "value": "Completed"
+                    },
+                    {
+                      "description": "List of repository names for filtering that needs to be applied before displaying the result.",
+                      "key": "RepositoryNames",
+                      "value": "*Qkzf7H6"
+                    },
+                    {
+                      "description": "(Required) The type of code reviews to list in the response.",
+                      "key": "Type",
+                      "value": "PullRequest"
+                    },
+                    {
+                      "description": "The maximum number of results that are returned per call. The default is 100.",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "Type"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:31.000Z",
+              "updatedAt": "2026-07-28T10:09:31.000Z",
+              "uid": "35240-64f42660-858b-402e-b7ac-9635202530fd"
+            },
+            {
+              "id": "31e019a9-ad92-452e-ba78-3ef2cc480fad",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/codereviews?ProviderTypes=GitHubEnterpriseServer&States=Completed&RepositoryNames=*Qkzf7H6&Type=PullRequest&MaxResults=<integer>&NextToken=<string>#Type",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "codereviews"
+                  ],
+                  "query": [
+                    {
+                      "description": "List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.",
+                      "key": "ProviderTypes",
+                      "value": "GitHubEnterpriseServer"
+                    },
+                    {
+                      "description": "<p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p> <p>The valid code review states are:</p> <ul> <li> <p> <code>Completed</code>: The code review is complete.</p> </li> <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> <li> <p> <code>Failed</code>: The code review failed.</p> </li> <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> </ul>",
+                      "key": "States",
+                      "value": "Completed"
+                    },
+                    {
+                      "description": "List of repository names for filtering that needs to be applied before displaying the result.",
+                      "key": "RepositoryNames",
+                      "value": "*Qkzf7H6"
+                    },
+                    {
+                      "description": "(Required) The type of code reviews to list in the response.",
+                      "key": "Type",
+                      "value": "PullRequest"
+                    },
+                    {
+                      "description": "The maximum number of results that are returned per call. The default is 100.",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "Type"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:31.000Z",
+              "updatedAt": "2026-07-28T10:09:31.000Z",
+              "uid": "35240-31e019a9-ad92-452e-ba78-3ef2cc480fad"
+            },
+            {
+              "id": "df2ebad2-7070-4299-b204-35f1c1a87061",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/codereviews?ProviderTypes=GitHubEnterpriseServer&States=Completed&RepositoryNames=*Qkzf7H6&Type=PullRequest&MaxResults=<integer>&NextToken=<string>#Type",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "codereviews"
+                  ],
+                  "query": [
+                    {
+                      "description": "List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.",
+                      "key": "ProviderTypes",
+                      "value": "GitHubEnterpriseServer"
+                    },
+                    {
+                      "description": "<p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p> <p>The valid code review states are:</p> <ul> <li> <p> <code>Completed</code>: The code review is complete.</p> </li> <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> <li> <p> <code>Failed</code>: The code review failed.</p> </li> <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> </ul>",
+                      "key": "States",
+                      "value": "Completed"
+                    },
+                    {
+                      "description": "List of repository names for filtering that needs to be applied before displaying the result.",
+                      "key": "RepositoryNames",
+                      "value": "*Qkzf7H6"
+                    },
+                    {
+                      "description": "(Required) The type of code reviews to list in the response.",
+                      "key": "Type",
+                      "value": "PullRequest"
+                    },
+                    {
+                      "description": "The maximum number of results that are returned per call. The default is 100.",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "Type"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:31.000Z",
+              "updatedAt": "2026-07-28T10:09:31.000Z",
+              "uid": "35240-df2ebad2-7070-4299-b204-35f1c1a87061"
+            },
+            {
+              "id": "bce27cd4-dedf-4f60-843e-4017e8240871",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/codereviews?ProviderTypes=GitHubEnterpriseServer&States=Completed&RepositoryNames=*Qkzf7H6&Type=PullRequest&MaxResults=<integer>&NextToken=<string>#Type",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "codereviews"
+                  ],
+                  "query": [
+                    {
+                      "description": "List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.",
+                      "key": "ProviderTypes",
+                      "value": "GitHubEnterpriseServer"
+                    },
+                    {
+                      "description": "<p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p> <p>The valid code review states are:</p> <ul> <li> <p> <code>Completed</code>: The code review is complete.</p> </li> <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> <li> <p> <code>Failed</code>: The code review failed.</p> </li> <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> </ul>",
+                      "key": "States",
+                      "value": "Completed"
+                    },
+                    {
+                      "description": "List of repository names for filtering that needs to be applied before displaying the result.",
+                      "key": "RepositoryNames",
+                      "value": "*Qkzf7H6"
+                    },
+                    {
+                      "description": "(Required) The type of code reviews to list in the response.",
+                      "key": "Type",
+                      "value": "PullRequest"
+                    },
+                    {
+                      "description": "The maximum number of results that are returned per call. The default is 100.",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "Type"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:31.000Z",
+              "updatedAt": "2026-07-28T10:09:31.000Z",
+              "uid": "35240-bce27cd4-dedf-4f60-843e-4017e8240871"
+            }
+          ],
+          "createdAt": "2026-07-28T10:09:31.000Z",
+          "updatedAt": "2026-07-28T10:09:31.000Z",
+          "uid": "35240-8da2ee8c-9071-4c04-ad96-2cdcd67e4173"
+        }
+      ],
+      "id": "1a792425-44d2-472e-948b-535048393b63",
+      "createdAt": "2026-07-28T10:09:31.000Z",
+      "updatedAt": "2026-07-28T10:09:31.000Z",
+      "uid": "35240-1a792425-44d2-472e-948b-535048393b63"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://codeguru-reviewer.{{region}}.amazonaws.com"
+    }
+  ]
+}

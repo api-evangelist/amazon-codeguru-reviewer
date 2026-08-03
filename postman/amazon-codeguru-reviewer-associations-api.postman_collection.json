@@ -1,0 +1,2224 @@
+{
+  "info": {
+    "_postman_id": "9688fb77-e562-4077-bc74-585b33317a73",
+    "name": "Amazon CodeGuru Reviewer Associations API",
+    "description": "<p>This section provides documentation for the Amazon CodeGuru Reviewer API operations. CodeGuru Reviewer is a service that uses program analysis and machine learning to detect potential defects that are difficult for developers to find and recommends fixes in your Java and Python code.</p> <p>By proactively detecting and providing recommendations for addressing code defects and implementing best practices, CodeGuru Reviewer improves the overall quality and maintainability of your code base during the code review stage. For more information about CodeGuru Reviewer, see the <i> <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html\">Amazon CodeGuru Reviewer User Guide</a>.</i> </p> <p>To improve the security of your CodeGuru Reviewer API calls, you can establish a private connection between your VPC and CodeGuru Reviewer by creating an <i>interface VPC endpoint</i>. For more information, see <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/vpc-interface-endpoints.html\">CodeGuru Reviewer and interface VPC endpoints (Amazon Web Services PrivateLink)</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:09:27.000Z",
+    "updatedAt": "2026-07-28T10:09:27.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9688fb77-e562-4077-bc74-585b33317a73"
+  },
+  "item": [
+    {
+      "name": "associations",
+      "item": [
+        {
+          "name": "{AssociationArn}",
+          "item": [
+            {
+              "name": "Amazon CodeGuru Reviewer Describe Repository Association",
+              "id": "8ec6b836-5b6f-4008-adbd-cb9df8853a77",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/associations/:AssociationArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "associations",
+                    ":AssociationArn"
+                  ],
+                  "variable": [
+                    {
+                      "id": "6b88b2b8-da02-4f54-841d-81e854a78b5b",
+                      "key": "AssociationArn",
+                      "value": "arn:aws+7B:codeguru-reviewer:]Vq=\"&yx)b:548302098099:association:bd5fad1a-77c2-88a6-2762-2b0dbae1df2f",
+                      "description": "(Required) The Amazon Resource Name (ARN) of the <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html\">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html\">ListRepositoryAssociations</a>."
+                    }
+                  ]
+                },
+                "description": "Returns a <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html\">RepositoryAssociation</a> object that contains information about the requested repository association."
+              },
+              "response": [
+                {
+                  "id": "f9ed6be4-2719-4673-92ad-690c108ed3d7",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/associations/:AssociationArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "associations",
+                        ":AssociationArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "AssociationArn"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"RepositoryAssociation\": {\n    \"AssociationId\": \"<string>\",\n    \"AssociationArn\": \"arn:awsT\\\\~*6nIF(G:codeguru-reviewer:lksqM-y:908608569806:sqy:F\",\n    \"ConnectionArn\": \"arn:aws-rudcDaJEe-jp-he0-15Pw:j:}E>Y:473363033266:::4$[\\\"bVJFQ\",\n    \"Name\": \"@\",\n    \"Owner\": \"]\",\n    \"ProviderType\": \"Bitbucket\",\n    \"State\": \"Associating\",\n    \"StateReason\": \"<string>\",\n    \"LastUpdatedTimeStamp\": \"<dateTime>\",\n    \"CreatedTimeStamp\": \"<dateTime>\",\n    \"KMSKeyDetails\": {\n      \"KMSKeyId\": \"c\",\n      \"EncryptionOption\": \"CUSTOMER_MANAGED_CMK\"\n    },\n    \"S3RepositoryDetails\": {\n      \"BucketName\": \"////\",\n      \"CodeArtifacts\": {\n        \"SourceCodeArtifactsObjectKey\": \"w\",\n        \"BuildArtifactsObjectKey\": \"+\"\n      }\n    }\n  },\n  \"Tags\": {\n    \"eu0\": \"<string>\",\n    \"nulla67\": \"<string>\",\n    \"id_85\": \"<string>\",\n    \"culpa_65b\": \"<string>\",\n    \"laboris3\": \"<string>\",\n    \"aliquip_99\": \"<string>\",\n    \"incididunt6e\": \"<string>\",\n    \"labore1d\": \"<string>\",\n    \"occaecat8c\": \"<string>\",\n    \"ipsum_d\": \"<string>\",\n    \"incididunt1e\": \"<string>\",\n    \"elitc8f\": \"<string>\",\n    \"id7\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"ead_\": \"<string>\",\n    \"aute_273\": \"<string>\",\n    \"ullamco521\": \"<string>\",\n    \"irure3\": \"<string>\",\n    \"culpa_568\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:09:27.000Z",
+                  "updatedAt": "2026-07-28T10:09:27.000Z",
+                  "uid": "35240-f9ed6be4-2719-4673-92ad-690c108ed3d7"
+                },
+                {
+                  "id": "7c32448d-973c-417d-a25f-f36b3e6bcb55",
+                  "name": "NotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/associations/:AssociationArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "associations",
+                        ":AssociationArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "AssociationArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:27.000Z",
+                  "updatedAt": "2026-07-28T10:09:27.000Z",
+                  "uid": "35240-7c32448d-973c-417d-a25f-f36b3e6bcb55"
+                },
+                {
+                  "id": "f0466526-efed-43d7-b953-97a2190c2658",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/associations/:AssociationArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "associations",
+                        ":AssociationArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "AssociationArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:27.000Z",
+                  "updatedAt": "2026-07-28T10:09:27.000Z",
+                  "uid": "35240-f0466526-efed-43d7-b953-97a2190c2658"
+                },
+                {
+                  "id": "6da88995-5d57-4dc5-9f16-973cc4fabdcc",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/associations/:AssociationArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "associations",
+                        ":AssociationArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "AssociationArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:27.000Z",
+                  "updatedAt": "2026-07-28T10:09:27.000Z",
+                  "uid": "35240-6da88995-5d57-4dc5-9f16-973cc4fabdcc"
+                },
+                {
+                  "id": "173ebb9b-7c88-4f29-8b55-9c1c65491a47",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/associations/:AssociationArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "associations",
+                        ":AssociationArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "AssociationArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:27.000Z",
+                  "updatedAt": "2026-07-28T10:09:27.000Z",
+                  "uid": "35240-173ebb9b-7c88-4f29-8b55-9c1c65491a47"
+                },
+                {
+                  "id": "047b471b-ec0c-4c0f-869b-6dbe7bba2032",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/associations/:AssociationArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "associations",
+                        ":AssociationArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "AssociationArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:27.000Z",
+                  "updatedAt": "2026-07-28T10:09:27.000Z",
+                  "uid": "35240-047b471b-ec0c-4c0f-869b-6dbe7bba2032"
+                }
+              ],
+              "createdAt": "2026-07-28T10:09:27.000Z",
+              "updatedAt": "2026-07-28T10:09:27.000Z",
+              "uid": "35240-8ec6b836-5b6f-4008-adbd-cb9df8853a77"
+            },
+            {
+              "name": "Amazon CodeGuru Reviewer Disassociate Repository",
+              "id": "0913ee03-d924-4e42-8410-ca81628dd4b7",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/associations/:AssociationArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "associations",
+                    ":AssociationArn"
+                  ],
+                  "variable": [
+                    {
+                      "id": "fcbce57e-6b22-4c6a-a5e6-7bb6d56c625f",
+                      "key": "AssociationArn",
+                      "value": "arn:aws+7B:codeguru-reviewer:]Vq=\"&yx)b:548302098099:association:bd5fad1a-77c2-88a6-2762-2b0dbae1df2f",
+                      "description": "(Required) The Amazon Resource Name (ARN) of the <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html\">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html\">ListRepositoryAssociations</a>."
+                    }
+                  ]
+                },
+                "description": "Removes the association between Amazon CodeGuru Reviewer and a repository."
+              },
+              "response": [
+                {
+                  "id": "a5d14bb8-b735-4f4b-8c5b-cc43f8120a86",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/associations/:AssociationArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "associations",
+                        ":AssociationArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "AssociationArn"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"RepositoryAssociation\": {\n    \"AssociationId\": \"<string>\",\n    \"AssociationArn\": \"arn:awsT\\\\~*6nIF(G:codeguru-reviewer:lksqM-y:908608569806:sqy:F\",\n    \"ConnectionArn\": \"arn:aws-rudcDaJEe-jp-he0-15Pw:j:}E>Y:473363033266:::4$[\\\"bVJFQ\",\n    \"Name\": \"@\",\n    \"Owner\": \"]\",\n    \"ProviderType\": \"Bitbucket\",\n    \"State\": \"Associating\",\n    \"StateReason\": \"<string>\",\n    \"LastUpdatedTimeStamp\": \"<dateTime>\",\n    \"CreatedTimeStamp\": \"<dateTime>\",\n    \"KMSKeyDetails\": {\n      \"KMSKeyId\": \"c\",\n      \"EncryptionOption\": \"CUSTOMER_MANAGED_CMK\"\n    },\n    \"S3RepositoryDetails\": {\n      \"BucketName\": \"////\",\n      \"CodeArtifacts\": {\n        \"SourceCodeArtifactsObjectKey\": \"w\",\n        \"BuildArtifactsObjectKey\": \"+\"\n      }\n    }\n  },\n  \"Tags\": {\n    \"eu0\": \"<string>\",\n    \"nulla67\": \"<string>\",\n    \"id_85\": \"<string>\",\n    \"culpa_65b\": \"<string>\",\n    \"laboris3\": \"<string>\",\n    \"aliquip_99\": \"<string>\",\n    \"incididunt6e\": \"<string>\",\n    \"labore1d\": \"<string>\",\n    \"occaecat8c\": \"<string>\",\n    \"ipsum_d\": \"<string>\",\n    \"incididunt1e\": \"<string>\",\n    \"elitc8f\": \"<string>\",\n    \"id7\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"ead_\": \"<string>\",\n    \"aute_273\": \"<string>\",\n    \"ullamco521\": \"<string>\",\n    \"irure3\": \"<string>\",\n    \"culpa_568\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:09:27.000Z",
+                  "updatedAt": "2026-07-28T10:09:27.000Z",
+                  "uid": "35240-a5d14bb8-b735-4f4b-8c5b-cc43f8120a86"
+                },
+                {
+                  "id": "98ec8eba-20ef-4153-9735-1314dc1676d2",
+                  "name": "NotFoundException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/associations/:AssociationArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "associations",
+                        ":AssociationArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "AssociationArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:27.000Z",
+                  "updatedAt": "2026-07-28T10:09:27.000Z",
+                  "uid": "35240-98ec8eba-20ef-4153-9735-1314dc1676d2"
+                },
+                {
+                  "id": "842ffc17-3c0b-4518-87bf-99c77edc6262",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/associations/:AssociationArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "associations",
+                        ":AssociationArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "AssociationArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:27.000Z",
+                  "updatedAt": "2026-07-28T10:09:27.000Z",
+                  "uid": "35240-842ffc17-3c0b-4518-87bf-99c77edc6262"
+                },
+                {
+                  "id": "9ac5af28-645f-4b24-bd4f-65f6c4fb2267",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/associations/:AssociationArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "associations",
+                        ":AssociationArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "AssociationArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:27.000Z",
+                  "updatedAt": "2026-07-28T10:09:27.000Z",
+                  "uid": "35240-9ac5af28-645f-4b24-bd4f-65f6c4fb2267"
+                },
+                {
+                  "id": "c2348094-bcaa-4bb0-bdc2-f710016bb861",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/associations/:AssociationArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "associations",
+                        ":AssociationArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "AssociationArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:27.000Z",
+                  "updatedAt": "2026-07-28T10:09:27.000Z",
+                  "uid": "35240-c2348094-bcaa-4bb0-bdc2-f710016bb861"
+                },
+                {
+                  "id": "033ca5fd-ae26-4678-9b7b-9a0596d15bde",
+                  "name": "ConflictException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/associations/:AssociationArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "associations",
+                        ":AssociationArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "AssociationArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:27.000Z",
+                  "updatedAt": "2026-07-28T10:09:27.000Z",
+                  "uid": "35240-033ca5fd-ae26-4678-9b7b-9a0596d15bde"
+                },
+                {
+                  "id": "b8bc515b-9c22-485c-b225-ed518585c231",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/associations/:AssociationArn",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "associations",
+                        ":AssociationArn"
+                      ],
+                      "variable": [
+                        {
+                          "key": "AssociationArn"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:09:27.000Z",
+                  "updatedAt": "2026-07-28T10:09:27.000Z",
+                  "uid": "35240-b8bc515b-9c22-485c-b225-ed518585c231"
+                }
+              ],
+              "createdAt": "2026-07-28T10:09:27.000Z",
+              "updatedAt": "2026-07-28T10:09:27.000Z",
+              "uid": "35240-0913ee03-d924-4e42-8410-ca81628dd4b7"
+            }
+          ],
+          "id": "6efea8c8-edb9-4079-992a-99bbfb4c44ba",
+          "createdAt": "2026-07-28T10:09:27.000Z",
+          "updatedAt": "2026-07-28T10:09:27.000Z",
+          "uid": "35240-6efea8c8-edb9-4079-992a-99bbfb4c44ba"
+        },
+        {
+          "name": "Amazon CodeGuru Reviewer Associate Repository",
+          "id": "8ec7b955-bbb4-40b4-b577-1ab00615acd0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Repository\": {\n    \"CodeCommit\": {\n      \"Name\": \"uIn4-T8BZO\"\n    },\n    \"Bitbucket\": {\n      \"Name\": \"1F7GINkh\",\n      \"ConnectionArn\": \"arn:aws-4B0fw3xCL5-wqY:$&2H-:W7:705492557431:d}A(q_KFzg6\",\n      \"Owner\": \"7>H8IA$z[9M\"\n    },\n    \"GitHubEnterpriseServer\": {\n      \"Name\": \"JmmhIhjtb\",\n      \"ConnectionArn\": \"arn:aws-UAOFy:`.Nc},Pf!T:KCOlMn:759813914052:uI.&yXX\",\n      \"Owner\": \"]1Srr</Un\"\n    },\n    \"S3Bucket\": {\n      \"Name\": \"j18KA62gPg\",\n      \"BucketName\": \"zzzz\"\n    }\n  },\n  \"ClientRequestToken\": \"92efLl7\",\n  \"Tags\": {\n    \"quis_0b9\": \"<string>\",\n    \"in_b9\": \"<string>\",\n    \"quis5\": \"<string>\",\n    \"irure35\": \"<string>\",\n    \"sed714\": \"<string>\",\n    \"aliqua2f\": \"<string>\",\n    \"magna0b7\": \"<string>\",\n    \"mollit_1\": \"<string>\",\n    \"fugiat3\": \"<string>\",\n    \"utb\": \"<string>\",\n    \"laborum657\": \"<string>\",\n    \"commodo_80\": \"<string>\",\n    \"culpa_6\": \"<string>\",\n    \"aliqua_aa7\": \"<string>\",\n    \"sed_b3\": \"<string>\",\n    \"ut_5\": \"<string>\",\n    \"ut_4\": \"<string>\",\n    \"consectetur_ceb\": \"<string>\",\n    \"in6\": \"<string>\",\n    \"tempor_9\": \"<string>\",\n    \"est_f_\": \"<string>\",\n    \"aute8\": \"<string>\",\n    \"nisicf9\": \"<string>\",\n    \"ut_1a\": \"<string>\"\n  },\n  \"KMSKeyDetails\": {\n    \"KMSKeyId\": \"9ZB3NkWjA\",\n    \"EncryptionOption\": \"CUSTOMER_MANAGED_CMK\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/associations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "associations"
+              ]
+            },
+            "description": "<p>Use to associate an Amazon Web Services CodeCommit repository or a repository managed by Amazon Web Services CodeStar Connections with Amazon CodeGuru Reviewer. When you associate a repository, CodeGuru Reviewer reviews source code changes in the repository's pull requests and provides automatic recommendations. You can view recommendations using the CodeGuru Reviewer console. For more information, see <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/recommendations.html\">Recommendations in Amazon CodeGuru Reviewer</a> in the <i>Amazon CodeGuru Reviewer User Guide.</i> </p> <p>If you associate a CodeCommit or S3 repository, it must be in the same Amazon Web Services Region and Amazon Web Services account where its CodeGuru Reviewer code reviews are configured.</p> <p>Bitbucket and GitHub Enterprise Server repositories are managed by Amazon Web Services CodeStar Connections to connect to CodeGuru Reviewer. For more information, see <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-associate-repository.html\">Associate a repository</a> in the <i>Amazon CodeGuru Reviewer User Guide.</i> </p> <note> <p>You cannot use the CodeGuru Reviewer SDK or the Amazon Web Services CLI to associate a GitHub repository with Amazon CodeGuru Reviewer. To associate a GitHub repository, use the console. For more information, see <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-with-guru.html\">Getting started with CodeGuru Reviewer</a> in the <i>CodeGuru Reviewer User Guide.</i> </p> </note>"
+          },
+          "response": [
+            {
+              "id": "b34ac731-5de4-4d34-b27f-ae32c31fb8c5",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Repository\": {\n    \"CodeCommit\": {\n      \"Name\": \"uIn4-T8BZO\"\n    },\n    \"Bitbucket\": {\n      \"Name\": \"1F7GINkh\",\n      \"ConnectionArn\": \"arn:aws-4B0fw3xCL5-wqY:$&2H-:W7:705492557431:d}A(q_KFzg6\",\n      \"Owner\": \"7>H8IA$z[9M\"\n    },\n    \"GitHubEnterpriseServer\": {\n      \"Name\": \"JmmhIhjtb\",\n      \"ConnectionArn\": \"arn:aws-UAOFy:`.Nc},Pf!T:KCOlMn:759813914052:uI.&yXX\",\n      \"Owner\": \"]1Srr</Un\"\n    },\n    \"S3Bucket\": {\n      \"Name\": \"j18KA62gPg\",\n      \"BucketName\": \"zzzz\"\n    }\n  },\n  \"ClientRequestToken\": \"92efLl7\",\n  \"Tags\": {\n    \"quis_0b9\": \"<string>\",\n    \"in_b9\": \"<string>\",\n    \"quis5\": \"<string>\",\n    \"irure35\": \"<string>\",\n    \"sed714\": \"<string>\",\n    \"aliqua2f\": \"<string>\",\n    \"magna0b7\": \"<string>\",\n    \"mollit_1\": \"<string>\",\n    \"fugiat3\": \"<string>\",\n    \"utb\": \"<string>\",\n    \"laborum657\": \"<string>\",\n    \"commodo_80\": \"<string>\",\n    \"culpa_6\": \"<string>\",\n    \"aliqua_aa7\": \"<string>\",\n    \"sed_b3\": \"<string>\",\n    \"ut_5\": \"<string>\",\n    \"ut_4\": \"<string>\",\n    \"consectetur_ceb\": \"<string>\",\n    \"in6\": \"<string>\",\n    \"tempor_9\": \"<string>\",\n    \"est_f_\": \"<string>\",\n    \"aute8\": \"<string>\",\n    \"nisicf9\": \"<string>\",\n    \"ut_1a\": \"<string>\"\n  },\n  \"KMSKeyDetails\": {\n    \"KMSKeyId\": \"9ZB3NkWjA\",\n    \"EncryptionOption\": \"CUSTOMER_MANAGED_CMK\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/associations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "associations"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"RepositoryAssociation\": {\n    \"AssociationId\": \"<string>\",\n    \"AssociationArn\": \"arn:awsT\\\\~*6nIF(G:codeguru-reviewer:lksqM-y:908608569806:sqy:F\",\n    \"ConnectionArn\": \"arn:aws-rudcDaJEe-jp-he0-15Pw:j:}E>Y:473363033266:::4$[\\\"bVJFQ\",\n    \"Name\": \"@\",\n    \"Owner\": \"]\",\n    \"ProviderType\": \"Bitbucket\",\n    \"State\": \"Associating\",\n    \"StateReason\": \"<string>\",\n    \"LastUpdatedTimeStamp\": \"<dateTime>\",\n    \"CreatedTimeStamp\": \"<dateTime>\",\n    \"KMSKeyDetails\": {\n      \"KMSKeyId\": \"c\",\n      \"EncryptionOption\": \"CUSTOMER_MANAGED_CMK\"\n    },\n    \"S3RepositoryDetails\": {\n      \"BucketName\": \"////\",\n      \"CodeArtifacts\": {\n        \"SourceCodeArtifactsObjectKey\": \"w\",\n        \"BuildArtifactsObjectKey\": \"+\"\n      }\n    }\n  },\n  \"Tags\": {\n    \"eu0\": \"<string>\",\n    \"nulla67\": \"<string>\",\n    \"id_85\": \"<string>\",\n    \"culpa_65b\": \"<string>\",\n    \"laboris3\": \"<string>\",\n    \"aliquip_99\": \"<string>\",\n    \"incididunt6e\": \"<string>\",\n    \"labore1d\": \"<string>\",\n    \"occaecat8c\": \"<string>\",\n    \"ipsum_d\": \"<string>\",\n    \"incididunt1e\": \"<string>\",\n    \"elitc8f\": \"<string>\",\n    \"id7\": \"<string>\",\n    \"in_3\": \"<string>\",\n    \"ead_\": \"<string>\",\n    \"aute_273\": \"<string>\",\n    \"ullamco521\": \"<string>\",\n    \"irure3\": \"<string>\",\n    \"culpa_568\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-07-28T10:09:27.000Z",
+              "updatedAt": "2026-07-28T10:09:27.000Z",
+              "uid": "35240-b34ac731-5de4-4d34-b27f-ae32c31fb8c5"
+            },
+            {
+              "id": "8b2d98b7-7e4f-45e0-b997-477ba450ac40",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Repository\": {\n    \"CodeCommit\": {\n      \"Name\": \"uIn4-T8BZO\"\n    },\n    \"Bitbucket\": {\n      \"Name\": \"1F7GINkh\",\n      \"ConnectionArn\": \"arn:aws-4B0fw3xCL5-wqY:$&2H-:W7:705492557431:d}A(q_KFzg6\",\n      \"Owner\": \"7>H8IA$z[9M\"\n    },\n    \"GitHubEnterpriseServer\": {\n      \"Name\": \"JmmhIhjtb\",\n      \"ConnectionArn\": \"arn:aws-UAOFy:`.Nc},Pf!T:KCOlMn:759813914052:uI.&yXX\",\n      \"Owner\": \"]1Srr</Un\"\n    },\n    \"S3Bucket\": {\n      \"Name\": \"j18KA62gPg\",\n      \"BucketName\": \"zzzz\"\n    }\n  },\n  \"ClientRequestToken\": \"92efLl7\",\n  \"Tags\": {\n    \"quis_0b9\": \"<string>\",\n    \"in_b9\": \"<string>\",\n    \"quis5\": \"<string>\",\n    \"irure35\": \"<string>\",\n    \"sed714\": \"<string>\",\n    \"aliqua2f\": \"<string>\",\n    \"magna0b7\": \"<string>\",\n    \"mollit_1\": \"<string>\",\n    \"fugiat3\": \"<string>\",\n    \"utb\": \"<string>\",\n    \"laborum657\": \"<string>\",\n    \"commodo_80\": \"<string>\",\n    \"culpa_6\": \"<string>\",\n    \"aliqua_aa7\": \"<string>\",\n    \"sed_b3\": \"<string>\",\n    \"ut_5\": \"<string>\",\n    \"ut_4\": \"<string>\",\n    \"consectetur_ceb\": \"<string>\",\n    \"in6\": \"<string>\",\n    \"tempor_9\": \"<string>\",\n    \"est_f_\": \"<string>\",\n    \"aute8\": \"<string>\",\n    \"nisicf9\": \"<string>\",\n    \"ut_1a\": \"<string>\"\n  },\n  \"KMSKeyDetails\": {\n    \"KMSKeyId\": \"9ZB3NkWjA\",\n    \"EncryptionOption\": \"CUSTOMER_MANAGED_CMK\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/associations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "associations"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:27.000Z",
+              "updatedAt": "2026-07-28T10:09:27.000Z",
+              "uid": "35240-8b2d98b7-7e4f-45e0-b997-477ba450ac40"
+            },
+            {
+              "id": "3a86cd27-7eb4-4ed6-a5d7-7b89f67f75d0",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Repository\": {\n    \"CodeCommit\": {\n      \"Name\": \"uIn4-T8BZO\"\n    },\n    \"Bitbucket\": {\n      \"Name\": \"1F7GINkh\",\n      \"ConnectionArn\": \"arn:aws-4B0fw3xCL5-wqY:$&2H-:W7:705492557431:d}A(q_KFzg6\",\n      \"Owner\": \"7>H8IA$z[9M\"\n    },\n    \"GitHubEnterpriseServer\": {\n      \"Name\": \"JmmhIhjtb\",\n      \"ConnectionArn\": \"arn:aws-UAOFy:`.Nc},Pf!T:KCOlMn:759813914052:uI.&yXX\",\n      \"Owner\": \"]1Srr</Un\"\n    },\n    \"S3Bucket\": {\n      \"Name\": \"j18KA62gPg\",\n      \"BucketName\": \"zzzz\"\n    }\n  },\n  \"ClientRequestToken\": \"92efLl7\",\n  \"Tags\": {\n    \"quis_0b9\": \"<string>\",\n    \"in_b9\": \"<string>\",\n    \"quis5\": \"<string>\",\n    \"irure35\": \"<string>\",\n    \"sed714\": \"<string>\",\n    \"aliqua2f\": \"<string>\",\n    \"magna0b7\": \"<string>\",\n    \"mollit_1\": \"<string>\",\n    \"fugiat3\": \"<string>\",\n    \"utb\": \"<string>\",\n    \"laborum657\": \"<string>\",\n    \"commodo_80\": \"<string>\",\n    \"culpa_6\": \"<string>\",\n    \"aliqua_aa7\": \"<string>\",\n    \"sed_b3\": \"<string>\",\n    \"ut_5\": \"<string>\",\n    \"ut_4\": \"<string>\",\n    \"consectetur_ceb\": \"<string>\",\n    \"in6\": \"<string>\",\n    \"tempor_9\": \"<string>\",\n    \"est_f_\": \"<string>\",\n    \"aute8\": \"<string>\",\n    \"nisicf9\": \"<string>\",\n    \"ut_1a\": \"<string>\"\n  },\n  \"KMSKeyDetails\": {\n    \"KMSKeyId\": \"9ZB3NkWjA\",\n    \"EncryptionOption\": \"CUSTOMER_MANAGED_CMK\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/associations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "associations"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:27.000Z",
+              "updatedAt": "2026-07-28T10:09:27.000Z",
+              "uid": "35240-3a86cd27-7eb4-4ed6-a5d7-7b89f67f75d0"
+            },
+            {
+              "id": "677dcece-7744-4caf-8834-7b17d8068a8d",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Repository\": {\n    \"CodeCommit\": {\n      \"Name\": \"uIn4-T8BZO\"\n    },\n    \"Bitbucket\": {\n      \"Name\": \"1F7GINkh\",\n      \"ConnectionArn\": \"arn:aws-4B0fw3xCL5-wqY:$&2H-:W7:705492557431:d}A(q_KFzg6\",\n      \"Owner\": \"7>H8IA$z[9M\"\n    },\n    \"GitHubEnterpriseServer\": {\n      \"Name\": \"JmmhIhjtb\",\n      \"ConnectionArn\": \"arn:aws-UAOFy:`.Nc},Pf!T:KCOlMn:759813914052:uI.&yXX\",\n      \"Owner\": \"]1Srr</Un\"\n    },\n    \"S3Bucket\": {\n      \"Name\": \"j18KA62gPg\",\n      \"BucketName\": \"zzzz\"\n    }\n  },\n  \"ClientRequestToken\": \"92efLl7\",\n  \"Tags\": {\n    \"quis_0b9\": \"<string>\",\n    \"in_b9\": \"<string>\",\n    \"quis5\": \"<string>\",\n    \"irure35\": \"<string>\",\n    \"sed714\": \"<string>\",\n    \"aliqua2f\": \"<string>\",\n    \"magna0b7\": \"<string>\",\n    \"mollit_1\": \"<string>\",\n    \"fugiat3\": \"<string>\",\n    \"utb\": \"<string>\",\n    \"laborum657\": \"<string>\",\n    \"commodo_80\": \"<string>\",\n    \"culpa_6\": \"<string>\",\n    \"aliqua_aa7\": \"<string>\",\n    \"sed_b3\": \"<string>\",\n    \"ut_5\": \"<string>\",\n    \"ut_4\": \"<string>\",\n    \"consectetur_ceb\": \"<string>\",\n    \"in6\": \"<string>\",\n    \"tempor_9\": \"<string>\",\n    \"est_f_\": \"<string>\",\n    \"aute8\": \"<string>\",\n    \"nisicf9\": \"<string>\",\n    \"ut_1a\": \"<string>\"\n  },\n  \"KMSKeyDetails\": {\n    \"KMSKeyId\": \"9ZB3NkWjA\",\n    \"EncryptionOption\": \"CUSTOMER_MANAGED_CMK\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/associations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "associations"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:27.000Z",
+              "updatedAt": "2026-07-28T10:09:27.000Z",
+              "uid": "35240-677dcece-7744-4caf-8834-7b17d8068a8d"
+            },
+            {
+              "id": "8f6e72a3-9fff-4bef-8651-50a343a7fa43",
+              "name": "ConflictException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Repository\": {\n    \"CodeCommit\": {\n      \"Name\": \"uIn4-T8BZO\"\n    },\n    \"Bitbucket\": {\n      \"Name\": \"1F7GINkh\",\n      \"ConnectionArn\": \"arn:aws-4B0fw3xCL5-wqY:$&2H-:W7:705492557431:d}A(q_KFzg6\",\n      \"Owner\": \"7>H8IA$z[9M\"\n    },\n    \"GitHubEnterpriseServer\": {\n      \"Name\": \"JmmhIhjtb\",\n      \"ConnectionArn\": \"arn:aws-UAOFy:`.Nc},Pf!T:KCOlMn:759813914052:uI.&yXX\",\n      \"Owner\": \"]1Srr</Un\"\n    },\n    \"S3Bucket\": {\n      \"Name\": \"j18KA62gPg\",\n      \"BucketName\": \"zzzz\"\n    }\n  },\n  \"ClientRequestToken\": \"92efLl7\",\n  \"Tags\": {\n    \"quis_0b9\": \"<string>\",\n    \"in_b9\": \"<string>\",\n    \"quis5\": \"<string>\",\n    \"irure35\": \"<string>\",\n    \"sed714\": \"<string>\",\n    \"aliqua2f\": \"<string>\",\n    \"magna0b7\": \"<string>\",\n    \"mollit_1\": \"<string>\",\n    \"fugiat3\": \"<string>\",\n    \"utb\": \"<string>\",\n    \"laborum657\": \"<string>\",\n    \"commodo_80\": \"<string>\",\n    \"culpa_6\": \"<string>\",\n    \"aliqua_aa7\": \"<string>\",\n    \"sed_b3\": \"<string>\",\n    \"ut_5\": \"<string>\",\n    \"ut_4\": \"<string>\",\n    \"consectetur_ceb\": \"<string>\",\n    \"in6\": \"<string>\",\n    \"tempor_9\": \"<string>\",\n    \"est_f_\": \"<string>\",\n    \"aute8\": \"<string>\",\n    \"nisicf9\": \"<string>\",\n    \"ut_1a\": \"<string>\"\n  },\n  \"KMSKeyDetails\": {\n    \"KMSKeyId\": \"9ZB3NkWjA\",\n    \"EncryptionOption\": \"CUSTOMER_MANAGED_CMK\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/associations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "associations"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:27.000Z",
+              "updatedAt": "2026-07-28T10:09:27.000Z",
+              "uid": "35240-8f6e72a3-9fff-4bef-8651-50a343a7fa43"
+            },
+            {
+              "id": "ae0b9430-0596-483b-a16e-588eff64c894",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Repository\": {\n    \"CodeCommit\": {\n      \"Name\": \"uIn4-T8BZO\"\n    },\n    \"Bitbucket\": {\n      \"Name\": \"1F7GINkh\",\n      \"ConnectionArn\": \"arn:aws-4B0fw3xCL5-wqY:$&2H-:W7:705492557431:d}A(q_KFzg6\",\n      \"Owner\": \"7>H8IA$z[9M\"\n    },\n    \"GitHubEnterpriseServer\": {\n      \"Name\": \"JmmhIhjtb\",\n      \"ConnectionArn\": \"arn:aws-UAOFy:`.Nc},Pf!T:KCOlMn:759813914052:uI.&yXX\",\n      \"Owner\": \"]1Srr</Un\"\n    },\n    \"S3Bucket\": {\n      \"Name\": \"j18KA62gPg\",\n      \"BucketName\": \"zzzz\"\n    }\n  },\n  \"ClientRequestToken\": \"92efLl7\",\n  \"Tags\": {\n    \"quis_0b9\": \"<string>\",\n    \"in_b9\": \"<string>\",\n    \"quis5\": \"<string>\",\n    \"irure35\": \"<string>\",\n    \"sed714\": \"<string>\",\n    \"aliqua2f\": \"<string>\",\n    \"magna0b7\": \"<string>\",\n    \"mollit_1\": \"<string>\",\n    \"fugiat3\": \"<string>\",\n    \"utb\": \"<string>\",\n    \"laborum657\": \"<string>\",\n    \"commodo_80\": \"<string>\",\n    \"culpa_6\": \"<string>\",\n    \"aliqua_aa7\": \"<string>\",\n    \"sed_b3\": \"<string>\",\n    \"ut_5\": \"<string>\",\n    \"ut_4\": \"<string>\",\n    \"consectetur_ceb\": \"<string>\",\n    \"in6\": \"<string>\",\n    \"tempor_9\": \"<string>\",\n    \"est_f_\": \"<string>\",\n    \"aute8\": \"<string>\",\n    \"nisicf9\": \"<string>\",\n    \"ut_1a\": \"<string>\"\n  },\n  \"KMSKeyDetails\": {\n    \"KMSKeyId\": \"9ZB3NkWjA\",\n    \"EncryptionOption\": \"CUSTOMER_MANAGED_CMK\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/associations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "associations"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:27.000Z",
+              "updatedAt": "2026-07-28T10:09:27.000Z",
+              "uid": "35240-ae0b9430-0596-483b-a16e-588eff64c894"
+            }
+          ],
+          "createdAt": "2026-07-28T10:09:27.000Z",
+          "updatedAt": "2026-07-28T10:09:27.000Z",
+          "uid": "35240-8ec7b955-bbb4-40b4-b577-1ab00615acd0"
+        },
+        {
+          "name": "Amazon CodeGuru Reviewer List Repository Associations",
+          "id": "97cde07e-1fc0-4c55-9368-c0d457e2b595",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/associations?ProviderType=Bitbucket&State=Failed&Name=8kQBjmi&Owner=%23wu {1Pq=%R&MaxResults=<integer>&NextToken=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "associations"
+              ],
+              "query": [
+                {
+                  "description": "List of provider types to use as a filter.",
+                  "key": "ProviderType",
+                  "value": "Bitbucket"
+                },
+                {
+                  "description": "<p>List of repository association states to use as a filter.</p> <p>The valid repository association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository association is complete.</p> </li> <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p> <ul> <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note> <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p> </note> </li> <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html\">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li> </ul>",
+                  "key": "State",
+                  "value": "Failed"
+                },
+                {
+                  "description": "List of repository names to use as a filter.",
+                  "key": "Name",
+                  "value": "8kQBjmi"
+                },
+                {
+                  "description": "List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository. ",
+                  "key": "Owner",
+                  "value": "#wu {1Pq=%R"
+                },
+                {
+                  "description": "The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable. ",
+                  "key": "MaxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "<p>The <code>nextToken</code> value returned from a previous paginated <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>Treat this token as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Returns a list of <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html\">RepositoryAssociationSummary</a> objects that contain summary information about a repository association. You can filter the returned list by <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-ProviderType\">ProviderType</a>, <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Name\">Name</a>, <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-State\">State</a>, and <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Owner\">Owner</a>."
+          },
+          "response": [
+            {
+              "id": "3932dd58-eeec-4b95-9f57-d87638f74515",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/associations?ProviderType=Bitbucket&State=Failed&Name=8kQBjmi&Owner=%23wu {1Pq=%R&MaxResults=<integer>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "associations"
+                  ],
+                  "query": [
+                    {
+                      "description": "List of provider types to use as a filter.",
+                      "key": "ProviderType",
+                      "value": "Bitbucket"
+                    },
+                    {
+                      "description": "<p>List of repository association states to use as a filter.</p> <p>The valid repository association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository association is complete.</p> </li> <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p> <ul> <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note> <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p> </note> </li> <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html\">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li> </ul>",
+                      "key": "State",
+                      "value": "Failed"
+                    },
+                    {
+                      "description": "List of repository names to use as a filter.",
+                      "key": "Name",
+                      "value": "8kQBjmi"
+                    },
+                    {
+                      "description": "List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository. ",
+                      "key": "Owner",
+                      "value": "#wu {1Pq=%R"
+                    },
+                    {
+                      "description": "The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable. ",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "<p>The <code>nextToken</code> value returned from a previous paginated <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>Treat this token as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"RepositoryAssociationSummaries\": [\n    {\n      \"AssociationArn\": \"arn:awsl~USUVL2w:codeguru-reviewer:Xl-a:896262899331:eworrmkouqx:jtqBae\",\n      \"ConnectionArn\": \"arn:aws-Vp:hHR:3J_:GQ8X#:897100511989:-IsLoK\",\n      \"LastUpdatedTimeStamp\": \"<dateTime>\",\n      \"AssociationId\": \"<string>\",\n      \"Name\": \"nyhX2dgcAEU\",\n      \"Owner\": \"2ES\",\n      \"ProviderType\": \"GitHubEnterpriseServer\",\n      \"State\": \"Associating\"\n    },\n    {\n      \"AssociationArn\": \"arn:awsCUy$:codeguru-reviewer:}+DGWU:676579185058:yjtwp:K73\",\n      \"ConnectionArn\": \"arn:aws-KLyQhk-SihnX:U2a:r:228850861050:GQ+$=^U\",\n      \"LastUpdatedTimeStamp\": \"<dateTime>\",\n      \"AssociationId\": \"<string>\",\n      \"Name\": \"A\",\n      \"Owner\": \"av\",\n      \"ProviderType\": \"GitHub\",\n      \"State\": \"Disassociated\"\n    }\n  ],\n  \"NextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:09:27.000Z",
+              "updatedAt": "2026-07-28T10:09:27.000Z",
+              "uid": "35240-3932dd58-eeec-4b95-9f57-d87638f74515"
+            },
+            {
+              "id": "bcdad412-cf42-437b-b485-7f3477b69819",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/associations?ProviderType=Bitbucket&State=Failed&Name=8kQBjmi&Owner=%23wu {1Pq=%R&MaxResults=<integer>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "associations"
+                  ],
+                  "query": [
+                    {
+                      "description": "List of provider types to use as a filter.",
+                      "key": "ProviderType",
+                      "value": "Bitbucket"
+                    },
+                    {
+                      "description": "<p>List of repository association states to use as a filter.</p> <p>The valid repository association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository association is complete.</p> </li> <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p> <ul> <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note> <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p> </note> </li> <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html\">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li> </ul>",
+                      "key": "State",
+                      "value": "Failed"
+                    },
+                    {
+                      "description": "List of repository names to use as a filter.",
+                      "key": "Name",
+                      "value": "8kQBjmi"
+                    },
+                    {
+                      "description": "List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository. ",
+                      "key": "Owner",
+                      "value": "#wu {1Pq=%R"
+                    },
+                    {
+                      "description": "The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable. ",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "<p>The <code>nextToken</code> value returned from a previous paginated <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>Treat this token as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:27.000Z",
+              "updatedAt": "2026-07-28T10:09:27.000Z",
+              "uid": "35240-bcdad412-cf42-437b-b485-7f3477b69819"
+            },
+            {
+              "id": "be19f92f-38a3-4cfa-af4f-6b1c8c3bd0a3",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/associations?ProviderType=Bitbucket&State=Failed&Name=8kQBjmi&Owner=%23wu {1Pq=%R&MaxResults=<integer>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "associations"
+                  ],
+                  "query": [
+                    {
+                      "description": "List of provider types to use as a filter.",
+                      "key": "ProviderType",
+                      "value": "Bitbucket"
+                    },
+                    {
+                      "description": "<p>List of repository association states to use as a filter.</p> <p>The valid repository association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository association is complete.</p> </li> <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p> <ul> <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note> <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p> </note> </li> <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html\">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li> </ul>",
+                      "key": "State",
+                      "value": "Failed"
+                    },
+                    {
+                      "description": "List of repository names to use as a filter.",
+                      "key": "Name",
+                      "value": "8kQBjmi"
+                    },
+                    {
+                      "description": "List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository. ",
+                      "key": "Owner",
+                      "value": "#wu {1Pq=%R"
+                    },
+                    {
+                      "description": "The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable. ",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "<p>The <code>nextToken</code> value returned from a previous paginated <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>Treat this token as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:27.000Z",
+              "updatedAt": "2026-07-28T10:09:27.000Z",
+              "uid": "35240-be19f92f-38a3-4cfa-af4f-6b1c8c3bd0a3"
+            },
+            {
+              "id": "a0c56ac1-c313-4273-874f-8191ae57dd84",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/associations?ProviderType=Bitbucket&State=Failed&Name=8kQBjmi&Owner=%23wu {1Pq=%R&MaxResults=<integer>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "associations"
+                  ],
+                  "query": [
+                    {
+                      "description": "List of provider types to use as a filter.",
+                      "key": "ProviderType",
+                      "value": "Bitbucket"
+                    },
+                    {
+                      "description": "<p>List of repository association states to use as a filter.</p> <p>The valid repository association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository association is complete.</p> </li> <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p> <ul> <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note> <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p> </note> </li> <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code access.</p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href=\"https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html\">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li> </ul>",
+                      "key": "State",
+                      "value": "Failed"
+                    },
+                    {
+                      "description": "List of repository names to use as a filter.",
+                      "key": "Name",
+                      "value": "8kQBjmi"
+                    },
+                    {
+                      "description": "List of owners to use as a filter. For Amazon Web Services CodeCommit, it is the name of the CodeCommit account that was used to associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server, this is name of the account that was used to associate the repository. ",
+                      "key": "Owner",
+                      "value": "#wu {1Pq=%R"
+                    },
+                    {
+                      "description": "The maximum number of repository association results returned by <code>ListRepositoryAssociations</code> in paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if applicable. ",
+                      "key": "MaxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "<p>The <code>nextToken</code> value returned from a previous paginated <code>ListRepositoryAssociations</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>Treat this token as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:09:27.000Z",
+              "updatedAt": "2026-07-28T10:09:27.000Z",
+              "uid": "35240-a0c56ac1-c313-4273-874f-8191ae57dd84"
+            }
+          ],
+          "createdAt": "2026-07-28T10:09:27.000Z",
+          "updatedAt": "2026-07-28T10:09:27.000Z",
+          "uid": "35240-97cde07e-1fc0-4c55-9368-c0d457e2b595"
+        }
+      ],
+      "id": "d360dbdd-8127-461f-8892-0df13d9ca7cb",
+      "createdAt": "2026-07-28T10:09:27.000Z",
+      "updatedAt": "2026-07-28T10:09:27.000Z",
+      "uid": "35240-d360dbdd-8127-461f-8892-0df13d9ca7cb"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://codeguru-reviewer.{{region}}.amazonaws.com"
+    }
+  ]
+}
