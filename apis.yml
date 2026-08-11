@@ -131,6 +131,10 @@ apis:
   - type: Lifecycle
     url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
 common:
+- type: MCPServer
+  url: mcp/amazon-codeguru-reviewer-mcp.yml
+- type: Overlay
+  url: overlays/amazon-codeguru-reviewer-openapi-overlay.yaml
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-codeguru-reviewer/overview
 - type: AgenticAccess
