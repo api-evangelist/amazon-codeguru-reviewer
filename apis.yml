@@ -1,7 +1,10 @@
 aid: amazon-codeguru-reviewer
 name: Amazon CodeGuru Reviewer
-description: Amazon CodeGuru Reviewer is an automated code review service that uses machine learning and AWS best practices to identify security vulnerabilities, bugs, and hard-to-detect issues in 
-  your Java and Python code. It provides intelligent recommendations to help improve code quality and find defects that may be difficult to detect through manual code reviews.
+description: >-
+  Amazon CodeGuru Reviewer is an automated code review service that uses machine learning and AWS best practices to
+  identify security vulnerabilities, bugs, and hard-to-detect issues in your Java and Python code. It provides
+  intelligent recommendations to help improve code quality and find defects that may be difficult to detect through
+  manual code reviews.
 type: Index
 accessModel:
   pricing: unknown
@@ -12,215 +15,220 @@ accessModel:
   label: Self-serve signup
   confidence: medium
   source:
-  - authentication
+    - authentication
   generated: '2026-07-22'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-codeguru-reviewer.png
 tags:
-- Amazon
-- AWS
-- Code Review
-- Security
-- DevOps
-- Machine Learning
-- Developer Tools
+  - Amazon
+  - AWS
+  - Code Review
+  - Security
+  - DevOps
+  - Machine Learning
+  - Developer Tools
 url: https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/apis.yml
 created: '2026-03-16'
 modified: '2026-06-20'
 specificationVersion: '0.19'
 apis:
-- aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-associations-api
-  name: Amazon CodeGuru Reviewer Associations API
-  description: The Associations API from Amazon CodeGuru Reviewer — 2 operation(s) for associations.
-  humanURL: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
-  baseURL: https://codeguru-reviewer.us-east-1.amazonaws.com
-  tags:
-  - Associations
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codeguru-reviewer-associations-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codegurureviewer/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
-  - type: ErrorCatalog
-    url: errors/amazon-codeguru-reviewer-problem-types.yml
-  - type: Conformance
-    url: conformance/amazon-codeguru-reviewer-conformance.yml
-  - type: Lifecycle
-    url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
-- aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-codereviews-api
-  name: Amazon CodeGuru Reviewer Codereviews API
-  description: The Codereviews API from Amazon CodeGuru Reviewer — 3 operation(s) for codereviews.
-  humanURL: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
-  baseURL: https://codeguru-reviewer.us-east-1.amazonaws.com
-  tags:
-  - Codereviews
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codeguru-reviewer-codereviews-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codegurureviewer/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
-  - type: ErrorCatalog
-    url: errors/amazon-codeguru-reviewer-problem-types.yml
-  - type: Conformance
-    url: conformance/amazon-codeguru-reviewer-conformance.yml
-  - type: Lifecycle
-    url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
-- aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-codereviews-type-api
-  name: Amazon CodeGuru Reviewer Codereviews#Type API
-  description: >-
-    The Codereviews#Type API from Amazon CodeGuru Reviewer — 1 operation(s) for codereviews#type.
-  humanURL: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
-  baseURL: https://codeguru-reviewer.us-east-1.amazonaws.com
-  tags:
-  - Codereviews#Type
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codeguru-reviewer-codereviews-type-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codegurureviewer/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
-  - type: ErrorCatalog
-    url: errors/amazon-codeguru-reviewer-problem-types.yml
-  - type: Conformance
-    url: conformance/amazon-codeguru-reviewer-conformance.yml
-  - type: Lifecycle
-    url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
-- aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-feedback-api
-  name: Amazon CodeGuru Reviewer Feedback API
-  description: The Feedback API from Amazon CodeGuru Reviewer — 3 operation(s) for feedback.
-  humanURL: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
-  baseURL: https://codeguru-reviewer.us-east-1.amazonaws.com
-  tags:
-  - Feedback
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codeguru-reviewer-feedback-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codegurureviewer/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
-  - type: ErrorCatalog
-    url: errors/amazon-codeguru-reviewer-problem-types.yml
-  - type: Conformance
-    url: conformance/amazon-codeguru-reviewer-conformance.yml
-  - type: Lifecycle
-    url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
-- aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-tags-api
-  name: Amazon CodeGuru Reviewer Tags API
-  description: The Tags API from Amazon CodeGuru Reviewer — 2 operation(s) for tags.
-  humanURL: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
-  baseURL: https://codeguru-reviewer.us-east-1.amazonaws.com
-  tags:
-  - Tags
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codeguru-reviewer-tags-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codegurureviewer/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
-  - type: ErrorCatalog
-    url: errors/amazon-codeguru-reviewer-problem-types.yml
-  - type: Conformance
-    url: conformance/amazon-codeguru-reviewer-conformance.yml
-  - type: Lifecycle
-    url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
+  - aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-associations-api
+    name: Amazon CodeGuru Reviewer Associations API
+    description: The Associations API from Amazon CodeGuru Reviewer — 2 operation(s) for associations.
+    humanURL: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+    baseURL: https://codeguru-reviewer.us-east-1.amazonaws.com
+    tags:
+      - Associations
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codeguru-reviewer-associations-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codegurureviewer/
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+      - type: ErrorCatalog
+        url: errors/amazon-codeguru-reviewer-problem-types.yml
+      - type: Conformance
+        url: conformance/amazon-codeguru-reviewer-conformance.yml
+      - type: Lifecycle
+        url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
+  - aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-codereviews-api
+    name: Amazon CodeGuru Reviewer Codereviews API
+    description: The Codereviews API from Amazon CodeGuru Reviewer — 3 operation(s) for codereviews.
+    humanURL: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+    baseURL: https://codeguru-reviewer.us-east-1.amazonaws.com
+    tags:
+      - Codereviews
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codeguru-reviewer-codereviews-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codegurureviewer/
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+      - type: ErrorCatalog
+        url: errors/amazon-codeguru-reviewer-problem-types.yml
+      - type: Conformance
+        url: conformance/amazon-codeguru-reviewer-conformance.yml
+      - type: Lifecycle
+        url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
+  - aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-codereviews-type-api
+    name: Amazon CodeGuru Reviewer Codereviews#Type API
+    description: The Codereviews#Type API from Amazon CodeGuru Reviewer — 1 operation(s) for codereviews#type.
+    humanURL: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+    baseURL: https://codeguru-reviewer.us-east-1.amazonaws.com
+    tags:
+      - Codereviews#Type
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codeguru-reviewer-codereviews-type-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codegurureviewer/
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+      - type: ErrorCatalog
+        url: errors/amazon-codeguru-reviewer-problem-types.yml
+      - type: Conformance
+        url: conformance/amazon-codeguru-reviewer-conformance.yml
+      - type: Lifecycle
+        url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
+  - aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-feedback-api
+    name: Amazon CodeGuru Reviewer Feedback API
+    description: The Feedback API from Amazon CodeGuru Reviewer — 3 operation(s) for feedback.
+    humanURL: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+    baseURL: https://codeguru-reviewer.us-east-1.amazonaws.com
+    tags:
+      - Feedback
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codeguru-reviewer-feedback-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codegurureviewer/
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+      - type: ErrorCatalog
+        url: errors/amazon-codeguru-reviewer-problem-types.yml
+      - type: Conformance
+        url: conformance/amazon-codeguru-reviewer-conformance.yml
+      - type: Lifecycle
+        url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
+  - aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-tags-api
+    name: Amazon CodeGuru Reviewer Tags API
+    description: The Tags API from Amazon CodeGuru Reviewer — 2 operation(s) for tags.
+    humanURL: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+    baseURL: https://codeguru-reviewer.us-east-1.amazonaws.com
+    tags:
+      - Tags
+    properties:
+      - type: OpenAPI
+        url: openapi/amazon-codeguru-reviewer-tags-api-openapi.yml
+      - type: Documentation
+        url: https://docs.aws.amazon.com/codegurureviewer/
+      - type: APIReference
+        url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
+      - type: ErrorCatalog
+        url: errors/amazon-codeguru-reviewer-problem-types.yml
+      - type: Conformance
+        url: conformance/amazon-codeguru-reviewer-conformance.yml
+      - type: Lifecycle
+        url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
 common:
-- type: MCPServer
-  url: mcp/amazon-codeguru-reviewer-mcp.yml
-- type: Overlay
-  url: overlays/amazon-codeguru-reviewer-openapi-overlay.yaml
-- type: PostmanWorkspace
-  url: https://www.postman.com/kinlaneapi/amazon-codeguru-reviewer/overview
-- type: AgenticAccess
-  url: agentic-access/amazon-codeguru-reviewer-agentic-access.yml
-- type: TrustCenter
-  url: security/amazon-codeguru-reviewer-trust-center.yml
-- type: VulnerabilityDisclosure
-  url: security/amazon-codeguru-reviewer-vulnerability-disclosure.yml
-- type: DomainSecurity
-  url: security/amazon-codeguru-reviewer-domain-security.yml
-- type: Authentication
-  url: authentication/amazon-codeguru-reviewer-authentication.yml
-- type: GettingStarted
-  url: https://docs.aws.amazon.com/codeguru/reviewer
-- type: Pricing
-  url: https://aws.amazon.com/codegurureviewer/pricing/
-- type: Console
-  url: https://console.aws.amazon.com/codegurureviewer/
-- type: Portal
-  url: https://aws.amazon.com/codegurureviewer/
-- type: Documentation
-  url: https://docs.aws.amazon.com/codegurureviewer/
-- type: TermsOfService
-  url: https://aws.amazon.com/service-terms/
-- type: PrivacyPolicy
-  url: https://aws.amazon.com/privacy/
-- type: StatusPage
-  url: https://health.aws.amazon.com/health/status
-- type: Blog
-  url: https://aws.amazon.com/blogs/devops/
-- type: SignUp
-  url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html
-- type: GitHubOrganization
-  url: https://github.com/aws
-- type: SpectralRules
-  url: rules/amazon-codeguru-reviewer-spectral-rules.yml
-- type: Vocabulary
-  url: vocabulary/amazon-codeguru-reviewer-vocabulary.yaml
-- type: NaftikoCapability
-  url: capabilities/amazon-codeguru-reviewer-code-review.yaml
-- type: JSONLD
-  url: json-ld/amazon-codeguru-reviewer-context.jsonld
-- type: Packages
-  url: packages/amazon-codeguru-reviewer-packages.yml
-- type: WellKnown
-  url: well-known/amazon-codeguru-reviewer-well-known.yml
-- type: SecurityTxt
-  url: well-known/amazon-codeguru-reviewer-security.txt
-- type: LLMsTxt
-  url: llms/amazon-codeguru-reviewer-llms.txt
-- type: Blog
-  url: https://aws.amazon.com/blogs/devops/tag/amazon-codeguru-reviewer/feed/
-- type: Features
-  data:
-  - name: Automated Code Review
-    description: Automatically analyze code changes in pull requests and provide recommendations for bugs, security vulnerabilities, and code quality issues.
-  - name: Security Analysis
-    description: Detect security vulnerabilities including OWASP Top 10, input validation issues, encryption problems, and AWS API security best practices.
-  - name: Java and Python Support
-    description: Analyze Java and Python code with language-specific recommendations based on AWS best practices.
-  - name: Repository Association
-    description: Connect CodeGuru Reviewer to GitHub, GitHub Enterprise, Bitbucket, CodeCommit, and S3 repositories.
-  - name: Pull Request Integration
-    description: Automatically trigger code reviews on new pull requests and post recommendations as inline comments.
-- type: UseCases
-  data:
-  - name: Security Vulnerability Detection
-    description: Automatically detect security issues in code changes before they reach production, reducing security review burden on developers.
-  - name: Automated Code Quality Enforcement
-    description: Enforce code quality standards across the organization with consistent, automated review feedback on every pull request.
-  - name: Developer Productivity
-    description: Help developers identify and fix common coding errors and anti-patterns earlier in the development cycle.
-- type: Integrations
-  data:
-  - name: GitHub
-    description: Associate GitHub repositories for automated code reviews on pull requests.
-  - name: GitHub Enterprise
-    description: Connect self-hosted GitHub Enterprise repositories for automated code review.
-  - name: Bitbucket
-    description: Integrate with Bitbucket repositories for pull request code reviews.
-  - name: AWS CodeCommit
-    description: Analyze CodeCommit repositories and pull requests natively.
-  - name: Amazon S3
-    description: Associate S3 buckets for one-time code analysis.
-  - name: Amazon CodeGuru Profiler
-    description: Combine code review recommendations with profiling insights for comprehensive code quality.
+  - type: MCPServer
+    url: mcp/amazon-codeguru-reviewer-mcp.yml
+  - type: Overlay
+    url: overlays/amazon-codeguru-reviewer-openapi-overlay.yaml
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/amazon-codeguru-reviewer/overview
+  - type: AgenticAccess
+    url: agentic-access/amazon-codeguru-reviewer-agentic-access.yml
+  - type: TrustCenter
+    url: security/amazon-codeguru-reviewer-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-codeguru-reviewer-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-codeguru-reviewer-domain-security.yml
+  - type: Authentication
+    url: authentication/amazon-codeguru-reviewer-authentication.yml
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/codeguru/reviewer
+  - type: Pricing
+    url: https://aws.amazon.com/codegurureviewer/pricing/
+  - type: Console
+    url: https://console.aws.amazon.com/codegurureviewer/
+  - type: Portal
+    url: https://aws.amazon.com/codegurureviewer/
+  - type: Documentation
+    url: https://docs.aws.amazon.com/codegurureviewer/
+  - type: TermsOfService
+    url: https://aws.amazon.com/service-terms/
+  - type: PrivacyPolicy
+    url: https://aws.amazon.com/privacy/
+  - type: StatusPage
+    url: https://health.aws.amazon.com/health/status
+  - type: Blog
+    url: https://aws.amazon.com/blogs/devops/
+  - type: SignUp
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html
+  - type: GitHubOrganization
+    url: https://github.com/aws
+  - type: SpectralRules
+    url: rules/amazon-codeguru-reviewer-spectral-rules.yml
+  - type: Vocabulary
+    url: vocabulary/amazon-codeguru-reviewer-vocabulary.yaml
+  - type: JSONLD
+    url: json-ld/amazon-codeguru-reviewer-context.jsonld
+  - type: Packages
+    url: packages/amazon-codeguru-reviewer-packages.yml
+  - type: WellKnown
+    url: well-known/amazon-codeguru-reviewer-well-known.yml
+  - type: SecurityTxt
+    url: well-known/amazon-codeguru-reviewer-security.txt
+  - type: LLMsTxt
+    url: llms/amazon-codeguru-reviewer-llms.txt
+  - type: Blog
+    url: https://aws.amazon.com/blogs/devops/tag/amazon-codeguru-reviewer/feed/
+  - type: Features
+    data:
+      - name: Automated Code Review
+        description: >-
+          Automatically analyze code changes in pull requests and provide recommendations for bugs, security
+          vulnerabilities, and code quality issues.
+      - name: Security Analysis
+        description: >-
+          Detect security vulnerabilities including OWASP Top 10, input validation issues, encryption problems, and AWS
+          API security best practices.
+      - name: Java and Python Support
+        description: Analyze Java and Python code with language-specific recommendations based on AWS best practices.
+      - name: Repository Association
+        description: Connect CodeGuru Reviewer to GitHub, GitHub Enterprise, Bitbucket, CodeCommit, and S3 repositories.
+      - name: Pull Request Integration
+        description: Automatically trigger code reviews on new pull requests and post recommendations as inline comments.
+  - type: UseCases
+    data:
+      - name: Security Vulnerability Detection
+        description: >-
+          Automatically detect security issues in code changes before they reach production, reducing security review
+          burden on developers.
+      - name: Automated Code Quality Enforcement
+        description: >-
+          Enforce code quality standards across the organization with consistent, automated review feedback on every
+          pull request.
+      - name: Developer Productivity
+        description: Help developers identify and fix common coding errors and anti-patterns earlier in the development cycle.
+  - type: Integrations
+    data:
+      - name: GitHub
+        description: Associate GitHub repositories for automated code reviews on pull requests.
+      - name: GitHub Enterprise
+        description: Connect self-hosted GitHub Enterprise repositories for automated code review.
+      - name: Bitbucket
+        description: Integrate with Bitbucket repositories for pull request code reviews.
+      - name: AWS CodeCommit
+        description: Analyze CodeCommit repositories and pull requests natively.
+      - name: Amazon S3
+        description: Associate S3 buckets for one-time code analysis.
+      - name: Amazon CodeGuru Profiler
+        description: Combine code review recommendations with profiling insights for comprehensive code quality.
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
