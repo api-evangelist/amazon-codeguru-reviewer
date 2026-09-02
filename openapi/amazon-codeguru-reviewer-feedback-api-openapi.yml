@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: Amazon CodeGuru Reviewer Associations Feedback API
   description: <p>This section provides documentation for the Amazon CodeGuru Reviewer API operations. CodeGuru Reviewer is a service that uses program analysis and machine learning to detect potential defects that are difficult for developers to find and recommends fixes in your Java and Python code.</p> <p>By proactively detecting and providing recommendations for addressing code defects and implementing best practices, CodeGuru Reviewer improves the overall quality and maintainability of your code base during the code review stage. For more information about CodeGuru Reviewer, see the <i> <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html">Amazon CodeGuru Reviewer User Guide</a>.</i> </p> <p>To improve the security of your CodeGuru Reviewer API calls, you can establish a private connection between your VPC and CodeGuru Reviewer by creating an <i>interface VPC endpoint</i>. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/vpc-interface-endpoints.html">CodeGuru Reviewer and interface VPC endpoints (Amazon Web Services PrivateLink)</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
@@ -485,12 +485,69 @@ paths:
       - Feedback
 components:
   schemas:
+    ValidationException: {}
+    TimeStamp:
+      type: string
+      format: date-time
+    Reactions:
+      type: array
+      items:
+        $ref: '#/components/schemas/Reaction'
+      minItems: 0
+      maxItems: 1
+    Arn:
+      type: string
+      pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+      minLength: 1
+      maxLength: 1600
+    DescribeRecommendationFeedbackResponse:
+      type: object
+      properties:
+        RecommendationFeedback:
+          allOf:
+          - $ref: '#/components/schemas/RecommendationFeedback'
+          - description: The recommendation feedback given by the user.
+    ListRecommendationFeedbackResponse:
+      type: object
+      properties:
+        RecommendationFeedbackSummaries:
+          allOf:
+          - $ref: '#/components/schemas/RecommendationFeedbackSummaries'
+          - description: Recommendation feedback summaries corresponding to the code review ARN.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
+    PutRecommendationFeedbackResponse:
+      type: object
+      properties: {}
+    RecommendationId:
+      type: string
+      minLength: 1
+      maxLength: 64
+    InternalServerException: {}
     UserId:
       type: string
       minLength: 1
       maxLength: 256
-    ValidationException: {}
-    ResourceNotFoundException: {}
+    ThrottlingException: {}
+    AccessDeniedException: {}
+    RecommendationFeedbackSummary:
+      type: object
+      properties:
+        RecommendationId:
+          allOf:
+          - $ref: '#/components/schemas/RecommendationId'
+          - description: The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
+        Reactions:
+          allOf:
+          - $ref: '#/components/schemas/Reactions'
+          - description: List for storing reactions. Reactions are utf-8 text code for emojis.
+        UserId:
+          allOf:
+          - $ref: '#/components/schemas/UserId'
+          - description: <p>The ID of the user that gave the feedback.</p> <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+      description: Information about recommendation feedback summaries.
     RecommendationFeedback:
       type: object
       properties:
@@ -519,86 +576,23 @@ components:
           - $ref: '#/components/schemas/TimeStamp'
           - description: The time at which the feedback was last updated.
       description: Information about the recommendation feedback.
+    ResourceNotFoundException: {}
+    RecommendationFeedbackSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/RecommendationFeedbackSummary'
+    NextToken:
+      type: string
+      minLength: 1
+      maxLength: 2048
     Reaction:
       type: string
       enum:
       - ThumbsUp
       - ThumbsDown
-    ListRecommendationFeedbackResponse:
-      type: object
-      properties:
-        RecommendationFeedbackSummaries:
-          allOf:
-          - $ref: '#/components/schemas/RecommendationFeedbackSummaries'
-          - description: Recommendation feedback summaries corresponding to the code review ARN.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
-    NextToken:
-      type: string
-      minLength: 1
-      maxLength: 2048
-    TimeStamp:
-      type: string
-      format: date-time
-    PutRecommendationFeedbackResponse:
-      type: object
-      properties: {}
-    Arn:
-      type: string
-      pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
-      minLength: 1
-      maxLength: 1600
-    ThrottlingException: {}
-    RecommendationId:
-      type: string
-      minLength: 1
-      maxLength: 64
-    AccessDeniedException: {}
-    InternalServerException: {}
-    RecommendationFeedbackSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/RecommendationFeedbackSummary'
-    DescribeRecommendationFeedbackResponse:
-      type: object
-      properties:
-        RecommendationFeedback:
-          allOf:
-          - $ref: '#/components/schemas/RecommendationFeedback'
-          - description: The recommendation feedback given by the user.
-    Reactions:
-      type: array
-      items:
-        $ref: '#/components/schemas/Reaction'
-      minItems: 0
-      maxItems: 1
-    RecommendationFeedbackSummary:
-      type: object
-      properties:
-        RecommendationId:
-          allOf:
-          - $ref: '#/components/schemas/RecommendationId'
-          - description: The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
-        Reactions:
-          allOf:
-          - $ref: '#/components/schemas/Reactions'
-          - description: List for storing reactions. Reactions are utf-8 text code for emojis.
-        UserId:
-          allOf:
-          - $ref: '#/components/schemas/UserId'
-          - description: <p>The ID of the user that gave the feedback.</p> <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
-      description: Information about recommendation feedback summaries.
   parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -609,8 +603,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -621,14 +627,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

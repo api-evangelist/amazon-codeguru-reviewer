@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: Amazon CodeGuru Reviewer Associations API
   description: <p>This section provides documentation for the Amazon CodeGuru Reviewer API operations. CodeGuru Reviewer is a service that uses program analysis and machine learning to detect potential defects that are difficult for developers to find and recommends fixes in your Java and Python code.</p> <p>By proactively detecting and providing recommendations for addressing code defects and implementing best practices, CodeGuru Reviewer improves the overall quality and maintainability of your code base during the code review stage. For more information about CodeGuru Reviewer, see the <i> <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html">Amazon CodeGuru Reviewer User Guide</a>.</i> </p> <p>To improve the security of your CodeGuru Reviewer API calls, you can establish a private connection between your VPC and CodeGuru Reviewer by creating an <i>interface VPC endpoint</i>. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/vpc-interface-endpoints.html">CodeGuru Reviewer and interface VPC endpoints (Amazon Web Services PrivateLink)</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p>
@@ -582,37 +582,15 @@ paths:
       - Associations
 components:
   schemas:
-    ConflictException: {}
-    ProviderType:
+    ConnectionArn:
       type: string
-      enum:
-      - CodeCommit
-      - GitHub
-      - Bitbucket
-      - GitHubEnterpriseServer
-      - S3Bucket
-    ListRepositoryAssociationsResponse:
-      type: object
-      properties:
-        RepositoryAssociationSummaries:
-          allOf:
-          - $ref: '#/components/schemas/RepositoryAssociationSummaries'
-          - description: A list of repository associations that meet the criteria of the request.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: 'The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. '
-    CodeCommitRepository:
-      type: object
-      required:
-      - Name
-      properties:
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: The name of the Amazon Web Services CodeCommit repository. For more information, see <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a> in the <i>Amazon Web Services CodeCommit API Reference</i>.
-      description: Information about an Amazon Web Services CodeCommit repository. The CodeCommit repository must be in the same Amazon Web Services Region and Amazon Web Services account where its CodeGuru Reviewer code reviews are configured.
+      pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
+      minLength: 0
+      maxLength: 256
     ValidationException: {}
+    TimeStamp:
+      type: string
+      format: date-time
     DisassociateRepositoryResponse:
       type: object
       properties:
@@ -624,197 +602,67 @@ components:
           allOf:
           - $ref: '#/components/schemas/TagMap'
           - description: <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> </ul>
-    ConnectionArn:
-      type: string
-      pattern: arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+
-      minLength: 0
-      maxLength: 256
-    BuildArtifactsObjectKey:
-      type: string
-      pattern: ^\S(.*\S)?$
-      minLength: 1
-      maxLength: 1024
-    Name:
-      type: string
-      pattern: ^\S[\w.-]*$
-      minLength: 1
-      maxLength: 100
     Owner:
       type: string
       pattern: ^\S(.*\S)?$
       minLength: 1
       maxLength: 100
-    StateReason:
-      type: string
-      minLength: 0
-      maxLength: 256
-    RepositoryAssociationState:
-      type: string
-      enum:
-      - Associated
-      - Associating
-      - Failed
-      - Disassociating
-      - Disassociated
-    KMSKeyDetails:
+    ThirdPartySourceRepository:
       type: object
+      required:
+      - Name
+      - ConnectionArn
+      - Owner
       properties:
-        KMSKeyId:
+        Name:
           allOf:
-          - $ref: '#/components/schemas/KMSKeyId'
-          - description: The ID of the Amazon Web Services KMS key that is associated with a repository association.
-        EncryptionOption:
+          - $ref: '#/components/schemas/Name'
+          - description: The name of the third party source repository.
+        ConnectionArn:
           allOf:
-          - $ref: '#/components/schemas/EncryptionOption'
-          - description: The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
-      description: <p>An object that contains:</p> <ul> <li> <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> <li> <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p> </li> </ul>
-    S3RepositoryDetails:
-      type: object
-      properties:
-        BucketName:
+          - $ref: '#/components/schemas/ConnectionArn'
+          - description: The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
+        Owner:
           allOf:
-          - $ref: '#/components/schemas/S3BucketName'
-          - description: 'The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. '
-        CodeArtifacts:
-          allOf:
-          - $ref: '#/components/schemas/CodeArtifacts'
-          - description: A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
-      description: Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
-    AssociateRepositoryResponse:
-      type: object
-      properties:
-        RepositoryAssociation:
-          allOf:
-          - $ref: '#/components/schemas/RepositoryAssociation'
-          - description: Information about the repository association.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/TagMap'
-          - description: <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> </ul>
-    KMSKeyId:
-      type: string
-      pattern: '[a-zA-Z0-9-]+'
-      minLength: 1
-      maxLength: 2048
-    EncryptionOption:
-      type: string
-      enum:
-      - AWS_OWNED_CMK
-      - CUSTOMER_MANAGED_CMK
-    S3BucketName:
-      type: string
-      pattern: ^\S(.*\S)?$
-      minLength: 3
-      maxLength: 63
-    NotFoundException: {}
-    RepositoryAssociationSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/RepositoryAssociationSummary'
-    AssociationId:
-      type: string
-      minLength: 1
-      maxLength: 64
-    NextToken:
-      type: string
-      minLength: 1
-      maxLength: 2048
-    TimeStamp:
-      type: string
-      format: date-time
+          - $ref: '#/components/schemas/Owner'
+          - description: 'The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services account ID '
+      description: Information about a third-party source repository connected to CodeGuru Reviewer.
     SourceCodeArtifactsObjectKey:
       type: string
       pattern: ^\S(.*\S)?$
       minLength: 1
       maxLength: 1024
+    ListRepositoryAssociationsResponse:
+      type: object
+      properties:
+        RepositoryAssociationSummaries:
+          allOf:
+          - $ref: '#/components/schemas/RepositoryAssociationSummaries'
+          - description: A list of repository associations that meet the criteria of the request.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: 'The <code>nextToken</code> value to include in a future <code>ListRecommendations</code> request. When the results of a <code>ListRecommendations</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. '
     Arn:
       type: string
       pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
       minLength: 1
       maxLength: 1600
-    RepositoryAssociationSummary:
-      type: object
-      properties:
-        AssociationArn:
-          allOf:
-          - $ref: '#/components/schemas/Arn'
-          - description: The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.
-        ConnectionArn:
-          allOf:
-          - $ref: '#/components/schemas/ConnectionArn'
-          - description: The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
-        LastUpdatedTimeStamp:
-          allOf:
-          - $ref: '#/components/schemas/TimeStamp'
-          - description: The time, in milliseconds since the epoch, since the repository association was last updated.
-        AssociationId:
-          allOf:
-          - $ref: '#/components/schemas/AssociationId'
-          - description: The repository association ID.
-        Name:
-          allOf:
-          - $ref: '#/components/schemas/Name'
-          - description: The name of the repository association.
-        Owner:
-          allOf:
-          - $ref: '#/components/schemas/Owner'
-          - description: The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.
-        ProviderType:
-          allOf:
-          - $ref: '#/components/schemas/ProviderType'
-          - description: The provider type of the repository association.
-        State:
-          allOf:
-          - $ref: '#/components/schemas/RepositoryAssociationState'
-          - description: '<p>The state of the repository association.</p> <p>The valid repository association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository association is complete.</p> </li> <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p> <ul> <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note> <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p> </note> </li> <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository''s pull request notifications and source code access.</p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li> </ul>'
-      description: Summary information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a> operation returns a list of <code>RepositoryAssociationSummary</code> objects.
-    ThrottlingException: {}
-    CodeArtifacts:
-      type: object
-      required:
-      - SourceCodeArtifactsObjectKey
-      properties:
-        SourceCodeArtifactsObjectKey:
-          allOf:
-          - $ref: '#/components/schemas/SourceCodeArtifactsObjectKey'
-          - description: The S3 object key for a source code .zip file. This is required for all code reviews.
-        BuildArtifactsObjectKey:
-          allOf:
-          - $ref: '#/components/schemas/BuildArtifactsObjectKey'
-          - description: The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
-      description: <p>Code artifacts are source code artifacts and build artifacts used in a repository analysis or a pull request review.</p> <ul> <li> <p>Source code artifacts are source code files in a Git repository that are compressed into a .zip file.</p> </li> <li> <p>Build artifacts are .jar or .class files that are compressed in a .zip file.</p> </li> </ul>
-    S3Repository:
+    CodeCommitRepository:
       type: object
       required:
       - Name
-      - BucketName
       properties:
         Name:
           allOf:
           - $ref: '#/components/schemas/Name'
-          - description: The name of the repository in the S3 bucket.
-        BucketName:
-          allOf:
-          - $ref: '#/components/schemas/S3BucketName'
-          - description: 'The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. '
-      description: Information about a repository in an S3 bucket.
-    TagMap:
-      type: object
-      minProperties: 1
-      maxProperties: 50
-      additionalProperties:
-        $ref: '#/components/schemas/TagValue'
-    DescribeRepositoryAssociationResponse:
-      type: object
-      properties:
-        RepositoryAssociation:
-          allOf:
-          - $ref: '#/components/schemas/RepositoryAssociation'
-          - description: Information about the repository association.
-        Tags:
-          allOf:
-          - $ref: '#/components/schemas/TagMap'
-          - description: <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> </ul>
+          - description: The name of the Amazon Web Services CodeCommit repository. For more information, see <a href="https://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html#CodeCommit-GetRepository-request-repositoryName">repositoryName</a> in the <i>Amazon Web Services CodeCommit API Reference</i>.
+      description: Information about an Amazon Web Services CodeCommit repository. The CodeCommit repository must be in the same Amazon Web Services Region and Amazon Web Services account where its CodeGuru Reviewer code reviews are configured.
+    S3BucketName:
+      type: string
+      pattern: ^\S(.*\S)?$
+      minLength: 3
+      maxLength: 63
     RepositoryAssociation:
       type: object
       properties:
@@ -865,40 +713,186 @@ components:
         S3RepositoryDetails:
           $ref: '#/components/schemas/S3RepositoryDetails'
       description: Information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html">DescribeRepositoryAssociation</a> operation returns a <code>RepositoryAssociation</code> object.
-    AccessDeniedException: {}
-    TagValue:
+    StateReason:
       type: string
+      minLength: 0
       maxLength: 256
     InternalServerException: {}
-    ThirdPartySourceRepository:
+    ConflictException: {}
+    KMSKeyDetails:
+      type: object
+      properties:
+        KMSKeyId:
+          allOf:
+          - $ref: '#/components/schemas/KMSKeyId'
+          - description: The ID of the Amazon Web Services KMS key that is associated with a repository association.
+        EncryptionOption:
+          allOf:
+          - $ref: '#/components/schemas/EncryptionOption'
+          - description: The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+      description: <p>An object that contains:</p> <ul> <li> <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p> </li> <li> <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p> </li> </ul>
+    KMSKeyId:
+      type: string
+      pattern: '[a-zA-Z0-9-]+'
+      minLength: 1
+      maxLength: 2048
+    ProviderType:
+      type: string
+      enum:
+      - CodeCommit
+      - GitHub
+      - Bitbucket
+      - GitHubEnterpriseServer
+      - S3Bucket
+    ThrottlingException: {}
+    AccessDeniedException: {}
+    TagMap:
+      type: object
+      minProperties: 1
+      maxProperties: 50
+      additionalProperties:
+        $ref: '#/components/schemas/TagValue'
+    S3RepositoryDetails:
+      type: object
+      properties:
+        BucketName:
+          allOf:
+          - $ref: '#/components/schemas/S3BucketName'
+          - description: 'The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. '
+        CodeArtifacts:
+          allOf:
+          - $ref: '#/components/schemas/CodeArtifacts'
+          - description: A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
+      description: Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
+    RepositoryAssociationSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/RepositoryAssociationSummary'
+    EncryptionOption:
+      type: string
+      enum:
+      - AWS_OWNED_CMK
+      - CUSTOMER_MANAGED_CMK
+    DescribeRepositoryAssociationResponse:
+      type: object
+      properties:
+        RepositoryAssociation:
+          allOf:
+          - $ref: '#/components/schemas/RepositoryAssociation'
+          - description: Information about the repository association.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> </ul>
+    RepositoryAssociationState:
+      type: string
+      enum:
+      - Associated
+      - Associating
+      - Failed
+      - Disassociating
+      - Disassociated
+    AssociateRepositoryResponse:
+      type: object
+      properties:
+        RepositoryAssociation:
+          allOf:
+          - $ref: '#/components/schemas/RepositoryAssociation'
+          - description: Information about the repository association.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> </ul>
+    AssociationId:
+      type: string
+      minLength: 1
+      maxLength: 64
+    NotFoundException: {}
+    S3Repository:
       type: object
       required:
       - Name
-      - ConnectionArn
-      - Owner
+      - BucketName
       properties:
         Name:
           allOf:
           - $ref: '#/components/schemas/Name'
-          - description: The name of the third party source repository.
+          - description: The name of the repository in the S3 bucket.
+        BucketName:
+          allOf:
+          - $ref: '#/components/schemas/S3BucketName'
+          - description: 'The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. '
+      description: Information about a repository in an S3 bucket.
+    CodeArtifacts:
+      type: object
+      required:
+      - SourceCodeArtifactsObjectKey
+      properties:
+        SourceCodeArtifactsObjectKey:
+          allOf:
+          - $ref: '#/components/schemas/SourceCodeArtifactsObjectKey'
+          - description: The S3 object key for a source code .zip file. This is required for all code reviews.
+        BuildArtifactsObjectKey:
+          allOf:
+          - $ref: '#/components/schemas/BuildArtifactsObjectKey'
+          - description: The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+      description: <p>Code artifacts are source code artifacts and build artifacts used in a repository analysis or a pull request review.</p> <ul> <li> <p>Source code artifacts are source code files in a Git repository that are compressed into a .zip file.</p> </li> <li> <p>Build artifacts are .jar or .class files that are compressed in a .zip file.</p> </li> </ul>
+    Name:
+      type: string
+      pattern: ^\S[\w.-]*$
+      minLength: 1
+      maxLength: 100
+    BuildArtifactsObjectKey:
+      type: string
+      pattern: ^\S(.*\S)?$
+      minLength: 1
+      maxLength: 1024
+    NextToken:
+      type: string
+      minLength: 1
+      maxLength: 2048
+    RepositoryAssociationSummary:
+      type: object
+      properties:
+        AssociationArn:
+          allOf:
+          - $ref: '#/components/schemas/Arn'
+          - description: The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object. You can retrieve this ARN by calling <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.
         ConnectionArn:
           allOf:
           - $ref: '#/components/schemas/ConnectionArn'
           - description: The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection. Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
+        LastUpdatedTimeStamp:
+          allOf:
+          - $ref: '#/components/schemas/TimeStamp'
+          - description: The time, in milliseconds since the epoch, since the repository association was last updated.
+        AssociationId:
+          allOf:
+          - $ref: '#/components/schemas/AssociationId'
+          - description: The repository association ID.
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/Name'
+          - description: The name of the repository association.
         Owner:
           allOf:
           - $ref: '#/components/schemas/Owner'
-          - description: 'The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, this can be the username or Amazon Web Services account ID '
-      description: Information about a third-party source repository connected to CodeGuru Reviewer.
+          - description: The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.
+        ProviderType:
+          allOf:
+          - $ref: '#/components/schemas/ProviderType'
+          - description: The provider type of the repository association.
+        State:
+          allOf:
+          - $ref: '#/components/schemas/RepositoryAssociationState'
+          - description: '<p>The state of the repository association.</p> <p>The valid repository association states are:</p> <ul> <li> <p> <b>Associated</b>: The repository association is complete.</p> </li> <li> <p> <b>Associating</b>: CodeGuru Reviewer is:</p> <ul> <li> <p>Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.</p> <note> <p>If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.</p> </note> </li> <li> <p>Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.</p> </li> </ul> </li> <li> <p> <b>Failed</b>: The repository failed to associate or disassociate.</p> </li> <li> <p> <b>Disassociating</b>: CodeGuru Reviewer is removing the repository''s pull request notifications and source code access.</p> </li> <li> <p> <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new association with this repository if you want to review source code in it later. You can control access to code reviews created in anassociated repository with tags after it has been disassociated. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.</p> </li> </ul>'
+      description: Summary information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a> operation returns a list of <code>RepositoryAssociationSummary</code> objects.
+    TagValue:
+      type: string
+      maxLength: 256
   parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -909,26 +903,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
