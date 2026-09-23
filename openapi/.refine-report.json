@@ -1,11 +1,7 @@
 {
   "provider": "amazon-codeguru-reviewer",
   "sources": [
-    "amazon-codeguru-reviewer-associations-api-openapi.yml",
-    "amazon-codeguru-reviewer-codereviews-api-openapi.yml",
-    "amazon-codeguru-reviewer-codereviews-type-api-openapi.yml",
-    "amazon-codeguru-reviewer-feedback-api-openapi.yml",
-    "amazon-codeguru-reviewer-tags-api-openapi.yml"
+    "_original/amazon-codeguru-reviewer-openapi-original.yaml"
   ],
   "outputs": [
     "amazon-codeguru-reviewer-associations-api-openapi.yml",
@@ -18,7 +14,34 @@
   "errors": [],
   "warnings": [],
   "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "amazon-codeguru-reviewer-openapi-original.yaml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths POST /associations -> Associations",
+    "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths GET /associations -> Associations",
+    "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths POST /codereviews -> Codereviews",
+    "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths GET /codereviews/{CodeReviewArn} -> Codereviews",
+    "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths GET /feedback/{CodeReviewArn}#RecommendationId -> Feedback",
+    "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths GET /associations/{AssociationArn} -> Associations",
+    "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths DELETE /associations/{AssociationArn} -> Associations",
+    "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths GET /codereviews#Type -> Codereviews#Type",
+    "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths GET /feedback/{CodeReviewArn}/RecommendationFeedback -> Feedback",
+    "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths GET /codereviews/{CodeReviewArn}/Recommendations -> Codereviews",
+    "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths GET /tags/{resourceArn} -> Tags",
+    "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths POST /tags/{resourceArn} -> Tags",
+    "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths PUT /feedback -> Feedback",
+    "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths DELETE /tags/{resourceArn}#tagKeys -> Tags",
+    "amazon-codeguru-reviewer-openapi-original.yaml: declared missing tag: Associations",
+    "amazon-codeguru-reviewer-openapi-original.yaml: declared missing tag: Codereviews",
+    "amazon-codeguru-reviewer-openapi-original.yaml: declared missing tag: Codereviews#Type",
+    "amazon-codeguru-reviewer-openapi-original.yaml: declared missing tag: Feedback",
+    "amazon-codeguru-reviewer-openapi-original.yaml: declared missing tag: Tags",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "amazon-codeguru-reviewer-associations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-codeguru-reviewer-codereviews-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-codeguru-reviewer-codereviews-type-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-codeguru-reviewer-feedback-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-codeguru-reviewer-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
