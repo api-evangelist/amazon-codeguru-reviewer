@@ -366,17 +366,15 @@ components:
       maxProperties: 50
       additionalProperties:
         $ref: '#/components/schemas/TagValue'
-    TagKey:
-      type: string
-      minLength: 1
-      maxLength: 128
-    TagResourceResponse:
-      type: object
-      properties: {}
     UntagResourceResponse:
       type: object
       properties: {}
     ResourceNotFoundException: {}
+    ValidationException: {}
+    TagKey:
+      type: string
+      minLength: 1
+      maxLength: 128
     TagValue:
       type: string
       maxLength: 256
@@ -387,11 +385,19 @@ components:
           allOf:
           - $ref: '#/components/schemas/TagMap'
           - description: <p>An array of key-value pairs used to tag an associated repository. A tag is a custom attribute label with two parts:</p> <ul> <li> <p>A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>, <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.</p> </li> <li> <p>An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>, <code>Production</code>, or a team name). Omitting the tag value is the same as using an empty string. Like tag keys, tag values are case sensitive.</p> </li> </ul>
+    TagResourceResponse:
+      type: object
+      properties: {}
     InternalServerException: {}
-    ValidationException: {}
   parameters:
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -408,20 +414,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

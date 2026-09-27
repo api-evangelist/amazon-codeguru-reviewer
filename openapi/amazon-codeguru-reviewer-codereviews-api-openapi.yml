@@ -369,6 +369,138 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Codereviews
+  /codereviews#Type:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    get:
+      operationId: ListCodeReviews
+      description: Lists all the code reviews that the customer has created in the past 90 days.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCodeReviewsResponse'
+              examples:
+                ListCodeReviews200Example:
+                  summary: Default ListCodeReviews 200 response
+                  x-microcks-default: true
+                  value:
+                    CodeReviewSummaries: example-value
+                    NextToken: example-value
+        '480':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+              examples:
+                ListCodeReviews480Example:
+                  summary: Default ListCodeReviews 480 response
+                  x-microcks-default: true
+                  value: example-value
+        '481':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+              examples:
+                ListCodeReviews481Example:
+                  summary: Default ListCodeReviews 481 response
+                  x-microcks-default: true
+                  value: example-value
+        '482':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+              examples:
+                ListCodeReviews482Example:
+                  summary: Default ListCodeReviews 482 response
+                  x-microcks-default: true
+                  value: example-value
+        '483':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+              examples:
+                ListCodeReviews483Example:
+                  summary: Default ListCodeReviews 483 response
+                  x-microcks-default: true
+                  value: example-value
+      parameters:
+      - name: ProviderTypes
+        in: query
+        required: false
+        description: List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProviderType'
+          minItems: 1
+          maxItems: 3
+      - name: States
+        in: query
+        required: false
+        description: '<p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p> <p>The valid code review states are:</p> <ul> <li> <p> <code>Completed</code>: The code review is complete.</p> </li> <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> <li> <p> <code>Failed</code>: The code review failed.</p> </li> <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> </ul>'
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/JobState'
+          minItems: 1
+          maxItems: 3
+      - name: RepositoryNames
+        in: query
+        required: false
+        description: List of repository names for filtering that needs to be applied before displaying the result.
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/Name'
+          minItems: 1
+          maxItems: 100
+      - name: Type
+        in: query
+        required: true
+        description: The type of code reviews to list in the response.
+        schema:
+          type: string
+          enum:
+          - PullRequest
+          - RepositoryAnalysis
+      - name: MaxResults
+        in: query
+        required: false
+        description: The maximum number of results that are returned per call. The default is 100.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 100
+      - name: NextToken
+        in: query
+        required: false
+        description: If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
+        schema:
+          type: string
+          minLength: 1
+          maxLength: 2048
+      summary: Amazon CodeGuru Reviewer List Code Reviews
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Codereviews
   /codereviews/{CodeReviewArn}/Recommendations:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -484,79 +616,16 @@ paths:
       - Codereviews
 components:
   schemas:
-    AnalysisType:
-      type: string
-      enum:
-      - Security
-      - CodeQuality
-    BranchName:
-      type: string
-      minLength: 1
-      maxLength: 256
-    LineNumber:
-      type: integer
-    VendorName:
-      type: string
-      enum:
-      - GitHub
-      - GitLab
-      - NativeS3
-    ResourceNotFoundException: {}
-    ShortDescription:
-      type: string
-      pattern: ^\S(.*\S)?$
-      minLength: 1
-      maxLength: 200
-    FilePath:
-      type: string
-      minLength: 1
-      maxLength: 1024
-    Metrics:
+    RepositoryAnalysis:
       type: object
       properties:
-        MeteredLinesOfCodeCount:
-          allOf:
-          - $ref: '#/components/schemas/LinesOfCodeCount'
-          - description: ' <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines.'
-        SuppressedLinesOfCodeCount:
-          allOf:
-          - $ref: '#/components/schemas/LinesOfCodeCount'
-          - description: ' <code>SuppressedLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened that CodeGuru Reviewer did not analyze. The lines suppressed in the analysis is based on the <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code> file. This number does not include non-code lines such as comments and blank lines. '
-        FindingsCount:
-          allOf:
-          - $ref: '#/components/schemas/FindingsCount'
-          - description: Total number of recommendations found in the code review.
-      description: Information about the statistics from the code review.
-    RecommendationSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/RecommendationSummary'
-    SourceCodeType:
-      type: object
-      properties:
-        CommitDiff:
-          allOf:
-          - $ref: '#/components/schemas/CommitDiffSourceCodeType'
-          - description: A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a commit diff created by a pull request on an associated repository.
         RepositoryHead:
-          $ref: '#/components/schemas/RepositoryHeadSourceCodeType'
-        BranchDiff:
           allOf:
-          - $ref: '#/components/schemas/BranchDiffSourceCodeType'
-          - description: A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a source branch name and a destination branch name in an associated repository.
-        S3BucketRepository:
-          allOf:
-          - $ref: '#/components/schemas/S3BucketRepository'
-          - description: Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for <code>S3BucketRepository</code> based code reviews.
-        RequestMetadata:
-          allOf:
-          - $ref: '#/components/schemas/RequestMetadata'
-          - description: Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with an event trigger, such as a push or a pull request.
-      description: Specifies the source code that is analyzed in a code review.
-    AnalysisTypes:
-      type: array
-      items:
-        $ref: '#/components/schemas/AnalysisType'
+          - $ref: '#/components/schemas/RepositoryHeadSourceCodeType'
+          - description: A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.
+        SourceCodeType:
+          $ref: '#/components/schemas/SourceCodeType'
+      description: A code review type that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN when you call <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.
     BranchDiffSourceCodeType:
       type: object
       required:
@@ -586,82 +655,81 @@ components:
       - ResourceLeaks
       - SecurityIssues
       - CodeInconsistencies
-    PullRequestId:
-      type: string
-      minLength: 1
-      maxLength: 64
-    Arn:
-      type: string
-      pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
-      minLength: 1
-      maxLength: 1600
-    TimeStamp:
-      type: string
-      format: date-time
+    Metrics:
+      type: object
+      properties:
+        MeteredLinesOfCodeCount:
+          allOf:
+          - $ref: '#/components/schemas/LinesOfCodeCount'
+          - description: ' <code>MeteredLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened. This does not include non-code lines such as comments and blank lines.'
+        SuppressedLinesOfCodeCount:
+          allOf:
+          - $ref: '#/components/schemas/LinesOfCodeCount'
+          - description: ' <code>SuppressedLinesOfCodeCount</code> is the number of lines of code in the repository where the code review happened that CodeGuru Reviewer did not analyze. The lines suppressed in the analysis is based on the <code>excludeFiles</code> variable in the <code>aws-codeguru-reviewer.yml</code> file. This number does not include non-code lines such as comments and blank lines. '
+        FindingsCount:
+          allOf:
+          - $ref: '#/components/schemas/FindingsCount'
+          - description: Total number of recommendations found in the code review.
+      description: Information about the statistics from the code review.
     FindingsCount:
       type: integer
-    Type:
-      type: string
-      enum:
-      - PullRequest
-      - RepositoryAnalysis
-    S3RepositoryDetails:
+    ListCodeReviewsResponse:
       type: object
       properties:
-        BucketName:
+        CodeReviewSummaries:
           allOf:
-          - $ref: '#/components/schemas/S3BucketName'
-          - description: 'The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. '
-        CodeArtifacts:
-          allOf:
-          - $ref: '#/components/schemas/CodeArtifacts'
-          - description: A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
-      description: Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
-    ListRecommendationsResponse:
-      type: object
-      properties:
-        RecommendationSummaries:
-          allOf:
-          - $ref: '#/components/schemas/RecommendationSummaries'
-          - description: List of recommendations for the requested code review.
+          - $ref: '#/components/schemas/CodeReviewSummaries'
+          - description: A list of code reviews that meet the criteria of the request.
         NextToken:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: Pagination token.
-    RequestId:
-      type: string
-      minLength: 1
-      maxLength: 64
+    CodeReviewSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/CodeReviewSummary'
     StateReason:
       type: string
       minLength: 0
       maxLength: 256
-    ConflictException: {}
-    CreateCodeReviewResponse:
-      type: object
-      properties:
-        CodeReview:
-          $ref: '#/components/schemas/CodeReview'
     NextToken:
       type: string
       minLength: 1
       maxLength: 2048
-    CommitDiffSourceCodeType:
+    PullRequestId:
+      type: string
+      minLength: 1
+      maxLength: 64
+    Severity:
+      type: string
+      enum:
+      - Info
+      - Low
+      - Medium
+      - High
+      - Critical
+    SourceCodeType:
       type: object
       properties:
-        SourceCommit:
+        CommitDiff:
           allOf:
-          - $ref: '#/components/schemas/CommitId'
-          - description: The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.
-        DestinationCommit:
+          - $ref: '#/components/schemas/CommitDiffSourceCodeType'
+          - description: A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a commit diff created by a pull request on an associated repository.
+        RepositoryHead:
+          $ref: '#/components/schemas/RepositoryHeadSourceCodeType'
+        BranchDiff:
           allOf:
-          - $ref: '#/components/schemas/CommitId'
-          - description: The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.
-        MergeBaseCommit:
+          - $ref: '#/components/schemas/BranchDiffSourceCodeType'
+          - description: A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies a source branch name and a destination branch name in an associated repository.
+        S3BucketRepository:
           allOf:
-          - $ref: '#/components/schemas/CommitId'
-          - description: The SHA of the merge base of a commit.
-      description: A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the commit diff for a pull request on an associated repository. The <code>SourceCommit</code> and <code>DestinationCommit</code> fields are required to do a pull request code review.
+          - $ref: '#/components/schemas/S3BucketRepository'
+          - description: Information about an associated repository in an S3 bucket that includes its name and an <code>S3RepositoryDetails</code> object. The <code>S3RepositoryDetails</code> object includes the name of an S3 bucket, an S3 key for a source code .zip file, and an S3 key for a build artifacts .zip file. <code>S3BucketRepository</code> is required in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> for <code>S3BucketRepository</code> based code reviews.
+        RequestMetadata:
+          allOf:
+          - $ref: '#/components/schemas/RequestMetadata'
+          - description: Metadata that is associated with a code review. This applies to any type of code review supported by CodeGuru Reviewer. The <code>RequestMetadaa</code> field captures any event metadata. For example, it might capture metadata associated with an event trigger, such as a push or a pull request.
+      description: Specifies the source code that is analyzed in a code review.
     RecommendationSummary:
       type: object
       properties:
@@ -698,33 +766,69 @@ components:
           - $ref: '#/components/schemas/Severity'
           - description: The severity of the issue in the code that generated this recommendation.
       description: Information about recommendations.
-    RuleTags:
+    RecommendationSummaries:
       type: array
       items:
-        $ref: '#/components/schemas/RuleTag'
-      minItems: 1
-      maxItems: 20
-    ThrottlingException: {}
-    RequestMetadata:
+        $ref: '#/components/schemas/RecommendationSummary'
+    TimeStamp:
+      type: string
+      format: date-time
+    AccessDeniedException: {}
+    CodeReviewSummary:
       type: object
       properties:
-        RequestId:
+        Name:
           allOf:
-          - $ref: '#/components/schemas/RequestId'
-          - description: The ID of the request. This is required for a pull request code review.
-        Requester:
+          - $ref: '#/components/schemas/Name'
+          - description: The name of the code review.
+        CodeReviewArn:
           allOf:
-          - $ref: '#/components/schemas/Requester'
-          - description: An identifier, such as a name or account ID, that is associated with the requester. The <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.
-        EventInfo:
+          - $ref: '#/components/schemas/Arn'
+          - description: 'The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. '
+        RepositoryName:
           allOf:
-          - $ref: '#/components/schemas/EventInfo'
-          - description: Information about the event associated with a code review.
-        VendorName:
+          - $ref: '#/components/schemas/Name'
+          - description: The name of the repository.
+        Owner:
           allOf:
-          - $ref: '#/components/schemas/VendorName'
-          - description: The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.
-      description: Metadata that is associated with a code review. This applies to both pull request and repository analysis code reviews.
+          - $ref: '#/components/schemas/Owner'
+          - description: The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.
+        ProviderType:
+          allOf:
+          - $ref: '#/components/schemas/ProviderType'
+          - description: The provider type of the repository association.
+        State:
+          allOf:
+          - $ref: '#/components/schemas/JobState'
+          - description: '<p>The state of the code review.</p> <p>The valid code review states are:</p> <ul> <li> <p> <code>Completed</code>: The code review is complete.</p> </li> <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> <li> <p> <code>Failed</code>: The code review failed.</p> </li> <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> </ul>'
+        CreatedTimeStamp:
+          allOf:
+          - $ref: '#/components/schemas/TimeStamp'
+          - description: The time, in milliseconds since the epoch, when the code review was created.
+        LastUpdatedTimeStamp:
+          allOf:
+          - $ref: '#/components/schemas/TimeStamp'
+          - description: The time, in milliseconds since the epoch, when the code review was last updated.
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/Type'
+          - description: The type of the code review.
+        PullRequestId:
+          allOf:
+          - $ref: '#/components/schemas/PullRequestId'
+          - description: The pull request ID for the code review.
+        MetricsSummary:
+          allOf:
+          - $ref: '#/components/schemas/MetricsSummary'
+          - description: The statistics from the code review.
+        SourceCodeType:
+          $ref: '#/components/schemas/SourceCodeType'
+      description: Information about the summary of the code review.
+    AnalysisType:
+      type: string
+      enum:
+      - Security
+      - CodeQuality
     RuleMetadata:
       type: object
       properties:
@@ -749,6 +853,107 @@ components:
           - $ref: '#/components/schemas/RuleTags'
           - description: Tags that are associated with the rule.
       description: Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.
+    S3RepositoryDetails:
+      type: object
+      properties:
+        BucketName:
+          allOf:
+          - $ref: '#/components/schemas/S3BucketName'
+          - description: 'The name of the S3 bucket used for associating a new S3 repository. It must begin with <code>codeguru-reviewer-</code>. '
+        CodeArtifacts:
+          allOf:
+          - $ref: '#/components/schemas/CodeArtifacts'
+          - description: A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes the S3 object key for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
+      description: Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
+    Requester:
+      type: string
+      pattern: ^\S(.*\S)?$
+      minLength: 1
+      maxLength: 100
+    CommitDiffSourceCodeType:
+      type: object
+      properties:
+        SourceCommit:
+          allOf:
+          - $ref: '#/components/schemas/CommitId'
+          - description: The SHA of the source commit used to generate a commit diff. This field is required for a pull request code review.
+        DestinationCommit:
+          allOf:
+          - $ref: '#/components/schemas/CommitId'
+          - description: The SHA of the destination commit used to generate a commit diff. This field is required for a pull request code review.
+        MergeBaseCommit:
+          allOf:
+          - $ref: '#/components/schemas/CommitId'
+          - description: The SHA of the merge base of a commit.
+      description: A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the commit diff for a pull request on an associated repository. The <code>SourceCommit</code> and <code>DestinationCommit</code> fields are required to do a pull request code review.
+    RuleName:
+      type: string
+      pattern: ^\S(.*\S)?$
+      minLength: 1
+      maxLength: 100
+    LineNumber:
+      type: integer
+    LinesOfCodeCount:
+      type: integer
+    Text:
+      type: string
+      minLength: 1
+      maxLength: 5000
+    ThrottlingException: {}
+    ValidationException: {}
+    RequestMetadata:
+      type: object
+      properties:
+        RequestId:
+          allOf:
+          - $ref: '#/components/schemas/RequestId'
+          - description: The ID of the request. This is required for a pull request code review.
+        Requester:
+          allOf:
+          - $ref: '#/components/schemas/Requester'
+          - description: An identifier, such as a name or account ID, that is associated with the requester. The <code>Requester</code> is used to capture the <code>author/actor</code> name of the event request.
+        EventInfo:
+          allOf:
+          - $ref: '#/components/schemas/EventInfo'
+          - description: Information about the event associated with a code review.
+        VendorName:
+          allOf:
+          - $ref: '#/components/schemas/VendorName'
+          - description: The name of the repository vendor used to upload code to an S3 bucket for a CI/CD code review. For example, if code and artifacts are uploaded to an S3 bucket for a CI/CD code review by GitHub scripts from a GitHub repository, then the repository association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository vendor name is GitHub. For more information, see the definition for <code>ProviderType</code> in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.
+      description: Metadata that is associated with a code review. This applies to both pull request and repository analysis code reviews.
+    CodeArtifacts:
+      type: object
+      required:
+      - SourceCodeArtifactsObjectKey
+      properties:
+        SourceCodeArtifactsObjectKey:
+          allOf:
+          - $ref: '#/components/schemas/SourceCodeArtifactsObjectKey'
+          - description: The S3 object key for a source code .zip file. This is required for all code reviews.
+        BuildArtifactsObjectKey:
+          allOf:
+          - $ref: '#/components/schemas/BuildArtifactsObjectKey'
+          - description: The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+      description: <p>Code artifacts are source code artifacts and build artifacts used in a repository analysis or a pull request review.</p> <ul> <li> <p>Source code artifacts are source code files in a Git repository that are compressed into a .zip file.</p> </li> <li> <p>Build artifacts are .jar or .class files that are compressed in a .zip file.</p> </li> </ul>
+    JobState:
+      type: string
+      enum:
+      - Completed
+      - Pending
+      - Failed
+      - Deleting
+    Name:
+      type: string
+      pattern: ^\S[\w.-]*$
+      minLength: 1
+      maxLength: 100
+    VendorName:
+      type: string
+      enum:
+      - GitHub
+      - GitLab
+      - NativeS3
+    ConflictException: {}
     S3BucketRepository:
       type: object
       required:
@@ -767,23 +972,84 @@ components:
       type: string
       minLength: 6
       maxLength: 64
+    AnalysisTypes:
+      type: array
+      items:
+        $ref: '#/components/schemas/AnalysisType'
+    SourceCodeArtifactsObjectKey:
+      type: string
+      pattern: ^\S(.*\S)?$
+      minLength: 1
+      maxLength: 1024
+    Type:
+      type: string
+      enum:
+      - PullRequest
+      - RepositoryAnalysis
+    InternalServerException: {}
+    ListRecommendationsResponse:
+      type: object
+      properties:
+        RecommendationSummaries:
+          allOf:
+          - $ref: '#/components/schemas/RecommendationSummaries'
+          - description: List of recommendations for the requested code review.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: Pagination token.
+    CreateCodeReviewResponse:
+      type: object
+      properties:
+        CodeReview:
+          $ref: '#/components/schemas/CodeReview'
+    EventState:
+      type: string
+      pattern: ^[ \-A-Z_a-z]+$
+      minLength: 1
+      maxLength: 32
+    RuleTags:
+      type: array
+      items:
+        $ref: '#/components/schemas/RuleTag'
+      minItems: 1
+      maxItems: 20
+    BranchName:
+      type: string
+      minLength: 1
+      maxLength: 256
+    ConfigFileState:
+      type: string
+      enum:
+      - Present
+      - Absent
+      - PresentWithErrors
+    LongDescription:
+      type: string
+      pattern: ^\S(.*\S)?$
+      minLength: 1
+      maxLength: 1000
     AssociationArn:
       type: string
       pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:association:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
       minLength: 1
       maxLength: 1600
-    EventInfo:
+    RuleId:
+      type: string
+      pattern: ^\S+\/[a-zA-Z0-9-]+@v\d+\.\d+$
+      minLength: 1
+      maxLength: 64
+    FilePath:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    DescribeCodeReviewResponse:
       type: object
       properties:
-        Name:
+        CodeReview:
           allOf:
-          - $ref: '#/components/schemas/EventName'
-          - description: 'The name of the event. The possible names are <code>pull_request</code>, <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code> '
-        State:
-          allOf:
-          - $ref: '#/components/schemas/EventState'
-          - description: The state of an event. The state might be open, closed, or another state.
-      description: Information about an event. The event might be a push, pull request, scheduled request, or another type of event.
+          - $ref: '#/components/schemas/CodeReview'
+          - description: Information about the code review.
     ProviderType:
       type: string
       enum:
@@ -792,67 +1058,6 @@ components:
       - Bitbucket
       - GitHubEnterpriseServer
       - S3Bucket
-    DescribeCodeReviewResponse:
-      type: object
-      properties:
-        CodeReview:
-          allOf:
-          - $ref: '#/components/schemas/CodeReview'
-          - description: Information about the code review.
-    Owner:
-      type: string
-      pattern: ^\S(.*\S)?$
-      minLength: 1
-      maxLength: 100
-    RuleTag:
-      type: string
-      pattern: ^\S(.*\S)?$
-      minLength: 1
-      maxLength: 50
-    ConfigFileState:
-      type: string
-      enum:
-      - Present
-      - Absent
-      - PresentWithErrors
-    Text:
-      type: string
-      minLength: 1
-      maxLength: 5000
-    RepositoryHeadSourceCodeType:
-      type: object
-      required:
-      - BranchName
-      properties:
-        BranchName:
-          allOf:
-          - $ref: '#/components/schemas/BranchName'
-          - description: The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch.
-      description: A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.
-    InternalServerException: {}
-    Name:
-      type: string
-      pattern: ^\S[\w.-]*$
-      minLength: 1
-      maxLength: 100
-    RuleName:
-      type: string
-      pattern: ^\S(.*\S)?$
-      minLength: 1
-      maxLength: 100
-    ValidationException: {}
-    RuleId:
-      type: string
-      pattern: ^\S+\/[a-zA-Z0-9-]+@v\d+\.\d+$
-      minLength: 1
-      maxLength: 64
-    JobState:
-      type: string
-      enum:
-      - Completed
-      - Pending
-      - Failed
-      - Deleting
     CodeReview:
       type: object
       properties:
@@ -921,95 +1126,97 @@ components:
           - $ref: '#/components/schemas/ConfigFileState'
           - description: The state of the <code>aws-codeguru-reviewer.yml</code> configuration file that allows the configuration of the CodeGuru Reviewer analysis. The file either exists, doesn't exist, or exists with errors at the root directory of your repository.
       description: Information about a code review. A code review belongs to the associated repository that contains the reviewed code.
-    LinesOfCodeCount:
-      type: integer
-    Requester:
-      type: string
-      pattern: ^\S(.*\S)?$
-      minLength: 1
-      maxLength: 100
-    Severity:
-      type: string
-      enum:
-      - Info
-      - Low
-      - Medium
-      - High
-      - Critical
-    RecommendationId:
-      type: string
-      minLength: 1
-      maxLength: 64
+    EventInfo:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/EventName'
+          - description: 'The name of the event. The possible names are <code>pull_request</code>, <code>workflow_dispatch</code>, <code>schedule</code>, and <code>push</code> '
+        State:
+          allOf:
+          - $ref: '#/components/schemas/EventState'
+          - description: The state of an event. The state might be open, closed, or another state.
+      description: Information about an event. The event might be a push, pull request, scheduled request, or another type of event.
     EventName:
       type: string
       pattern: ^[ \-A-Z_a-z]+$
       minLength: 1
       maxLength: 32
-    AccessDeniedException: {}
-    SourceCodeArtifactsObjectKey:
+    RuleTag:
       type: string
       pattern: ^\S(.*\S)?$
       minLength: 1
-      maxLength: 1024
+      maxLength: 50
+    Arn:
+      type: string
+      pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
+      minLength: 1
+      maxLength: 1600
+    ResourceNotFoundException: {}
+    ShortDescription:
+      type: string
+      pattern: ^\S(.*\S)?$
+      minLength: 1
+      maxLength: 200
+    RecommendationId:
+      type: string
+      minLength: 1
+      maxLength: 64
+    RequestId:
+      type: string
+      minLength: 1
+      maxLength: 64
+    Owner:
+      type: string
+      pattern: ^\S(.*\S)?$
+      minLength: 1
+      maxLength: 100
     S3BucketName:
       type: string
       pattern: ^\S(.*\S)?$
       minLength: 3
       maxLength: 63
-    RepositoryAnalysis:
+    MetricsSummary:
       type: object
       properties:
-        RepositoryHead:
+        MeteredLinesOfCodeCount:
           allOf:
-          - $ref: '#/components/schemas/RepositoryHeadSourceCodeType'
-          - description: A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.
-        SourceCodeType:
-          $ref: '#/components/schemas/SourceCodeType'
-      description: A code review type that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN when you call <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.
-    LongDescription:
-      type: string
-      pattern: ^\S(.*\S)?$
-      minLength: 1
-      maxLength: 1000
-    EventState:
-      type: string
-      pattern: ^[ \-A-Z_a-z]+$
-      minLength: 1
-      maxLength: 32
-    CodeArtifacts:
+          - $ref: '#/components/schemas/LinesOfCodeCount'
+          - description: Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions, this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that already existed in the pull request, this includes only the changed lines of code. In both cases, this does not include non-code lines such as comments and import statements. For example, if you submit a pull request containing 5 files, each with 500 lines of code, and in a subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the initial 5 files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for a total of 2,725 lines of code.
+        SuppressedLinesOfCodeCount:
+          allOf:
+          - $ref: '#/components/schemas/LinesOfCodeCount'
+          - description: Lines of code suppressed in the code review based on the <code>excludeFiles</code> element in the <code>aws-codeguru-reviewer.yml</code> file. For full repository analyses, this number includes all lines of code in the files that are suppressed. For pull requests, this number only includes the <i>changed</i> lines of code that are suppressed. In both cases, this number does not include non-code lines such as comments and import statements. For example, if you initiate a full repository analysis on a repository containing 5 files, each file with 100 lines of code, and 2 files are listed as excluded in the <code>aws-codeguru-reviewer.yml</code> file, then <code>SuppressedLinesOfCodeCount</code> returns 200 (2 * 100) as the total number of lines of code suppressed. However, if you submit a pull request for the same repository, then <code>SuppressedLinesOfCodeCount</code> only includes the lines in the 2 files that changed. If only 1 of the 2 files changed in the pull request, then <code>SuppressedLinesOfCodeCount</code> returns 100 (1 * 100) as the total number of lines of code suppressed.
+        FindingsCount:
+          allOf:
+          - $ref: '#/components/schemas/FindingsCount'
+          - description: Total number of recommendations found in the code review.
+      description: Information about metrics summaries.
+    RepositoryHeadSourceCodeType:
       type: object
       required:
-      - SourceCodeArtifactsObjectKey
+      - BranchName
       properties:
-        SourceCodeArtifactsObjectKey:
+        BranchName:
           allOf:
-          - $ref: '#/components/schemas/SourceCodeArtifactsObjectKey'
-          - description: The S3 object key for a source code .zip file. This is required for all code reviews.
-        BuildArtifactsObjectKey:
-          allOf:
-          - $ref: '#/components/schemas/BuildArtifactsObjectKey'
-          - description: The S3 object key for a build artifacts .zip file that contains .jar or .class files. This is required for a code review with security analysis. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
-      description: <p>Code artifacts are source code artifacts and build artifacts used in a repository analysis or a pull request review.</p> <ul> <li> <p>Source code artifacts are source code files in a Git repository that are compressed into a .zip file.</p> </li> <li> <p>Build artifacts are .jar or .class files that are compressed in a .zip file.</p> </li> </ul>
+          - $ref: '#/components/schemas/BranchName'
+          - description: The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch.
+      description: A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.
     BuildArtifactsObjectKey:
       type: string
       pattern: ^\S(.*\S)?$
       minLength: 1
       maxLength: 1024
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -1020,8 +1227,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -1032,8 +1239,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

@@ -37,7 +37,7 @@ tags:
 - Code Review
 - Security
 - DevOps
-- Machine-Learning
+- Machine Learning
 - Developer Tools
 tags_raw:
 - Amazon
@@ -47,6 +47,7 @@ tags_raw:
 - DevOps
 - Machine Learning
 - Developer Tools
+- Machine-Learning
 url: https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/apis.yml
 created: '2026-03-16'
 modified: '2026-09-16'
@@ -82,26 +83,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-codeguru-reviewer-codereviews-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/codegurureviewer/
-  - type: APIReference
-    url: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
-  - type: ErrorCatalog
-    url: errors/amazon-codeguru-reviewer-problem-types.yml
-  - type: Conformance
-    url: conformance/amazon-codeguru-reviewer-conformance.yml
-  - type: Lifecycle
-    url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
-- aid: amazon-codeguru-reviewer:amazon-codeguru-reviewer-codereviews-type-api
-  name: Amazon CodeGuru Reviewer Codereviews#Type API
-  description: The Codereviews#Type API from Amazon CodeGuru Reviewer — 1 operation(s) for codereviews#type.
-  humanURL: https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html
-  baseURL: https://codeguru-reviewer.us-east-1.amazonaws.com
-  tags:
-  - Codereviews#Type
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-codeguru-reviewer-codereviews-type-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/codegurureviewer/
   - type: APIReference
@@ -154,7 +135,7 @@ apis:
     url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
 common:
 - type: Website
-  url: https://amazon.com
+  url: https://aws.amazon.com/codeguru/reviewer/
 - type: X-MCPServerCandidate
   url: mcp/amazon-codeguru-reviewer-mcp.yml
   note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate
@@ -258,5 +239,5 @@ common:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product

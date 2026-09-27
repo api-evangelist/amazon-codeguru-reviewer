@@ -6,11 +6,12 @@
   "outputs": [
     "amazon-codeguru-reviewer-associations-api-openapi.yml",
     "amazon-codeguru-reviewer-codereviews-api-openapi.yml",
-    "amazon-codeguru-reviewer-codereviews-type-api-openapi.yml",
     "amazon-codeguru-reviewer-feedback-api-openapi.yml",
     "amazon-codeguru-reviewer-tags-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -23,7 +24,7 @@
     "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths GET /feedback/{CodeReviewArn}#RecommendationId -> Feedback",
     "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths GET /associations/{AssociationArn} -> Associations",
     "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths DELETE /associations/{AssociationArn} -> Associations",
-    "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths GET /codereviews#Type -> Codereviews#Type",
+    "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths GET /codereviews#Type -> Codereviews",
     "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths GET /feedback/{CodeReviewArn}/RecommendationFeedback -> Feedback",
     "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths GET /codereviews/{CodeReviewArn}/Recommendations -> Codereviews",
     "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths GET /tags/{resourceArn} -> Tags",
@@ -32,10 +33,10 @@
     "amazon-codeguru-reviewer-openapi-original.yaml: tagged paths DELETE /tags/{resourceArn}#tagKeys -> Tags",
     "amazon-codeguru-reviewer-openapi-original.yaml: declared missing tag: Associations",
     "amazon-codeguru-reviewer-openapi-original.yaml: declared missing tag: Codereviews",
-    "amazon-codeguru-reviewer-openapi-original.yaml: declared missing tag: Codereviews#Type",
     "amazon-codeguru-reviewer-openapi-original.yaml: declared missing tag: Feedback",
     "amazon-codeguru-reviewer-openapi-original.yaml: declared missing tag: Tags",
-    "apis.yml register: already-registered"
+    "superseded outputs removed: amazon-codeguru-reviewer-codereviews-type-api-openapi.yml",
+    "apis.yml register: written (+0 apis, 4 total)"
   ],
   "skipped": [
     "amazon-codeguru-reviewer-associations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
