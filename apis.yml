@@ -134,6 +134,9 @@ apis:
   - type: Lifecycle
     url: lifecycle/amazon-codeguru-reviewer-lifecycle.yml
 common:
+- type: CapabilityMap
+  url: capabilities/amazon-codeguru-reviewer-capability-edges.yml
+  name: Amazon CodeGuru Reviewer Business Capability Map
 - type: Website
   url: https://aws.amazon.com/codeguru/reviewer/
 - type: X-MCPServerCandidate
