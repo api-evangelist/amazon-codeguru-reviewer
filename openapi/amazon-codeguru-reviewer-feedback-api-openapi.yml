@@ -485,63 +485,50 @@ paths:
       tags:
       - Feedback
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    ListRecommendationFeedbackResponse:
-      type: object
-      properties:
-        RecommendationFeedbackSummaries:
-          allOf:
-          - $ref: '#/components/schemas/RecommendationFeedbackSummaries'
-          - description: Recommendation feedback summaries corresponding to the code review ARN.
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
-    RecommendationFeedbackSummary:
-      type: object
-      properties:
-        RecommendationId:
-          allOf:
-          - $ref: '#/components/schemas/RecommendationId'
-          - description: The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
-        Reactions:
-          allOf:
-          - $ref: '#/components/schemas/Reactions'
-          - description: List for storing reactions. Reactions are utf-8 text code for emojis.
-        UserId:
-          allOf:
-          - $ref: '#/components/schemas/UserId'
-          - description: <p>The ID of the user that gave the feedback.</p> <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
-      description: Information about recommendation feedback summaries.
-    UserId:
-      type: string
-      minLength: 1
-      maxLength: 256
-    Reaction:
-      type: string
-      enum:
-      - ThumbsUp
-      - ThumbsDown
-    AccessDeniedException: {}
-    DescribeRecommendationFeedbackResponse:
-      type: object
-      properties:
-        RecommendationFeedback:
-          allOf:
-          - $ref: '#/components/schemas/RecommendationFeedback'
-          - description: The recommendation feedback given by the user.
-    PutRecommendationFeedbackResponse:
-      type: object
-      properties: {}
-    TimeStamp:
-      type: string
-      format: date-time
-    InternalServerException: {}
-    ResourceNotFoundException: {}
-    RecommendationId:
-      type: string
-      minLength: 1
-      maxLength: 64
     RecommendationFeedback:
       type: object
       properties:
@@ -570,7 +557,57 @@ components:
           - $ref: '#/components/schemas/TimeStamp'
           - description: The time at which the feedback was last updated.
       description: Information about the recommendation feedback.
+    Reaction:
+      type: string
+      enum:
+      - ThumbsUp
+      - ThumbsDown
+    InternalServerException: {}
+    RecommendationFeedbackSummary:
+      type: object
+      properties:
+        RecommendationId:
+          allOf:
+          - $ref: '#/components/schemas/RecommendationId'
+          - description: The recommendation ID that can be used to track the provided recommendations. Later on it can be used to collect the feedback.
+        Reactions:
+          allOf:
+          - $ref: '#/components/schemas/Reactions'
+          - description: List for storing reactions. Reactions are utf-8 text code for emojis.
+        UserId:
+          allOf:
+          - $ref: '#/components/schemas/UserId'
+          - description: <p>The ID of the user that gave the feedback.</p> <p> The <code>UserId</code> is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying"> Specifying a Principal</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
+      description: Information about recommendation feedback summaries.
     ValidationException: {}
+    UserId:
+      type: string
+      minLength: 1
+      maxLength: 256
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    TimeStamp:
+      type: string
+      format: date-time
+    DescribeRecommendationFeedbackResponse:
+      type: object
+      properties:
+        RecommendationFeedback:
+          allOf:
+          - $ref: '#/components/schemas/RecommendationFeedback'
+          - description: The recommendation feedback given by the user.
+    ListRecommendationFeedbackResponse:
+      type: object
+      properties:
+        RecommendationFeedbackSummaries:
+          allOf:
+          - $ref: '#/components/schemas/RecommendationFeedbackSummaries'
+          - description: Recommendation feedback summaries corresponding to the code review ARN.
+        NextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
+    AccessDeniedException: {}
     Reactions:
       type: array
       items:
@@ -581,59 +618,22 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/RecommendationFeedbackSummary'
+    PutRecommendationFeedbackResponse:
+      type: object
+      properties: {}
+    RecommendationId:
+      type: string
+      minLength: 1
+      maxLength: 64
     Arn:
       type: string
       pattern: ^arn:aws[^:\s]*:codeguru-reviewer:[^:\s]+:[\d]{12}:[a-z-]+:[\w-]+$
       minLength: 1
       maxLength: 1600
-    ThrottlingException: {}
     NextToken:
       type: string
       minLength: 1
       maxLength: 2048
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey
