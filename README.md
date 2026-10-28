@@ -66,135 +66,238 @@
 
 Amazon CodeGuru Reviewer is an automated code review service that uses machine learning and AWS best practices to identify security vulnerabilities, bugs, and hard-to-detect issues in your Java and Python code. It provides intelligent recommendations to help improve code quality and find defects that may be difficult to detect through manual code reviews.
 
-**URL:** [Visit APIs.json](https://raw.githubusercontent.com/api-evangelist/amazon-codeguru-reviewer/refs/heads/main/apis.yml)
+**Areas:** Amazon · AWS · Code Review · Security · DevOps · Machine Learning · Developer Tools
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Amazon CodeGuru Reviewer on APIs.io
 
-## Tags:
+Everything profiled for Amazon CodeGuru Reviewer is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-codeguru-reviewer/](https://apis.io/providers/amazon-codeguru-reviewer/)** — or go straight to one of the APIs or properties below.
 
- - Amazon, AWS, Code Review, Security, DevOps, Machine Learning, Developer Tools
+### APIs (4)
 
-## Timestamps
+- [Amazon CodeGuru Reviewer Associations API](https://apis.io/apis/amazon-codeguru-reviewer/amazon-codeguru-reviewer-associations-api/) — The Associations API from Amazon CodeGuru Reviewer — 2 operation(s) for associations.
+- [Amazon CodeGuru Reviewer Codereviews API](https://apis.io/apis/amazon-codeguru-reviewer/amazon-codeguru-reviewer-codereviews-api/) — The Codereviews API from Amazon CodeGuru Reviewer — 3 operation(s) for codereviews.
+- [Amazon CodeGuru Reviewer Feedback API](https://apis.io/apis/amazon-codeguru-reviewer/amazon-codeguru-reviewer-feedback-api/) — The Feedback API from Amazon CodeGuru Reviewer — 3 operation(s) for feedback.
+- [Amazon CodeGuru Reviewer Tags API](https://apis.io/apis/amazon-codeguru-reviewer/amazon-codeguru-reviewer-tags-api/) — The Tags API from Amazon CodeGuru Reviewer — 2 operation(s) for tags.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Amazon CodeGuru Reviewer API
+#### MCP servers (1)
 
-The Amazon CodeGuru Reviewer REST API.
+Model Context Protocol servers that expose the API to agents.
 
-**Human URL:** [https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html)
+- [amazon-codeguru-reviewer](https://apis.io/servers/amazon-codeguru-reviewer/amazon-codeguru-reviewer/)
 
-#### Tags:
+#### Agentic access (1)
 
- - Amazon, AWS, Code Review, Security, DevOps
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Properties
+- [Amazon Codeguru Reviewer Agentic Access](https://apis.io/agentic-access/amazon-codeguru-reviewer/amazon-codeguru-reviewer-agentic-access/)
 
+#### JSON Schema (122)
+
+The data models the API reads and writes.
+
+- [AnalysisType](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-analysis-type/)
+- [AnalysisTypes](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-analysis-types/)
+- [Arn](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-arn/)
+- [AssociateRepositoryRequest](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-associate-repository-request/)
+- [AssociateRepositoryResponse](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-associate-repository-response/)
+- [AssociationArn](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-association-arn/)
+- [AssociationId](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-association-id/)
+- [BranchDiffSourceCodeType](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-branch-diff-source-code-type/)
+- [BranchName](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-branch-name/)
+- [BuildArtifactsObjectKey](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-build-artifacts-object-key/)
+- [ClientRequestToken](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-client-request-token/)
+- [CodeArtifacts](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-artifacts/)
+- [CodeCommitRepository](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-commit-repository/)
+- [CodeReview](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-review/)
+- [CodeReviewName](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-review-name/)
+- [CodeReviewSummaries](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-review-summaries/)
+- [CodeReviewSummary](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-review-summary/)
+- [CodeReviewType](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-review-type/)
+- [CommitDiffSourceCodeType](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-commit-diff-source-code-type/)
+- [CommitId](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-commit-id/)
+- [ConfigFileState](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-config-file-state/)
+- [ConnectionArn](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-connection-arn/)
+- [CreateCodeReviewRequest](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-create-code-review-request/)
+- [CreateCodeReviewResponse](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-create-code-review-response/)
+- [DescribeCodeReviewRequest](https://apis.io/schemas/amazon-codeguru-reviewer/amazon-codeguru-reviewer-describe-code-review-request/)
+- …and 97 more published on APIs.io
+
+#### JSON Structure (122)
+
+Data models expressed in JSON Structure.
+
+- [Amazon Codeguru Reviewer Analysis Type Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-analysis-type-structure/)
+- [Amazon Codeguru Reviewer Analysis Types Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-analysis-types-structure/)
+- [Amazon Codeguru Reviewer Arn Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-arn-structure/)
+- [Amazon Codeguru Reviewer Associate Repository Request Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-associate-repository-request-structure/)
+- [Amazon Codeguru Reviewer Associate Repository Response Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-associate-repository-response-structure/)
+- [Amazon Codeguru Reviewer Association Arn Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-association-arn-structure/)
+- [Amazon Codeguru Reviewer Association Id Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-association-id-structure/)
+- [Amazon Codeguru Reviewer Branch Diff Source Code Type Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-branch-diff-source-code-type-structure/)
+- [Amazon Codeguru Reviewer Branch Name Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-branch-name-structure/)
+- [Amazon Codeguru Reviewer Build Artifacts Object Key Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-build-artifacts-object-key-structure/)
+- [Amazon Codeguru Reviewer Client Request Token Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-client-request-token-structure/)
+- [Amazon Codeguru Reviewer Code Artifacts Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-artifacts-structure/)
+- [Amazon Codeguru Reviewer Code Commit Repository Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-commit-repository-structure/)
+- [Amazon Codeguru Reviewer Code Review Name Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-review-name-structure/)
+- [Amazon Codeguru Reviewer Code Review Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-review-structure/)
+- [Amazon Codeguru Reviewer Code Review Summaries Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-review-summaries-structure/)
+- [Amazon Codeguru Reviewer Code Review Summary Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-review-summary-structure/)
+- [Amazon Codeguru Reviewer Code Review Type Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-review-type-structure/)
+- [Amazon Codeguru Reviewer Commit Diff Source Code Type Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-commit-diff-source-code-type-structure/)
+- [Amazon Codeguru Reviewer Commit Id Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-commit-id-structure/)
+- [Amazon Codeguru Reviewer Config File State Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-config-file-state-structure/)
+- [Amazon Codeguru Reviewer Connection Arn Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-connection-arn-structure/)
+- [Amazon Codeguru Reviewer Create Code Review Request Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-create-code-review-request-structure/)
+- [Amazon Codeguru Reviewer Create Code Review Response Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-create-code-review-response-structure/)
+- [Amazon Codeguru Reviewer Describe Code Review Request Structure](https://apis.io/json-structure/amazon-codeguru-reviewer/amazon-codeguru-reviewer-describe-code-review-request-structure/)
+- …and 97 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Codeguru Reviewer Context](https://apis.io/jsonld/amazon-codeguru-reviewer/amazon-codeguru-reviewer-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Codeguru Reviewer Vocabulary](https://apis.io/vocabularies/amazon-codeguru-reviewer/amazon-codeguru-reviewer-vocabulary/)
+
+#### Examples (55)
+
+Example requests and responses.
+
+- [Amazon Codeguru Reviewer Associate Repository Request Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-associate-repository-request-example/)
+- [Amazon Codeguru Reviewer Associate Repository Response Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-associate-repository-response-example/)
+- [Amazon Codeguru Reviewer Branch Diff Source Code Type Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-branch-diff-source-code-type-example/)
+- [Amazon Codeguru Reviewer Code Artifacts Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-artifacts-example/)
+- [Amazon Codeguru Reviewer Code Commit Repository Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-commit-repository-example/)
+- [Amazon Codeguru Reviewer Code Review Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-review-example/)
+- [Amazon Codeguru Reviewer Code Review Summary Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-review-summary-example/)
+- [Amazon Codeguru Reviewer Code Review Type Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-code-review-type-example/)
+- [Amazon Codeguru Reviewer Commit Diff Source Code Type Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-commit-diff-source-code-type-example/)
+- [Amazon Codeguru Reviewer Create Code Review Request Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-create-code-review-request-example/)
+- [Amazon Codeguru Reviewer Create Code Review Response Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-create-code-review-response-example/)
+- [Amazon Codeguru Reviewer Describe Code Review Request Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-describe-code-review-request-example/)
+- [Amazon Codeguru Reviewer Describe Code Review Response Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-describe-code-review-response-example/)
+- [Amazon Codeguru Reviewer Describe Recommendation Feedback Request Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-describe-recommendation-feedback-request-example/)
+- [Amazon Codeguru Reviewer Describe Recommendation Feedback Response Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-describe-recommendation-feedback-response-example/)
+- [Amazon Codeguru Reviewer Describe Repository Association Request Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-describe-repository-association-request-example/)
+- [Amazon Codeguru Reviewer Describe Repository Association Response Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-describe-repository-association-response-example/)
+- [Amazon Codeguru Reviewer Disassociate Repository Request Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-disassociate-repository-request-example/)
+- [Amazon Codeguru Reviewer Disassociate Repository Response Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-disassociate-repository-response-example/)
+- [Amazon Codeguru Reviewer Event Info Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-event-info-example/)
+- [Amazon Codeguru Reviewer Kms Key Details Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-kms-key-details-example/)
+- [Amazon Codeguru Reviewer List Code Reviews Request Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-list-code-reviews-request-example/)
+- [Amazon Codeguru Reviewer List Code Reviews Response Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-list-code-reviews-response-example/)
+- [Amazon Codeguru Reviewer List Recommendation Feedback Request Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-list-recommendation-feedback-request-example/)
+- [Amazon Codeguru Reviewer List Recommendation Feedback Response Example](https://apis.io/examples/amazon-codeguru-reviewer/amazon-codeguru-reviewer-list-recommendation-feedback-response-example/)
+- …and 30 more published on APIs.io
+
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [Amazon CodeGuru Reviewer Associations API](https://apis.io/collections/amazon-codeguru-reviewer/postman-amazon-codeguru-reviewer-associations-api/)
+- [Amazon CodeGuru Reviewer Associations Codereviews API](https://apis.io/collections/amazon-codeguru-reviewer/postman-amazon-codeguru-reviewer-codereviews-api/)
+- [Amazon CodeGuru Reviewer Associations Codereviews#Type API](https://apis.io/collections/amazon-codeguru-reviewer/postman-amazon-codeguru-reviewer-codereviews-type-api/)
+- [Amazon CodeGuru Reviewer Associations Feedback API](https://apis.io/collections/amazon-codeguru-reviewer/postman-amazon-codeguru-reviewer-feedback-api/)
+- [Amazon CodeGuru Reviewer Associations Tags API](https://apis.io/collections/amazon-codeguru-reviewer/postman-amazon-codeguru-reviewer-tags-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Amazon Codeguru Reviewer Openapi Overlay](https://apis.io/overlays/amazon-codeguru-reviewer/amazon-codeguru-reviewer-openapi-overlay/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon CodeGuru Reviewer — jsonschema rules](https://apis.io/rules/amazon-codeguru-reviewer/amazon-codeguru-reviewer-jsonschema-spectral-rules/)
+- [Amazon CodeGuru Reviewer API Rules](https://apis.io/rules/amazon-codeguru-reviewer/amazon-codeguru-reviewer-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Codeguru Reviewer Authentication](https://apis.io/security/amazon-codeguru-reviewer/amazon-codeguru-reviewer-authentication/)
+- [Amazon Codeguru Reviewer Domain Security](https://apis.io/security/amazon-codeguru-reviewer/amazon-codeguru-reviewer-domain-security/)
+- [Amazon Codeguru Reviewer Trust Center](https://apis.io/security/amazon-codeguru-reviewer/amazon-codeguru-reviewer-trust-center/)
+- [Amazon Codeguru Reviewer Vulnerability Disclosure](https://apis.io/security/amazon-codeguru-reviewer/amazon-codeguru-reviewer-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://aws.amazon.com/codeguru/reviewer/)
 - [Documentation](https://docs.aws.amazon.com/codegurureviewer/)
-- [APIReference](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/Welcome.html)
-- [OpenAPI](openapi/amazon-codeguru-reviewer-openapi-original.yaml)
-
-## Common Properties
-
-- [GettingStarted](https://docs.aws.amazon.com/codeguru/reviewer)
+- [Getting started](https://docs.aws.amazon.com/codeguru/reviewer)
 - [Pricing](https://aws.amazon.com/codegurureviewer/pricing/)
-- [Console](https://console.aws.amazon.com/codegurureviewer/)
-- [Portal](https://aws.amazon.com/codegurureviewer/)
-- [Documentation](https://docs.aws.amazon.com/codegurureviewer/)
-- [TermsOfService](https://aws.amazon.com/service-terms/)
-- [PrivacyPolicy](https://aws.amazon.com/privacy/)
-- [StatusPage](https://health.aws.amazon.com/health/status)
+- [Sign up](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html)
 - [Blog](https://aws.amazon.com/blogs/devops/)
-- [SignUp](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html)
-- [GitHubOrganization](https://github.com/aws)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Automated Code Review | Automatically analyze code changes in pull requests and provide recommendations for bugs, security vulnerabilities, and  |
-| Security Analysis | Detect security vulnerabilities including OWASP Top 10, input validation issues, encryption problems, and AWS API securi |
-| Java and Python Support | Analyze Java and Python code with language-specific recommendations based on AWS best practices. |
-| Repository Association | Connect CodeGuru Reviewer to GitHub, GitHub Enterprise, Bitbucket, CodeCommit, and S3 repositories. |
-| Pull Request Integration | Automatically trigger code reviews on new pull requests and post recommendations as inline comments. |
+**Kin Score 47.8** — developing · rubric 0.25.0 · scored 2026-10-23
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 62.0 |
+| Contract governance | 31.8 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 35.2 |
+| Access clarity | 42.1 |
 
-| Name | Description |
-|------|-------------|
-| Security Vulnerability Detection | Automatically detect security issues in code changes before they reach production, reducing security review burden on de |
-| Automated Code Quality Enforcement | Enforce code quality standards across the organization with consistent, automated review feedback on every pull request. |
-| Developer Productivity | Help developers identify and fix common coding errors and anti-patterns earlier in the development cycle. |
+**Agent readiness 35.9** — agent-ready
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | verified |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
 
-| Name | Description |
-|------|-------------|
-| GitHub | Associate GitHub repositories for automated code reviews on pull requests. |
-| GitHub Enterprise | Connect self-hosted GitHub Enterprise repositories for automated code review. |
-| Bitbucket | Integrate with Bitbucket repositories for pull request code reviews. |
-| AWS CodeCommit | Analyze CodeCommit repositories and pull requests natively. |
-| Amazon S3 | Associate S3 buckets for one-time code analysis. |
-| Amazon CodeGuru Profiler | Combine code review recommendations with profiling insights for comprehensive code quality. |
+**Regulatory alignment 32.7** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-codeguru-reviewer/](https://apis.io/providers/amazon-codeguru-reviewer/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### OpenAPI
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [amazon-codeguru-reviewer-openapi-original](openapi/amazon-codeguru-reviewer-openapi-original.yaml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon CodeGuru Reviewer: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Schema
+## Open an issue
 
-122 JSON Schema files generated from the OpenAPI specification.
-
-- [amazon-codeguru-reviewer-analysis-type-schema](json-schema/amazon-codeguru-reviewer-analysis-type-schema.json)
-- [amazon-codeguru-reviewer-analysis-types-schema](json-schema/amazon-codeguru-reviewer-analysis-types-schema.json)
-- [amazon-codeguru-reviewer-arn-schema](json-schema/amazon-codeguru-reviewer-arn-schema.json)
-- [amazon-codeguru-reviewer-associate-repository-request-schema](json-schema/amazon-codeguru-reviewer-associate-repository-request-schema.json)
-- [amazon-codeguru-reviewer-associate-repository-response-schema](json-schema/amazon-codeguru-reviewer-associate-repository-response-schema.json)
-- ...and 117 more in [json-schema/](json-schema/)
-
-### JSON Structure
-
-122 JSON Structure files in [json-structure/](json-structure/).
-
-### JSON-LD
-
-- [amazon-codeguru-reviewer-context](json-ld/amazon-codeguru-reviewer-context.jsonld)
-
-### Examples
-
-122 example JSON files in [examples/](examples/).
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [codegurureviewer](capabilities/shared/codegurureviewer.yaml) — 14 operations
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Amazon CodeGuru Reviewer Automated Code Review](capabilities/amazon-codeguru-reviewer-code-review.yaml) | codegurureviewer | 8 | DevOps Engineer |
-
-## Vocabulary
-
-- [amazon-codeguru-reviewer-vocabulary](vocabulary/amazon-codeguru-reviewer-vocabulary.yaml) — Unified taxonomy mapping 6 resources, 5 actions, 1 workflows, and 3 personas
-
-## Rules
-
-- [amazon-codeguru-reviewer-spectral-rules](rules/amazon-codeguru-reviewer-spectral-rules.yml) — 10 rules enforcing Amazon CodeGuru Reviewer API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-codeguru-reviewer/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
